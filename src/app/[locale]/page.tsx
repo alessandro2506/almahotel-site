@@ -104,7 +104,7 @@ function HomeContent() {
         <div className="max-w-[680px] mx-auto px-6 text-center">
           <FadeIn>
             <span className="font-[family-name:var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.22em] text-[#9A9A9A] block mb-6">
-              DAL 1896 · PALERMO CENTRO
+              DAL 2021 · PALERMO CENTRO
             </span>
             <h2
               className="font-[family-name:var(--font-display)] italic text-[#1C1C1C] mb-7"
@@ -220,17 +220,14 @@ function HomeContent() {
       <section className="bg-[#1C1C1C] py-[120px] max-md:py-[80px]">
         <div className="max-w-[680px] mx-auto px-6 text-center">
           <FadeIn>
-            <span className="font-[family-name:var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.22em] text-[#E60023] block mb-5">
-              PRENOTA DIRETTAMENTE
-            </span>
             <h2
               className="font-[family-name:var(--font-display)] italic text-white mb-6"
               style={{ fontSize: 'clamp(36px, 5vw, 52px)', lineHeight: 1.2 }}
             >
-              La Miglior Tariffa<br />è sul Nostro Sito
+              La Miglior Tariffa<br />la trovi da noi.
             </h2>
             <p className="text-[16px] leading-[1.8] text-[#9A9A9A] mb-10">
-              Prenota direttamente e garantirti il miglior prezzo disponibile, senza commissioni.
+              Prenota ora per garantirti il miglior prezzo disponibile.
             </p>
             <a href={OCTORATE_URL} target="_blank" rel="noopener noreferrer">
               <Button variant="primary" size="lg">Prenota Ora</Button>

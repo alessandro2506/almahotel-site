@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { useTranslations, useLocale } from 'next-intl'
 import { Menu, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
@@ -13,22 +14,32 @@ import { OCTORATE_URL } from '@/lib/utils'
 export function Navbar() {
   const t = useTranslations('nav')
   const locale = useLocale()
-  const [scrolled, setScrolled] = useState(false)
+  const pathname = usePathname()
+  const [scrolledState, setScrolledState] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
 
+  // Transparent mode only on the home page; all other pages use solid navbar
+  const isHome = pathname === `/${locale}` || pathname === '/'
+  const scrolled = !isHome || scrolledState
+
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 80)
+    if (!isHome) {
+      setScrolledState(false)
+      return
+    }
+    const handleScroll = () => setScrolledState(window.scrollY > 80)
+    handleScroll()
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  }, [isHome])
 
   const navLinks = [
     { href: `/${locale}`, label: t('home') },
     { href: `/${locale}/camere`, label: t('rooms') },
-    { href: `/${locale}#servizi`, label: t('services') },
+    { href: `/${locale}/protected/prenota-transfer`, label: t('transfer') },
+    { href: `/${locale}/protected/web-check-in`, label: t('checkin') },
     { href: `/${locale}/chi-siamo`, label: t('about') },
     { href: `/${locale}/contatti`, label: t('contacts') },
-    { href: `/${locale}/ristorante`, label: t('restaurant') },
   ]
 
   return (
