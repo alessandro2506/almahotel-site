@@ -5,10 +5,13 @@ import { MapPin, Phone, Mail, Clock, ExternalLink } from 'lucide-react'
 
 export function MapSection() {
   const t = useTranslations('map')
-  const mapsUrl =
-    'https://www.google.com/maps/embed/v1/place?key=' +
-    (process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? '') +
-    '&q=Via+Mariano+Stabile+136+Palermo+Italy'
+  // Uses keyless embed (same approach as the existing almahotel.it site).
+  // If a Maps Embed API key is provided, the more precise /embed/v1/place endpoint is used.
+  const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
+  const hasKey = apiKey && apiKey !== 'xxxx'
+  const mapsUrl = hasKey
+    ? `https://www.google.com/maps/embed/v1/place?key=${apiKey}&q=Via+Mariano+Stabile+136+Palermo+Italy`
+    : 'https://maps.google.com/maps?q=Alma+Hotel+Palermo&t=m&z=16&output=embed&iwloc=near'
   const directionsUrl =
     'https://www.google.com/maps/dir/?api=1&destination=Via+Mariano+Stabile+136+Palermo+Italy'
 
@@ -16,26 +19,14 @@ export function MapSection() {
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 min-h-[480px]">
       {/* Map */}
       <div className="relative min-h-[320px] lg:min-h-[480px] bg-[#E8E3DE]">
-        {process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY &&
-        process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY !== 'xxxx' ? (
-          <iframe
-            src={mapsUrl}
-            className="absolute inset-0 w-full h-full border-0"
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            title="Alma Hotel Palermo location"
-          />
-        ) : (
-          <div className="absolute inset-0 flex items-center justify-center bg-[#E8E3DE]">
-            <div className="text-center">
-              <MapPin size={40} className="text-[#E60023] mx-auto mb-4" />
-              <p className="font-[family-name:var(--font-sans)] text-[12px] uppercase tracking-widest text-[#6B6B6B]">
-                Via Mariano Stabile, 136<br />Palermo
-              </p>
-            </div>
-          </div>
-        )}
+        <iframe
+          src={mapsUrl}
+          className="absolute inset-0 w-full h-full border-0"
+          allowFullScreen
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          title="Alma Hotel Palermo location"
+        />
       </div>
 
       {/* Info card */}
