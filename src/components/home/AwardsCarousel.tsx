@@ -1,8 +1,8 @@
 const awards = [
   { name: 'TripAdvisor Travellers Choice', year: '2024' },
   { name: "Booking.com Guest Review Award", year: '2024' },
-  { name: 'Federalberghi', year: '' },
-  { name: 'Accoglienza Sicura', year: '' },
+  { name: 'Federalberghi', year: '2021' },
+  { name: 'Accoglienza Sicura', year: '2021' },
   { name: 'Trivago Top Rated', year: '2023' },
   { name: 'Hotels.com Loved by Guests', year: '2024' },
   { name: 'Expedia Traveler Preferred', year: '2024' },
