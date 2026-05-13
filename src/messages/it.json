@@ -12,18 +12,22 @@
   },
   "hero": {
     "label": "BOUTIQUE HOTEL · PALERMO CENTRO",
-    "title": "Il Tuo Soggiorno\na Palermo",
+    "title": "Il Tuo Rifugio\nnel Cuore di Palermo",
     "bookNow": "Prenota Ora",
     "discoverRooms": "Scopri le Camere",
     "scrollDown": "Scorri"
   },
   "welcome": {
-    "label": "LA NOSTRA STORIA",
+    "label": "DAL 2021 · PALERMO CENTRO",
     "title": "Benvenuti all'Alma Hotel",
-    "text": "Situato nel cuore pulsante di Palermo, l'Alma Hotel nasce dalla passione per l'ospitalità autentica siciliana. A pochi passi dai principali monumenti della città, offriamo un rifugio di eleganza e comfort dove ogni dettaglio è curato per rendere il vostro soggiorno indimenticabile.",
-    "text2": "Tre tipologie di camere raffinate, colazione inclusa ogni mattina, e una squadra dedicata a soddisfare ogni vostra esigenza. Perché un viaggio a Palermo merita di essere vissuto al meglio."
+    "text": "Nel cuore di Palermo, a pochi passi dai monumenti più belli della città, l'Alma Hotel vi accoglie in un'atmosfera di eleganza discreta e calore autentico.",
+    "text2": "Tre tipologie di camere raffinate, colazione inclusa ogni mattina, e una squadra dedicata a soddisfare ogni vostra esigenza. Perché un viaggio a Palermo merita di essere vissuto al meglio.",
+    "cta": "Scopri la nostra storia"
   },
   "rooms": {
+    "label": "LE NOSTRE CAMERE",
+    "heading": "Spazi Pensati\nper il Vostro Comfort",
+    "viewAll": "Vedi tutte le camere",
     "title": "Le Nostre Camere",
     "subtitle": "Tre categorie di comfort raffinato nel cuore di Palermo",
     "from": "da",
@@ -43,6 +47,8 @@
     }
   },
   "services": {
+    "label": "I NOSTRI SERVIZI",
+    "heading": "Tutto Incluso nel Vostro Soggiorno",
     "title": "I Nostri Servizi",
     "subtitle": "Tutto il necessario per un soggiorno perfetto",
     "wifi": "WiFi Fibra 1Gbps",
@@ -54,7 +60,32 @@
     "parking": "Parcheggio",
     "airConditioning": "Aria Condizionata"
   },
+  "restaurant": {
+    "label": "IL RISTORANTE",
+    "title": "Sapori Perduti",
+    "text": "A pochi passi dall'hotel, il ristorante Sapori Perduti porta in tavola il meglio della tradizione siciliana, reinterpretata con maestria dallo Chef Piero Oneto. Un'esperienza culinaria autentica nel cuore di Palermo.",
+    "cta": "Scopri il Ristorante"
+  },
+  "experience": {
+    "label": "PALERMO DA SCOPRIRE",
+    "title": "La Città a Portata di Mano",
+    "text": "L'Alma Hotel si trova nel cuore pulsante di Palermo, a pochi minuti a piedi dai mercati storici, dalla Cattedrale e dal Teatro Massimo. La città più bella del Mediterraneo è tutta attorno a voi.",
+    "cta": "Prenota il Transfer"
+  },
+  "highlight": {
+    "label": "OGNI MATTINA",
+    "title": "La Colazione Inclusa",
+    "text": "Inizia la giornata con una colazione abbondante, preparata con prodotti freschi e locali.",
+    "cta": "Sfoglia il Menu"
+  },
+  "awards": {
+    "label": "RICONOSCIMENTI & PREMI",
+    "heading": "La Qualità Riconosciuta",
+    "title": "Riconoscimenti"
+  },
   "booking": {
+    "heading": "La Miglior Tariffa\nla trovi da noi.",
+    "text": "Prenota ora per garantirti il miglior prezzo disponibile.",
     "title": "Prenota Direttamente",
     "subtitle": "Ottieni il miglior prezzo garantito prenotando sul nostro sito ufficiale",
     "cta": "Prenota Ora su Octorate",
@@ -64,9 +95,6 @@
     "guestsCount": "{count} Ospite",
     "guestsCounts": "{count} Ospiti",
     "search": "Prenota Ora"
-  },
-  "awards": {
-    "title": "Riconoscimenti"
   },
   "map": {
     "title": "Dove Siamo",

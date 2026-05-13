@@ -12,18 +12,22 @@
   },
   "hero": {
     "label": "BOUTIQUE HÔTEL · CENTRE DE PALERME",
-    "title": "Votre Séjour\nà Palerme",
+    "title": "Votre Refuge\nau Cœur de Palerme",
     "bookNow": "Réserver Maintenant",
     "discoverRooms": "Découvrir les Chambres",
     "scrollDown": "Défiler"
   },
   "welcome": {
-    "label": "NOTRE HISTOIRE",
+    "label": "DEPUIS 2021 · CENTRE DE PALERME",
     "title": "Bienvenue à l'Alma Hotel",
-    "text": "Situé au cœur de Palerme, l'Alma Hotel est né de la passion pour l'hospitalité sicilienne authentique. À quelques pas des principaux monuments de la ville, nous offrons un havre d'élégance et de confort.",
-    "text2": "Trois catégories de chambres raffinées, petit-déjeuner inclus chaque matin, et une équipe dévouée prête à satisfaire tous vos besoins."
+    "text": "Au cœur de Palerme, à quelques pas des plus beaux monuments de la ville, l'Alma Hotel vous accueille dans une atmosphère d'élégance discrète et de chaleur authentique.",
+    "text2": "Trois catégories de chambres raffinées, petit-déjeuner inclus chaque matin, et une équipe dévouée prête à satisfaire tous vos besoins.",
+    "cta": "Découvrez notre histoire"
   },
   "rooms": {
+    "label": "NOS CHAMBRES",
+    "heading": "Des Espaces Conçus\npour Votre Confort",
+    "viewAll": "Voir toutes les chambres",
     "title": "Nos Chambres",
     "subtitle": "Trois catégories de confort raffiné au cœur de Palerme",
     "from": "à partir de",
@@ -43,6 +47,8 @@
     }
   },
   "services": {
+    "label": "NOS SERVICES",
+    "heading": "Tout Inclus dans Votre Séjour",
     "title": "Nos Services",
     "subtitle": "Tout le nécessaire pour un séjour parfait",
     "wifi": "WiFi Fibre 1Gbps",
@@ -54,7 +60,32 @@
     "parking": "Parking",
     "airConditioning": "Climatisation"
   },
+  "restaurant": {
+    "label": "LE RESTAURANT",
+    "title": "Sapori Perduti",
+    "text": "À quelques pas de l'hôtel, le restaurant Sapori Perduti met à la table le meilleur de la tradition sicilienne, magistralement réinterprétée par le Chef Piero Oneto. Une expérience culinaire authentique au cœur de Palerme.",
+    "cta": "Découvrir le Restaurant"
+  },
+  "experience": {
+    "label": "PALERME À DÉCOUVRIR",
+    "title": "La Ville à Portée de Main",
+    "text": "L'Alma Hotel est situé au cœur battant de Palerme, à quelques minutes à pied des marchés historiques, de la Cathédrale et du Teatro Massimo. La plus belle ville de la Méditerranée est tout autour de vous.",
+    "cta": "Réserver le Transfert"
+  },
+  "highlight": {
+    "label": "CHAQUE MATIN",
+    "title": "Petit-déjeuner Inclus",
+    "text": "Commencez la journée avec un petit-déjeuner copieux, préparé avec des produits frais et locaux.",
+    "cta": "Consulter le Menu"
+  },
+  "awards": {
+    "label": "RECONNAISSANCES & PRIX",
+    "heading": "La Qualité Reconnue",
+    "title": "Récompenses"
+  },
   "booking": {
+    "heading": "Le Meilleur Tarif\nvous Attend ici.",
+    "text": "Réservez maintenant pour vous garantir le meilleur prix disponible.",
     "title": "Réservation Directe",
     "subtitle": "Obtenez le meilleur prix garanti en réservant sur notre site officiel",
     "cta": "Réserver sur Octorate",
@@ -64,9 +95,6 @@
     "guestsCount": "{count} Client",
     "guestsCounts": "{count} Clients",
     "search": "Réserver Maintenant"
-  },
-  "awards": {
-    "title": "Récompenses"
   },
   "map": {
     "title": "Nous Trouver",
@@ -143,8 +171,8 @@
     "title": "À Propos",
     "subtitle": "Une histoire d'hospitalité au cœur de Palerme",
     "history": "Histoire",
-    "historyText": "L'Alma Hotel est né dans le centre historique de Palerme avec un objectif précis : offrir aux clients une expérience de séjour authentique, raffinée et accueillante.",
-    "historyText2": "Chaque chambre a été conçue avec soin pour allier confort moderne et élégance classique sicilienne.",
+    "historyText": "L'Alma Hotel est né dans le centre historique de Palerme avec un objectif précis : offrir aux clients une expérience de séjour authentique, raffinée et accueillante. Depuis des années notre famille gère avec passion cet hôtel boutique, transmettant les valeurs de l'hospitalité sicilienne.",
+    "historyText2": "Chaque chambre a été conçue avec soin pour allier confort moderne et élégance classique sicilienne. Notre personnel, présent 24 heures sur 24, est toujours disponible pour rendre votre séjour inoubliable.",
     "certifications": "Certifications"
   },
   "contacts": {

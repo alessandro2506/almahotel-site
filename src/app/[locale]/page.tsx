@@ -1,4 +1,4 @@
-import { useLocale } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import { HeroVideo } from '@/components/home/HeroVideo'
 import { RoomCard } from '@/components/home/RoomCard'
 import { ServiceIcons } from '@/components/home/ServiceIcons'
@@ -66,11 +66,16 @@ const hotelSchema = {
 
 function HomeContent() {
   const locale = useLocale()
+  const tWelcome = useTranslations('welcome')
+  const tRooms = useTranslations('rooms')
+  const tServices = useTranslations('services')
+  const tAwards = useTranslations('awards')
+  const tBooking = useTranslations('booking')
 
   const rooms = [
     {
       slug: 'suite',
-      name: 'Suite',
+      name: tRooms('suite.name'),
       price: '€149',
       image: 'https://www.saporiperduti.it/wp-content/uploads/2021/11/suite-1.jpg',
       badge: 'Suite',
@@ -78,13 +83,13 @@ function HomeContent() {
     },
     {
       slug: 'matrimoniale',
-      name: 'Camera Matrimoniale',
+      name: tRooms('matrimoniale.name'),
       price: '€89',
       image: 'https://www.saporiperduti.it/wp-content/uploads/2021/11/matrimoniale-7-1.jpg',
     },
     {
       slug: 'matrimoniale-superior',
-      name: 'Matrimoniale Superior',
+      name: tRooms('matrimonialeSuperiore.name'),
       price: '€109',
       image: 'https://www.saporiperduti.it/wp-content/uploads/2021/11/suite-2.jpg',
       badge: 'Superior',
@@ -104,23 +109,22 @@ function HomeContent() {
         <div className="max-w-[680px] mx-auto px-6 text-center">
           <FadeIn>
             <span className="font-[family-name:var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.22em] text-[#9A9A9A] block mb-6">
-              DAL 2021 · PALERMO CENTRO
+              {tWelcome('label')}
             </span>
             <h2
               className="font-[family-name:var(--font-display)] italic text-[#1C1C1C] mb-7"
               style={{ fontSize: 'clamp(36px, 5vw, 48px)', lineHeight: 1.2 }}
             >
-              Benvenuti all&apos;Alma Hotel
+              {tWelcome('title')}
             </h2>
             <p className="text-[17px] leading-[1.9] text-[#6B6B6B] mb-8">
-              Nel cuore di Palermo, a pochi passi dai monumenti più belli della città, 
-              l&apos;Alma Hotel vi accoglie in un&apos;atmosfera di eleganza discreta e calore autentico.
+              {tWelcome('text')}
             </p>
             <Link
               href={`/${locale}/chi-siamo`}
               className="inline-flex items-center gap-2 font-[family-name:var(--font-sans)] text-[12px] font-semibold uppercase tracking-[0.15em] text-[#1C1C1C] hover:text-[#E60023] transition-colors group"
             >
-              Scopri la nostra storia
+              {tWelcome('cta')}
               <span className="transition-transform group-hover:translate-x-1">→</span>
             </Link>
           </FadeIn>
@@ -132,13 +136,13 @@ function HomeContent() {
         <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
           <FadeIn className="mb-14">
             <span className="font-[family-name:var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.22em] text-[#9A9A9A] block mb-4">
-              LE NOSTRE CAMERE
+              {tRooms('label')}
             </span>
             <h2
-              className="font-[family-name:var(--font-display)] italic text-[#1C1C1C]"
+              className="font-[family-name:var(--font-display)] italic text-[#1C1C1C] whitespace-pre-line"
               style={{ fontSize: 'clamp(36px, 5vw, 48px)', lineHeight: 1.15 }}
             >
-              Spazi Pensati<br />per il Vostro Comfort
+              {tRooms('heading')}
             </h2>
           </FadeIn>
 
@@ -164,7 +168,7 @@ function HomeContent() {
           <FadeIn className="mt-10 flex justify-end">
             <Link href={`/${locale}/camere`}>
               <Button variant="outline" size="md">
-                Vedi tutte le camere
+                {tRooms('viewAll')}
               </Button>
             </Link>
           </FadeIn>
@@ -182,13 +186,13 @@ function HomeContent() {
         <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
           <FadeIn className="text-center mb-14">
             <span className="font-[family-name:var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.22em] text-[#9A9A9A] block mb-4">
-              I NOSTRI SERVIZI
+              {tServices('label')}
             </span>
             <h2
               className="font-[family-name:var(--font-display)] italic text-[#1C1C1C]"
               style={{ fontSize: 'clamp(34px, 4vw, 44px)', lineHeight: 1.2 }}
             >
-              Tutto Incluso nel Vostro Soggiorno
+              {tServices('heading')}
             </h2>
           </FadeIn>
           <ServiceIcons />
@@ -203,13 +207,13 @@ function HomeContent() {
         <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
           <FadeIn className="text-center mb-10">
             <span className="font-[family-name:var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.22em] text-[#9A9A9A] block mb-3">
-              RICONOSCIMENTI &amp; PREMI
+              {tAwards('label')}
             </span>
             <h3
               className="font-[family-name:var(--font-display)] italic text-[#1C1C1C]"
               style={{ fontSize: 'clamp(28px, 3vw, 38px)' }}
             >
-              La Qualità Riconosciuta
+              {tAwards('heading')}
             </h3>
           </FadeIn>
         </div>
@@ -221,16 +225,16 @@ function HomeContent() {
         <div className="max-w-[680px] mx-auto px-6 text-center">
           <FadeIn>
             <h2
-              className="font-[family-name:var(--font-display)] italic text-white mb-6"
+              className="font-[family-name:var(--font-display)] italic text-white mb-6 whitespace-pre-line"
               style={{ fontSize: 'clamp(36px, 5vw, 52px)', lineHeight: 1.2 }}
             >
-              La Miglior Tariffa<br />la trovi da noi.
+              {tBooking('heading')}
             </h2>
             <p className="text-[16px] leading-[1.8] text-[#9A9A9A] mb-10">
-              Prenota ora per garantirti il miglior prezzo disponibile.
+              {tBooking('text')}
             </p>
             <a href={OCTORATE_URL} target="_blank" rel="noopener noreferrer">
-              <Button variant="primary" size="lg">Prenota Ora</Button>
+              <Button variant="primary" size="lg">{tBooking('search')}</Button>
             </a>
           </FadeIn>
         </div>

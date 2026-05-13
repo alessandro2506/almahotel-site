@@ -1,6 +1,6 @@
 'use client'
 
-import { useLocale } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import { ChevronDown } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { OCTORATE_URL } from '@/lib/utils'
@@ -8,6 +8,7 @@ import Link from 'next/link'
 
 export function HeroVideo() {
   const locale = useLocale()
+  const t = useTranslations('hero')
   const vimeoId = process.env.NEXT_PUBLIC_VIMEO_ID ?? '382157995'
 
   return (
@@ -34,20 +35,20 @@ export function HeroVideo() {
       {/* Contenuto centrato */}
       <div className="relative z-20 text-center px-6 max-w-4xl mx-auto">
         <p className="font-[family-name:var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.22em] text-white/65 mb-7">
-          PALERMO · BOUTIQUE HOTEL
+          {t('label')}
         </p>
         <h1
-          className="font-[family-name:var(--font-display)] italic text-white mb-10 leading-tight"
+          className="font-[family-name:var(--font-display)] italic text-white mb-10 leading-tight whitespace-pre-line"
           style={{ fontSize: 'clamp(44px, 7vw, 72px)' }}
         >
-          Il Tuo Rifugio<br />nel Cuore di Palermo
+          {t('title')}
         </h1>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a href={OCTORATE_URL} target="_blank" rel="noopener noreferrer">
-            <Button variant="primary" size="lg">Prenota Ora</Button>
+            <Button variant="primary" size="lg">{t('bookNow')}</Button>
           </a>
           <Link href={`/${locale}/camere`}>
-            <Button variant="outline-white" size="lg">Scopri le Camere</Button>
+            <Button variant="outline-white" size="lg">{t('discoverRooms')}</Button>
           </Link>
         </div>
       </div>
@@ -62,7 +63,7 @@ export function HeroVideo() {
       {/* Scroll indicator bottom-right */}
       <div className="absolute bottom-10 right-6 lg:right-10 z-20 flex flex-col items-center gap-2">
         <span className="font-[family-name:var(--font-sans)] text-[10px] uppercase tracking-widest text-white/40 [writing-mode:vertical-rl] rotate-180">
-          Scroll
+          {t('scrollDown')}
         </span>
         <ChevronDown size={16} className="scroll-bounce text-white/40" />
       </div>

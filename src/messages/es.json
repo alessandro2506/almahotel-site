@@ -12,18 +12,22 @@
   },
   "hero": {
     "label": "HOTEL BOUTIQUE · CENTRO DE PALERMO",
-    "title": "Tu Estancia\nen Palermo",
+    "title": "Tu Refugio\nen el Corazón de Palermo",
     "bookNow": "Reservar Ahora",
     "discoverRooms": "Descubrir Habitaciones",
     "scrollDown": "Desplazar"
   },
   "welcome": {
-    "label": "NUESTRA HISTORIA",
+    "label": "DESDE 2021 · CENTRO DE PALERMO",
     "title": "Bienvenidos al Alma Hotel",
-    "text": "Situado en el corazón de Palermo, el Alma Hotel nace de la pasión por la hospitalidad siciliana auténtica. A pocos pasos de los principales monumentos de la ciudad, ofrecemos un refugio de elegancia y confort.",
-    "text2": "Tres categorías de habitaciones refinadas, desayuno incluido cada mañana, y un equipo dedicado listo para satisfacer todas sus necesidades."
+    "text": "En el corazón de Palermo, a pocos pasos de los monumentos más bellos de la ciudad, el Alma Hotel le da la bienvenida en una atmósfera de elegancia discreta y calidez auténtica.",
+    "text2": "Tres categorías de habitaciones refinadas, desayuno incluido cada mañana, y un equipo dedicado listo para satisfacer todas sus necesidades.",
+    "cta": "Descubra nuestra historia"
   },
   "rooms": {
+    "label": "NUESTRAS HABITACIONES",
+    "heading": "Espacios Diseñados\npara Su Confort",
+    "viewAll": "Ver todas las habitaciones",
     "title": "Nuestras Habitaciones",
     "subtitle": "Tres categorías de confort refinado en el corazón de Palermo",
     "from": "desde",
@@ -43,6 +47,8 @@
     }
   },
   "services": {
+    "label": "NUESTROS SERVICIOS",
+    "heading": "Todo Incluido en Su Estancia",
     "title": "Nuestros Servicios",
     "subtitle": "Todo lo necesario para una estancia perfecta",
     "wifi": "WiFi Fibra 1Gbps",
@@ -54,7 +60,32 @@
     "parking": "Aparcamiento",
     "airConditioning": "Aire Acondicionado"
   },
+  "restaurant": {
+    "label": "EL RESTAURANTE",
+    "title": "Sapori Perduti",
+    "text": "A pocos pasos del hotel, el restaurante Sapori Perduti lleva a la mesa lo mejor de la tradición siciliana, magistralmente reinterpretada por el Chef Piero Oneto. Una experiencia culinaria auténtica en el corazón de Palermo.",
+    "cta": "Descubrir el Restaurante"
+  },
+  "experience": {
+    "label": "PALERMO POR DESCUBRIR",
+    "title": "La Ciudad a Su Alcance",
+    "text": "El Alma Hotel se encuentra en el corazón palpitante de Palermo, a pocos minutos a pie de los mercados históricos, la Catedral y el Teatro Massimo. La ciudad más bella del Mediterráneo está toda alrededor de usted.",
+    "cta": "Reservar Transfer"
+  },
+  "highlight": {
+    "label": "CADA MAÑANA",
+    "title": "Desayuno Incluido",
+    "text": "Comience el día con un desayuno abundante, preparado con productos frescos y locales.",
+    "cta": "Ver el Menú"
+  },
+  "awards": {
+    "label": "RECONOCIMIENTOS & PREMIOS",
+    "heading": "La Calidad Reconocida",
+    "title": "Reconocimientos"
+  },
   "booking": {
+    "heading": "La Mejor Tarifa\nla Encuentra Aquí.",
+    "text": "Reserve ahora para garantizarse el mejor precio disponible.",
     "title": "Reserva Directa",
     "subtitle": "Obtén el mejor precio garantizado reservando en nuestro sitio oficial",
     "cta": "Reservar en Octorate",
@@ -64,9 +95,6 @@
     "guestsCount": "{count} Huésped",
     "guestsCounts": "{count} Huéspedes",
     "search": "Reservar Ahora"
-  },
-  "awards": {
-    "title": "Reconocimientos"
   },
   "map": {
     "title": "Dónde Estamos",
@@ -143,8 +171,8 @@
     "title": "Quiénes Somos",
     "subtitle": "Una historia de hospitalidad en el corazón de Palermo",
     "history": "Historia",
-    "historyText": "El Alma Hotel nació en el centro histórico de Palermo con un objetivo preciso: ofrecer a los huéspedes una experiencia de estancia auténtica, refinada y acogedora.",
-    "historyText2": "Cada habitación fue diseñada con cuidado para combinar el confort moderno con la elegancia clásica siciliana.",
+    "historyText": "El Alma Hotel nació en el centro histórico de Palermo con un objetivo preciso: ofrecer a los huéspedes una experiencia de estancia auténtica, refinada y acogedora. Durante años nuestra familia ha gestionado con pasión este hotel boutique, transmitiendo los valores de la hospitalidad siciliana.",
+    "historyText2": "Cada habitación fue diseñada con cuidado para combinar el confort moderno con la elegancia clásica siciliana. Nuestro personal, presente las 24 horas, siempre está disponible para hacer su estancia inolvidable.",
     "certifications": "Certificaciones"
   },
   "contacts": {

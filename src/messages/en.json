@@ -12,18 +12,22 @@
   },
   "hero": {
     "label": "BOUTIQUE HOTEL · PALERMO CENTRE",
-    "title": "Your Stay\nin Palermo",
+    "title": "Your Refuge\nin the Heart of Palermo",
     "bookNow": "Book Now",
     "discoverRooms": "Discover Rooms",
     "scrollDown": "Scroll"
   },
   "welcome": {
-    "label": "OUR STORY",
+    "label": "SINCE 2021 · PALERMO CENTRE",
     "title": "Welcome to Alma Hotel",
-    "text": "Located in the heart of Palermo, Alma Hotel was born from a passion for authentic Sicilian hospitality. Steps away from the city's main monuments, we offer a haven of elegance and comfort where every detail is crafted to make your stay unforgettable.",
-    "text2": "Three refined room categories, breakfast included every morning, and a dedicated team ready to fulfil your every need. Because a trip to Palermo deserves to be experienced at its best."
+    "text": "In the heart of Palermo, steps away from the city's most beautiful monuments, Alma Hotel welcomes you in an atmosphere of discreet elegance and authentic warmth.",
+    "text2": "Three refined room categories, breakfast included every morning, and a dedicated team ready to fulfil your every need. Because a trip to Palermo deserves to be experienced at its best.",
+    "cta": "Discover our story"
   },
   "rooms": {
+    "label": "OUR ROOMS",
+    "heading": "Spaces Designed\nfor Your Comfort",
+    "viewAll": "View all rooms",
     "title": "Our Rooms",
     "subtitle": "Three categories of refined comfort in the heart of Palermo",
     "from": "from",
@@ -43,6 +47,8 @@
     }
   },
   "services": {
+    "label": "OUR SERVICES",
+    "heading": "Everything Included in Your Stay",
     "title": "Our Services",
     "subtitle": "Everything you need for a perfect stay",
     "wifi": "1Gbps Fibre WiFi",
@@ -54,7 +60,32 @@
     "parking": "Parking",
     "airConditioning": "Air Conditioning"
   },
+  "restaurant": {
+    "label": "THE RESTAURANT",
+    "title": "Sapori Perduti",
+    "text": "Steps away from the hotel, restaurant Sapori Perduti brings the best of Sicilian tradition to the table, masterfully reinterpreted by Chef Piero Oneto. An authentic culinary experience in the heart of Palermo.",
+    "cta": "Discover the Restaurant"
+  },
+  "experience": {
+    "label": "PALERMO TO EXPLORE",
+    "title": "The City at Your Doorstep",
+    "text": "Alma Hotel is situated in the beating heart of Palermo, just minutes on foot from historic markets, the Cathedral and Teatro Massimo. The most beautiful city in the Mediterranean is all around you.",
+    "cta": "Book Transfer"
+  },
+  "highlight": {
+    "label": "EVERY MORNING",
+    "title": "Breakfast Included",
+    "text": "Start the day with a generous breakfast, prepared with fresh local produce.",
+    "cta": "Browse the Menu"
+  },
+  "awards": {
+    "label": "RECOGNITION & AWARDS",
+    "heading": "Quality Recognised",
+    "title": "Awards"
+  },
   "booking": {
+    "heading": "The Best Rate\nis Here with Us.",
+    "text": "Book now to guarantee yourself the best available price.",
     "title": "Book Direct",
     "subtitle": "Get the best guaranteed price by booking on our official website",
     "cta": "Book Now on Octorate",
@@ -64,9 +95,6 @@
     "guestsCount": "{count} Guest",
     "guestsCounts": "{count} Guests",
     "search": "Book Now"
-  },
-  "awards": {
-    "title": "Awards"
   },
   "map": {
     "title": "Find Us",
