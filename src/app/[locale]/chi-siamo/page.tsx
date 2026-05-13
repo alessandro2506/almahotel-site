@@ -110,13 +110,36 @@ function ChiSiamoContent() {
           </h2>
         </FadeIn>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          {['Federalberghi', 'Accoglienza Sicura', 'TripAdvisor Excellence', 'Booking Award'].map((cert) => (
-            <div key={cert} className="flex flex-col items-center text-center gap-3 p-6 border border-[#E8E3DE]">
-              <div className="w-16 h-16 bg-[#F7F3EE] flex items-center justify-center">
-                <span className="font-[family-name:var(--font-sans)] text-[10px] uppercase tracking-widest text-[#9A9A9A]">Logo</span>
+          {[
+            {
+              name: 'Federalberghi',
+              src: 'https://www.almahotel.it/wp-content/uploads/elementor/thumbs/FEDER-rbgvvoukylvfp1ldjwda8kalwiyp7km4ppmy6dzkig.jpg',
+            },
+            {
+              name: 'Accoglienza Sicura',
+              src: 'https://www.almahotel.it/wp-content/uploads/elementor/thumbs/accoglienza-sicura-il-nostro-staff-e-vaccinato-firma-web-rbgvvxbe66nseeuhlkpans4x15yi17r81ybnb27ixs.jpg',
+            },
+            {
+              name: 'TripAdvisor Excellence',
+              src: 'https://www.almahotel.it/wp-content/uploads/2023/05/TRIPADVISOR-2023.png',
+            },
+            {
+              name: 'Booking Award',
+              src: 'https://www.almahotel.it/wp-content/uploads/2021/06/0001.jpg',
+            },
+          ].map((cert) => (
+            <div key={cert.name} className="flex flex-col items-center text-center gap-3 p-6 border border-[#E8E3DE]">
+              <div className="w-20 h-20 relative flex items-center justify-center">
+                <Image
+                  src={cert.src}
+                  alt={cert.name}
+                  fill
+                  className="object-contain"
+                  sizes="80px"
+                />
               </div>
               <p className="font-[family-name:var(--font-sans)] text-[12px] font-semibold uppercase tracking-wider text-[#242424]">
-                {cert}
+                {cert.name}
               </p>
             </div>
           ))}
