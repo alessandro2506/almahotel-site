@@ -173,7 +173,9 @@
     "history": "Histoire",
     "historyText": "L'Alma Hotel est né dans le centre historique de Palerme avec un objectif précis : offrir aux clients une expérience de séjour authentique, raffinée et accueillante. Depuis des années notre famille gère avec passion cet hôtel boutique, transmettant les valeurs de l'hospitalité sicilienne.",
     "historyText2": "Chaque chambre a été conçue avec soin pour allier confort moderne et élégance classique sicilienne. Notre personnel, présent 24 heures sur 24, est toujours disponible pour rendre votre séjour inoubliable.",
-    "certifications": "Certifications"
+    "certifications": "Certifications",
+    "reviewsLabel": "CE QUE DISENT NOS CLIENTS",
+    "reviewsTitle": "La Voix de Ceux qui Nous ont Choisis"
   },
   "contacts": {
     "title": "Contacts",

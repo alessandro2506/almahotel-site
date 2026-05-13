@@ -2,6 +2,7 @@ import { getTranslations } from 'next-intl/server'
 import { useTranslations } from 'next-intl'
 import { SectionWrapper } from '@/components/ui/SectionWrapper'
 import { FadeIn } from '@/components/ui/FadeIn'
+import { ReviewsCarousel } from '@/components/home/ReviewsCarousel'
 import Image from 'next/image'
 import type { Metadata } from 'next'
 
@@ -145,6 +146,38 @@ function ChiSiamoContent() {
           ))}
         </div>
       </SectionWrapper>
+
+      {/* Recensioni */}
+      <section className="bg-[#F5F0E8] py-[96px] max-md:py-[64px]">
+        <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
+          <FadeIn className="text-center mb-12">
+            <span className="font-[family-name:var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.22em] text-[#9A9A9A] block mb-4">
+              {t('reviewsLabel')}
+            </span>
+            <h2 className="font-[family-name:var(--font-display)] italic text-[#242424]"
+                style={{ fontSize: 'clamp(32px, 4vw, 44px)', lineHeight: 1.2 }}>
+              {t('reviewsTitle')}
+            </h2>
+            <div className="flex items-center justify-center gap-6 mt-6">
+              <div className="text-center">
+                <p className="font-[family-name:var(--font-display)] italic text-[32px] text-[#1C1C1C] leading-none">8.9</p>
+                <p className="font-[family-name:var(--font-sans)] text-[10px] uppercase tracking-wider text-[#9A9A9A] mt-1">Booking.com</p>
+              </div>
+              <div className="w-px h-10 bg-[#E8E3DE]" />
+              <div className="text-center">
+                <p className="font-[family-name:var(--font-display)] italic text-[32px] text-[#1C1C1C] leading-none">4.8</p>
+                <p className="font-[family-name:var(--font-sans)] text-[10px] uppercase tracking-wider text-[#9A9A9A] mt-1">TripAdvisor</p>
+              </div>
+              <div className="w-px h-10 bg-[#E8E3DE]" />
+              <div className="text-center">
+                <p className="font-[family-name:var(--font-display)] italic text-[32px] text-[#1C1C1C] leading-none">9.5</p>
+                <p className="font-[family-name:var(--font-sans)] text-[10px] uppercase tracking-wider text-[#9A9A9A] mt-1">Trivago</p>
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+        <ReviewsCarousel />
+      </section>
     </>
   )
 }

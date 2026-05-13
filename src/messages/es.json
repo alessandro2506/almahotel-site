@@ -173,7 +173,9 @@
     "history": "Historia",
     "historyText": "El Alma Hotel nació en el centro histórico de Palermo con un objetivo preciso: ofrecer a los huéspedes una experiencia de estancia auténtica, refinada y acogedora. Durante años nuestra familia ha gestionado con pasión este hotel boutique, transmitiendo los valores de la hospitalidad siciliana.",
     "historyText2": "Cada habitación fue diseñada con cuidado para combinar el confort moderno con la elegancia clásica siciliana. Nuestro personal, presente las 24 horas, siempre está disponible para hacer su estancia inolvidable.",
-    "certifications": "Certificaciones"
+    "certifications": "Certificaciones",
+    "reviewsLabel": "LO QUE DICEN NUESTROS HUÉSPEDES",
+    "reviewsTitle": "La Voz de Quienes Nos Eligieron"
   },
   "contacts": {
     "title": "Contactos",
