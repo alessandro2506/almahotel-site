@@ -1,3 +1,4 @@
+import type { ComponentType } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { FadeIn, SlideFade, ScaleIn } from '@/components/ui/FadeIn'
@@ -5,7 +6,7 @@ import { RoomBookingCard } from './RoomBookingCard'
 import { RoomCard } from './RoomCard'
 import { Wifi, Coffee, Car, Shield, Wind, Tv, Bath, BedDouble } from 'lucide-react'
 
-const AMENITY_ICONS: Record<string, React.ComponentType<{ size?: number; className?: string; strokeWidth?: number }>> = {
+const AMENITY_ICONS: Record<string, ComponentType<{ size?: number; className?: string; strokeWidth?: number }>> = {
   'WiFi': Wifi,
   'Colazione': Coffee,
   'Transfer': Car,
