@@ -1,0 +1,163 @@
+{
+  "nav": {
+    "home": "Home",
+    "rooms": "Camere",
+    "services": "Servizi",
+    "about": "Chi Siamo",
+    "contacts": "Contatti",
+    "restaurant": "Ristorante",
+    "book": "Prenota"
+  },
+  "hero": {
+    "label": "BOUTIQUE HOTEL · PALERMO CENTRO",
+    "title": "Il Tuo Soggiorno\na Palermo",
+    "bookNow": "Prenota Ora",
+    "discoverRooms": "Scopri le Camere",
+    "scrollDown": "Scorri"
+  },
+  "welcome": {
+    "label": "LA NOSTRA STORIA",
+    "title": "Benvenuti all'Alma Hotel",
+    "text": "Situato nel cuore pulsante di Palermo, l'Alma Hotel nasce dalla passione per l'ospitalità autentica siciliana. A pochi passi dai principali monumenti della città, offriamo un rifugio di eleganza e comfort dove ogni dettaglio è curato per rendere il vostro soggiorno indimenticabile.",
+    "text2": "Tre tipologie di camere raffinate, colazione inclusa ogni mattina, e una squadra dedicata a soddisfare ogni vostra esigenza. Perché un viaggio a Palermo merita di essere vissuto al meglio."
+  },
+  "rooms": {
+    "title": "Le Nostre Camere",
+    "subtitle": "Tre categorie di comfort raffinato nel cuore di Palermo",
+    "from": "da",
+    "perNight": "/notte",
+    "discover": "Scopri",
+    "matrimoniale": {
+      "name": "Camera Matrimoniale",
+      "description": "Elegante e confortevole, ideale per coppie in cerca di comfort classico."
+    },
+    "matrimonialeSuperiore": {
+      "name": "Camera Matrimoniale Superior",
+      "description": "Ampia e raffinata, con dotazioni premium per un soggiorno superiore."
+    },
+    "suite": {
+      "name": "Suite",
+      "description": "Il massimo del lusso boutique: spazi generosi, vista privilegiata, servizi esclusivi."
+    }
+  },
+  "services": {
+    "title": "I Nostri Servizi",
+    "subtitle": "Tutto il necessario per un soggiorno perfetto",
+    "wifi": "WiFi Fibra 1Gbps",
+    "breakfast": "Colazione Inclusa",
+    "transfer": "Transfer Aeroporto",
+    "safe": "Cassaforte",
+    "glutenFree": "Gluten Free",
+    "reception": "Reception 24/7",
+    "parking": "Parcheggio",
+    "airConditioning": "Aria Condizionata"
+  },
+  "booking": {
+    "title": "Prenota Direttamente",
+    "subtitle": "Ottieni il miglior prezzo garantito prenotando sul nostro sito ufficiale",
+    "cta": "Prenota Ora su Octorate",
+    "checkin": "Check-in",
+    "checkout": "Check-out",
+    "guests": "Ospiti",
+    "guestsCount": "{count} Ospite",
+    "guestsCounts": "{count} Ospiti",
+    "search": "Prenota Ora"
+  },
+  "awards": {
+    "title": "Riconoscimenti"
+  },
+  "map": {
+    "title": "Dove Siamo",
+    "address": "Via Mariano Stabile, 136",
+    "city": "90139 – Palermo",
+    "phone1": "+39 091 2514962",
+    "email": "info@almahotel.it",
+    "reception": "Reception",
+    "receptionHours": "24 ore su 24, 7 giorni su 7",
+    "directions": "Ottieni Indicazioni"
+  },
+  "footer": {
+    "hotel": "Hotel",
+    "about": "Chi Siamo",
+    "services": "Servizi",
+    "restaurant": "Ristorante",
+    "book": "Prenota",
+    "rooms": "Camere",
+    "contacts": "Contatti",
+    "address": "Via Mariano Stabile, 136",
+    "city": "90139 – Palermo",
+    "cin": "CIN: IT082053A1NPDY6DP",
+    "cir": "CIR: 19082053A301094",
+    "copyright": "© 2026 Alma Hotel – Tutti i diritti riservati",
+    "privacy": "Privacy Policy"
+  },
+  "protected": {
+    "password": {
+      "title": "Area Riservata Ospiti",
+      "subtitle": "Inserisci la password fornita dall'hotel per accedere",
+      "placeholder": "Password",
+      "cta": "Accedi",
+      "error": "Password non corretta. Riprova.",
+      "loading": "Verifica in corso..."
+    },
+    "breakfast": {
+      "title": "Menù Colazione",
+      "subtitle": "Ogni mattina, una colazione preparata con cura per iniziare la giornata al meglio",
+      "sweet": "Dolce",
+      "savory": "Salato",
+      "beverages": "Bevande",
+      "glutenFree": "Gluten Free"
+    },
+    "transfer": {
+      "title": "Prenota Transfer",
+      "subtitle": "Organizza il tuo trasporto verso e dall'hotel in modo semplice e rapido",
+      "step1": "Dettagli Viaggio",
+      "step2": "Dati Personali",
+      "step3": "Conferma",
+      "next": "Continua",
+      "back": "Indietro",
+      "submit": "Invia Richiesta",
+      "success": "Richiesta inviata con successo! Riceverai una email di conferma.",
+      "error": "Si è verificato un errore. Riprova."
+    },
+    "checkin": {
+      "title": "Web Check-In",
+      "subtitle": "Risparmia tempo all'arrivo compilando il check-in online",
+      "step1": "Dati Soggiorno",
+      "step2": "Ospite Principale",
+      "step3": "Ospiti Aggiuntivi",
+      "step4": "Conferma",
+      "next": "Continua",
+      "back": "Indietro",
+      "submit": "Completa Check-In",
+      "success": "Check-in completato! Riceverai il riepilogo via email.",
+      "error": "Si è verificato un errore. Riprova.",
+      "addGuest": "Aggiungi Ospite",
+      "removeGuest": "Rimuovi",
+      "noAdditionalGuests": "Nessun ospite aggiuntivo"
+    }
+  },
+  "about": {
+    "title": "Chi Siamo",
+    "subtitle": "Una storia di accoglienza nel cuore di Palermo",
+    "history": "Storia",
+    "historyText": "L'Alma Hotel nasce nel centro storico di Palermo con un obiettivo preciso: offrire agli ospiti un'esperienza di soggiorno autentica, raffinata e accogliente. Da anni la nostra famiglia gestisce con passione questo boutique hotel, trasmettendo i valori dell'ospitalità siciliana.",
+    "historyText2": "Ogni camera è stata progettata con cura per coniugare il comfort moderno con l'eleganza classica siciliana. Il nostro staff, presente 24 ore su 24, è sempre disponibile per rendere il vostro soggiorno indimenticabile.",
+    "certifications": "Certificazioni"
+  },
+  "contacts": {
+    "title": "Contatti",
+    "subtitle": "Siamo qui per aiutarti",
+    "form": {
+      "name": "Nome",
+      "email": "Email",
+      "phone": "Telefono",
+      "subject": "Oggetto",
+      "message": "Messaggio",
+      "submit": "Invia Messaggio",
+      "success": "Messaggio inviato con successo!",
+      "error": "Si è verificato un errore. Riprova.",
+      "privacy": "Acconsento al trattamento dei dati personali"
+    }
+  }
+}

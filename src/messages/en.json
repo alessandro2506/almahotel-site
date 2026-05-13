@@ -1,0 +1,163 @@
+{
+  "nav": {
+    "home": "Home",
+    "rooms": "Rooms",
+    "services": "Services",
+    "about": "About Us",
+    "contacts": "Contacts",
+    "restaurant": "Restaurant",
+    "book": "Book"
+  },
+  "hero": {
+    "label": "BOUTIQUE HOTEL · PALERMO CENTRE",
+    "title": "Your Stay\nin Palermo",
+    "bookNow": "Book Now",
+    "discoverRooms": "Discover Rooms",
+    "scrollDown": "Scroll"
+  },
+  "welcome": {
+    "label": "OUR STORY",
+    "title": "Welcome to Alma Hotel",
+    "text": "Located in the heart of Palermo, Alma Hotel was born from a passion for authentic Sicilian hospitality. Steps away from the city's main monuments, we offer a haven of elegance and comfort where every detail is crafted to make your stay unforgettable.",
+    "text2": "Three refined room categories, breakfast included every morning, and a dedicated team ready to fulfil your every need. Because a trip to Palermo deserves to be experienced at its best."
+  },
+  "rooms": {
+    "title": "Our Rooms",
+    "subtitle": "Three categories of refined comfort in the heart of Palermo",
+    "from": "from",
+    "perNight": "/night",
+    "discover": "Discover",
+    "matrimoniale": {
+      "name": "Double Room",
+      "description": "Elegant and comfortable, ideal for couples seeking classic comfort."
+    },
+    "matrimonialeSuperiore": {
+      "name": "Superior Double Room",
+      "description": "Spacious and refined, with premium amenities for a superior stay."
+    },
+    "suite": {
+      "name": "Suite",
+      "description": "The ultimate boutique luxury: generous spaces, privileged views, exclusive services."
+    }
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Everything you need for a perfect stay",
+    "wifi": "1Gbps Fibre WiFi",
+    "breakfast": "Breakfast Included",
+    "transfer": "Airport Transfer",
+    "safe": "In-Room Safe",
+    "glutenFree": "Gluten Free",
+    "reception": "24/7 Reception",
+    "parking": "Parking",
+    "airConditioning": "Air Conditioning"
+  },
+  "booking": {
+    "title": "Book Direct",
+    "subtitle": "Get the best guaranteed price by booking on our official website",
+    "cta": "Book Now on Octorate",
+    "checkin": "Check-in",
+    "checkout": "Check-out",
+    "guests": "Guests",
+    "guestsCount": "{count} Guest",
+    "guestsCounts": "{count} Guests",
+    "search": "Book Now"
+  },
+  "awards": {
+    "title": "Awards"
+  },
+  "map": {
+    "title": "Find Us",
+    "address": "Via Mariano Stabile, 136",
+    "city": "90139 – Palermo",
+    "phone1": "+39 091 2514962",
+    "email": "info@almahotel.it",
+    "reception": "Reception",
+    "receptionHours": "24 hours a day, 7 days a week",
+    "directions": "Get Directions"
+  },
+  "footer": {
+    "hotel": "Hotel",
+    "about": "About Us",
+    "services": "Services",
+    "restaurant": "Restaurant",
+    "book": "Book",
+    "rooms": "Rooms",
+    "contacts": "Contacts",
+    "address": "Via Mariano Stabile, 136",
+    "city": "90139 – Palermo",
+    "cin": "CIN: IT082053A1NPDY6DP",
+    "cir": "CIR: 19082053A301094",
+    "copyright": "© 2026 Alma Hotel – All rights reserved",
+    "privacy": "Privacy Policy"
+  },
+  "protected": {
+    "password": {
+      "title": "Guest Reserved Area",
+      "subtitle": "Enter the password provided by the hotel to access",
+      "placeholder": "Password",
+      "cta": "Access",
+      "error": "Incorrect password. Please try again.",
+      "loading": "Verifying..."
+    },
+    "breakfast": {
+      "title": "Breakfast Menu",
+      "subtitle": "Every morning, a carefully prepared breakfast to start the day right",
+      "sweet": "Sweet",
+      "savory": "Savory",
+      "beverages": "Beverages",
+      "glutenFree": "Gluten Free"
+    },
+    "transfer": {
+      "title": "Book Transfer",
+      "subtitle": "Organise your transport to and from the hotel simply and quickly",
+      "step1": "Trip Details",
+      "step2": "Personal Details",
+      "step3": "Confirmation",
+      "next": "Continue",
+      "back": "Back",
+      "submit": "Send Request",
+      "success": "Request sent successfully! You will receive a confirmation email.",
+      "error": "An error occurred. Please try again."
+    },
+    "checkin": {
+      "title": "Web Check-In",
+      "subtitle": "Save time at arrival by completing online check-in",
+      "step1": "Stay Details",
+      "step2": "Main Guest",
+      "step3": "Additional Guests",
+      "step4": "Confirmation",
+      "next": "Continue",
+      "back": "Back",
+      "submit": "Complete Check-In",
+      "success": "Check-in completed! You will receive a summary by email.",
+      "error": "An error occurred. Please try again.",
+      "addGuest": "Add Guest",
+      "removeGuest": "Remove",
+      "noAdditionalGuests": "No additional guests"
+    }
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "A story of hospitality in the heart of Palermo",
+    "history": "History",
+    "historyText": "Alma Hotel was born in the historic centre of Palermo with a clear objective: to offer guests an authentic, refined, and welcoming stay experience. For years our family has passionately managed this boutique hotel, conveying the values of Sicilian hospitality.",
+    "historyText2": "Each room was designed with care to combine modern comfort with classic Sicilian elegance. Our staff, present 24 hours a day, is always available to make your stay unforgettable.",
+    "certifications": "Certifications"
+  },
+  "contacts": {
+    "title": "Contacts",
+    "subtitle": "We are here to help you",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "subject": "Subject",
+      "message": "Message",
+      "submit": "Send Message",
+      "success": "Message sent successfully!",
+      "error": "An error occurred. Please try again.",
+      "privacy": "I consent to the processing of personal data"
+    }
+  }
+}

@@ -1,0 +1,163 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "rooms": "Chambres",
+    "services": "Services",
+    "about": "À Propos",
+    "contacts": "Contacts",
+    "restaurant": "Restaurant",
+    "book": "Réserver"
+  },
+  "hero": {
+    "label": "BOUTIQUE HÔTEL · CENTRE DE PALERME",
+    "title": "Votre Séjour\nà Palerme",
+    "bookNow": "Réserver Maintenant",
+    "discoverRooms": "Découvrir les Chambres",
+    "scrollDown": "Défiler"
+  },
+  "welcome": {
+    "label": "NOTRE HISTOIRE",
+    "title": "Bienvenue à l'Alma Hotel",
+    "text": "Situé au cœur de Palerme, l'Alma Hotel est né de la passion pour l'hospitalité sicilienne authentique. À quelques pas des principaux monuments de la ville, nous offrons un havre d'élégance et de confort.",
+    "text2": "Trois catégories de chambres raffinées, petit-déjeuner inclus chaque matin, et une équipe dévouée prête à satisfaire tous vos besoins."
+  },
+  "rooms": {
+    "title": "Nos Chambres",
+    "subtitle": "Trois catégories de confort raffiné au cœur de Palerme",
+    "from": "à partir de",
+    "perNight": "/nuit",
+    "discover": "Découvrir",
+    "matrimoniale": {
+      "name": "Chambre Double",
+      "description": "Élégante et confortable, idéale pour les couples en quête de confort classique."
+    },
+    "matrimonialeSuperiore": {
+      "name": "Chambre Double Supérieure",
+      "description": "Spacieuse et raffinée, avec des équipements premium pour un séjour supérieur."
+    },
+    "suite": {
+      "name": "Suite",
+      "description": "Le summum du luxe boutique : espaces généreux, vue privilégiée, services exclusifs."
+    }
+  },
+  "services": {
+    "title": "Nos Services",
+    "subtitle": "Tout le nécessaire pour un séjour parfait",
+    "wifi": "WiFi Fibre 1Gbps",
+    "breakfast": "Petit-déjeuner Inclus",
+    "transfer": "Transfert Aéroport",
+    "safe": "Coffre-fort",
+    "glutenFree": "Sans Gluten",
+    "reception": "Réception 24h/24",
+    "parking": "Parking",
+    "airConditioning": "Climatisation"
+  },
+  "booking": {
+    "title": "Réservation Directe",
+    "subtitle": "Obtenez le meilleur prix garanti en réservant sur notre site officiel",
+    "cta": "Réserver sur Octorate",
+    "checkin": "Arrivée",
+    "checkout": "Départ",
+    "guests": "Clients",
+    "guestsCount": "{count} Client",
+    "guestsCounts": "{count} Clients",
+    "search": "Réserver Maintenant"
+  },
+  "awards": {
+    "title": "Récompenses"
+  },
+  "map": {
+    "title": "Nous Trouver",
+    "address": "Via Mariano Stabile, 136",
+    "city": "90139 – Palerme",
+    "phone1": "+39 091 2514962",
+    "email": "info@almahotel.it",
+    "reception": "Réception",
+    "receptionHours": "24h/24, 7j/7",
+    "directions": "Obtenir l'Itinéraire"
+  },
+  "footer": {
+    "hotel": "Hôtel",
+    "about": "À Propos",
+    "services": "Services",
+    "restaurant": "Restaurant",
+    "book": "Réserver",
+    "rooms": "Chambres",
+    "contacts": "Contacts",
+    "address": "Via Mariano Stabile, 136",
+    "city": "90139 – Palerme",
+    "cin": "CIN: IT082053A1NPDY6DP",
+    "cir": "CIR: 19082053A301094",
+    "copyright": "© 2026 Alma Hotel – Tous droits réservés",
+    "privacy": "Politique de Confidentialité"
+  },
+  "protected": {
+    "password": {
+      "title": "Espace Réservé Clients",
+      "subtitle": "Entrez le mot de passe fourni par l'hôtel pour accéder",
+      "placeholder": "Mot de passe",
+      "cta": "Accéder",
+      "error": "Mot de passe incorrect. Veuillez réessayer.",
+      "loading": "Vérification..."
+    },
+    "breakfast": {
+      "title": "Menu Petit-déjeuner",
+      "subtitle": "Chaque matin, un petit-déjeuner soigneusement préparé",
+      "sweet": "Sucré",
+      "savory": "Salé",
+      "beverages": "Boissons",
+      "glutenFree": "Sans Gluten"
+    },
+    "transfer": {
+      "title": "Réserver Transfert",
+      "subtitle": "Organisez votre transport simplement et rapidement",
+      "step1": "Détails du Voyage",
+      "step2": "Données Personnelles",
+      "step3": "Confirmation",
+      "next": "Continuer",
+      "back": "Retour",
+      "submit": "Envoyer la Demande",
+      "success": "Demande envoyée avec succès ! Vous recevrez un email de confirmation.",
+      "error": "Une erreur s'est produite. Veuillez réessayer."
+    },
+    "checkin": {
+      "title": "Enregistrement en Ligne",
+      "subtitle": "Gagnez du temps à l'arrivée en effectuant l'enregistrement en ligne",
+      "step1": "Détails du Séjour",
+      "step2": "Client Principal",
+      "step3": "Clients Supplémentaires",
+      "step4": "Confirmation",
+      "next": "Continuer",
+      "back": "Retour",
+      "submit": "Terminer l'Enregistrement",
+      "success": "Enregistrement terminé ! Vous recevrez un récapitulatif par email.",
+      "error": "Une erreur s'est produite. Veuillez réessayer.",
+      "addGuest": "Ajouter Client",
+      "removeGuest": "Supprimer",
+      "noAdditionalGuests": "Aucun client supplémentaire"
+    }
+  },
+  "about": {
+    "title": "À Propos",
+    "subtitle": "Une histoire d'hospitalité au cœur de Palerme",
+    "history": "Histoire",
+    "historyText": "L'Alma Hotel est né dans le centre historique de Palerme avec un objectif précis : offrir aux clients une expérience de séjour authentique, raffinée et accueillante.",
+    "historyText2": "Chaque chambre a été conçue avec soin pour allier confort moderne et élégance classique sicilienne.",
+    "certifications": "Certifications"
+  },
+  "contacts": {
+    "title": "Contacts",
+    "subtitle": "Nous sommes là pour vous aider",
+    "form": {
+      "name": "Nom",
+      "email": "Email",
+      "phone": "Téléphone",
+      "subject": "Sujet",
+      "message": "Message",
+      "submit": "Envoyer",
+      "success": "Message envoyé avec succès !",
+      "error": "Une erreur s'est produite. Veuillez réessayer.",
+      "privacy": "Je consens au traitement des données personnelles"
+    }
+  }
+}

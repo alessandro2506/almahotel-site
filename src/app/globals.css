@@ -1,26 +1,65 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Brand */
+  --color-red:        #E60023;
+  --color-red-dark:   #C60015;
+
+  /* Surfaces */
+  --color-black:      #0A0A0A;
+  --color-charcoal:   #242424;
+  --color-warm:       #F5F0E8;
+  --color-white:      #FFFFFF;
+
+  /* Text */
+  --color-text:       #1C1C1C;
+  --color-muted:      #6B6B6B;
+  --color-label:      #9A9A9A;
+
+  /* Borders */
+  --color-border:     #E8E3DE;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-white);
+  color: var(--color-text);
+  font-family: var(--font-body, 'Open Sans', system-ui, sans-serif);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2 {
+  font-family: var(--font-display, 'Cormorant Garamond', Georgia, serif);
+}
+
+h3, h4, h5, h6 {
+  font-family: var(--font-sans, 'Montserrat', system-ui, sans-serif);
+}
+
+/* Awards carousel animation */
+@keyframes carousel-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.carousel-track {
+  animation: carousel-scroll 30s linear infinite;
+}
+
+.carousel-track:hover {
+  animation-play-state: paused;
+}
+
+/* Scroll indicator bounce */
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+.scroll-bounce {
+  animation: bounce-slow 2s ease-in-out infinite;
 }

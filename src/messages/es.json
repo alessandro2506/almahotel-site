@@ -1,0 +1,163 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "rooms": "Habitaciones",
+    "services": "Servicios",
+    "about": "Quiénes Somos",
+    "contacts": "Contactos",
+    "restaurant": "Restaurante",
+    "book": "Reservar"
+  },
+  "hero": {
+    "label": "HOTEL BOUTIQUE · CENTRO DE PALERMO",
+    "title": "Tu Estancia\nen Palermo",
+    "bookNow": "Reservar Ahora",
+    "discoverRooms": "Descubrir Habitaciones",
+    "scrollDown": "Desplazar"
+  },
+  "welcome": {
+    "label": "NUESTRA HISTORIA",
+    "title": "Bienvenidos al Alma Hotel",
+    "text": "Situado en el corazón de Palermo, el Alma Hotel nace de la pasión por la hospitalidad siciliana auténtica. A pocos pasos de los principales monumentos de la ciudad, ofrecemos un refugio de elegancia y confort.",
+    "text2": "Tres categorías de habitaciones refinadas, desayuno incluido cada mañana, y un equipo dedicado listo para satisfacer todas sus necesidades."
+  },
+  "rooms": {
+    "title": "Nuestras Habitaciones",
+    "subtitle": "Tres categorías de confort refinado en el corazón de Palermo",
+    "from": "desde",
+    "perNight": "/noche",
+    "discover": "Descubrir",
+    "matrimoniale": {
+      "name": "Habitación Doble",
+      "description": "Elegante y confortable, ideal para parejas que buscan confort clásico."
+    },
+    "matrimonialeSuperiore": {
+      "name": "Habitación Doble Superior",
+      "description": "Amplia y refinada, con amenidades premium para una estancia superior."
+    },
+    "suite": {
+      "name": "Suite",
+      "description": "El máximo del lujo boutique: espacios generosos, vistas privilegiadas, servicios exclusivos."
+    }
+  },
+  "services": {
+    "title": "Nuestros Servicios",
+    "subtitle": "Todo lo necesario para una estancia perfecta",
+    "wifi": "WiFi Fibra 1Gbps",
+    "breakfast": "Desayuno Incluido",
+    "transfer": "Traslado Aeropuerto",
+    "safe": "Caja Fuerte",
+    "glutenFree": "Sin Gluten",
+    "reception": "Recepción 24/7",
+    "parking": "Aparcamiento",
+    "airConditioning": "Aire Acondicionado"
+  },
+  "booking": {
+    "title": "Reserva Directa",
+    "subtitle": "Obtén el mejor precio garantizado reservando en nuestro sitio oficial",
+    "cta": "Reservar en Octorate",
+    "checkin": "Llegada",
+    "checkout": "Salida",
+    "guests": "Huéspedes",
+    "guestsCount": "{count} Huésped",
+    "guestsCounts": "{count} Huéspedes",
+    "search": "Reservar Ahora"
+  },
+  "awards": {
+    "title": "Reconocimientos"
+  },
+  "map": {
+    "title": "Dónde Estamos",
+    "address": "Via Mariano Stabile, 136",
+    "city": "90139 – Palermo",
+    "phone1": "+39 091 2514962",
+    "email": "info@almahotel.it",
+    "reception": "Recepción",
+    "receptionHours": "24 horas al día, 7 días a la semana",
+    "directions": "Cómo Llegar"
+  },
+  "footer": {
+    "hotel": "Hotel",
+    "about": "Quiénes Somos",
+    "services": "Servicios",
+    "restaurant": "Restaurante",
+    "book": "Reservar",
+    "rooms": "Habitaciones",
+    "contacts": "Contactos",
+    "address": "Via Mariano Stabile, 136",
+    "city": "90139 – Palermo",
+    "cin": "CIN: IT082053A1NPDY6DP",
+    "cir": "CIR: 19082053A301094",
+    "copyright": "© 2026 Alma Hotel – Todos los derechos reservados",
+    "privacy": "Política de Privacidad"
+  },
+  "protected": {
+    "password": {
+      "title": "Área Reservada para Huéspedes",
+      "subtitle": "Introduce la contraseña proporcionada por el hotel para acceder",
+      "placeholder": "Contraseña",
+      "cta": "Acceder",
+      "error": "Contraseña incorrecta. Inténtalo de nuevo.",
+      "loading": "Verificando..."
+    },
+    "breakfast": {
+      "title": "Menú Desayuno",
+      "subtitle": "Cada mañana, un desayuno preparado con esmero",
+      "sweet": "Dulce",
+      "savory": "Salado",
+      "beverages": "Bebidas",
+      "glutenFree": "Sin Gluten"
+    },
+    "transfer": {
+      "title": "Reservar Traslado",
+      "subtitle": "Organiza tu transporte de manera simple y rápida",
+      "step1": "Detalles del Viaje",
+      "step2": "Datos Personales",
+      "step3": "Confirmación",
+      "next": "Continuar",
+      "back": "Atrás",
+      "submit": "Enviar Solicitud",
+      "success": "¡Solicitud enviada con éxito! Recibirás un email de confirmación.",
+      "error": "Se produjo un error. Inténtalo de nuevo."
+    },
+    "checkin": {
+      "title": "Check-In Online",
+      "subtitle": "Ahorra tiempo a la llegada completando el check-in online",
+      "step1": "Detalles de Estancia",
+      "step2": "Huésped Principal",
+      "step3": "Huéspedes Adicionales",
+      "step4": "Confirmación",
+      "next": "Continuar",
+      "back": "Atrás",
+      "submit": "Completar Check-In",
+      "success": "¡Check-in completado! Recibirás un resumen por email.",
+      "error": "Se produjo un error. Inténtalo de nuevo.",
+      "addGuest": "Añadir Huésped",
+      "removeGuest": "Eliminar",
+      "noAdditionalGuests": "Sin huéspedes adicionales"
+    }
+  },
+  "about": {
+    "title": "Quiénes Somos",
+    "subtitle": "Una historia de hospitalidad en el corazón de Palermo",
+    "history": "Historia",
+    "historyText": "El Alma Hotel nació en el centro histórico de Palermo con un objetivo preciso: ofrecer a los huéspedes una experiencia de estancia auténtica, refinada y acogedora.",
+    "historyText2": "Cada habitación fue diseñada con cuidado para combinar el confort moderno con la elegancia clásica siciliana.",
+    "certifications": "Certificaciones"
+  },
+  "contacts": {
+    "title": "Contactos",
+    "subtitle": "Estamos aquí para ayudarte",
+    "form": {
+      "name": "Nombre",
+      "email": "Email",
+      "phone": "Teléfono",
+      "subject": "Asunto",
+      "message": "Mensaje",
+      "submit": "Enviar Mensaje",
+      "success": "¡Mensaje enviado con éxito!",
+      "error": "Se produjo un error. Inténtalo de nuevo.",
+      "privacy": "Consiento el tratamiento de datos personales"
+    }
+  }
+}
