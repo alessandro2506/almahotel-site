@@ -24,14 +24,14 @@ function CamereContent() {
       name: t('matrimoniale.name'),
       description: t('matrimoniale.description'),
       price: '€89',
-      image: 'https://placehold.co/1200x800/242424/F7F3EE?text=Camera+Matrimoniale',
+      image: 'https://www.saporiperduti.it/wp-content/uploads/2021/11/matrimoniale-7-1.jpg',
     },
     {
       slug: 'matrimoniale-superior',
       name: t('matrimonialeSuperiore.name'),
       description: t('matrimonialeSuperiore.description'),
       price: '€109',
-      image: 'https://placehold.co/1200x800/3a3a3a/F7F3EE?text=Matrimoniale+Superior',
+      image: 'https://www.saporiperduti.it/wp-content/uploads/2021/11/suite-2.jpg',
       badge: 'Superior',
     },
     {
@@ -39,7 +39,7 @@ function CamereContent() {
       name: t('suite.name'),
       description: t('suite.description'),
       price: '€149',
-      image: 'https://placehold.co/1200x800/1a1a1a/F7F3EE?text=Suite',
+      image: 'https://www.saporiperduti.it/wp-content/uploads/2021/11/suite-1.jpg',
       badge: 'Suite',
     },
   ]
@@ -49,7 +49,7 @@ function CamereContent() {
       {/* Hero */}
       <div className="relative h-[60vh] min-h-[400px] flex items-end overflow-hidden">
         <Image
-          src="https://placehold.co/1920x1080/242424/F7F3EE?text=Le+Nostre+Camere"
+          src="https://www.saporiperduti.it/wp-content/uploads/2021/11/suite-1.jpg"
           alt="Le Nostre Camere"
           fill
           className="object-cover"

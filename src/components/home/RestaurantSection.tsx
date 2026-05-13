@@ -1,3 +1,5 @@
+'use client'
+
 import Image from 'next/image'
 import { SlideFade } from '@/components/ui/FadeIn'
 import { ArrowRight } from 'lucide-react'

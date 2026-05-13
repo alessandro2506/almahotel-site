@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, Variants } from 'framer-motion'
+import { motion, type Variants } from 'framer-motion'
 import { ReactNode } from 'react'
 
 export const fadeInUp: Variants = {
@@ -32,6 +32,9 @@ export const scaleIn: Variants = {
   visible: { opacity: 1, scale: 1, transition: { duration: 1.0, ease: [0.22, 1, 0.36, 1] } },
 }
 
+// ─── Ease used across all transitions ────────────────────────────
+const EASE = [0.22, 1, 0.36, 1] as const
+
 interface FadeInProps {
   children: ReactNode
   className?: string
@@ -54,7 +57,7 @@ export function FadeIn({ children, className, delay = 0, direction = 'up' }: Fad
       initial={{ opacity: 0, ...d }}
       whileInView={{ opacity: 1, y: 0, x: 0 }}
       viewport={{ once: true, margin: '-80px' }}
-      transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay }}
+      transition={{ duration: 0.8, ease: EASE, delay }}
     >
       {children}
     </motion.div>
@@ -96,15 +99,14 @@ interface SplitFadeProps {
 }
 
 export function SlideFade({ children, className, direction, delay = 0 }: SplitFadeProps) {
-  const variants = direction === 'left' ? slideFromLeft : slideFromRight
+  const initial = direction === 'left' ? { opacity: 0, x: -40 } : { opacity: 0, x: 40 }
   return (
     <motion.div
       className={className}
-      initial="hidden"
-      whileInView="visible"
+      initial={initial}
+      whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true, margin: '-60px' }}
-      variants={variants}
-      transition={{ ...variants.visible?.transition, delay }}
+      transition={{ duration: 0.8, ease: EASE, delay }}
     >
       {children}
     </motion.div>
@@ -115,11 +117,10 @@ export function ScaleIn({ children, className, delay = 0 }: FadeInProps) {
   return (
     <motion.div
       className={className}
-      initial="hidden"
-      whileInView="visible"
+      initial={{ opacity: 0, scale: 1.04 }}
+      whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true, margin: '-60px' }}
-      variants={scaleIn}
-      transition={{ ...scaleIn.visible?.transition, delay }}
+      transition={{ duration: 1.0, ease: EASE, delay }}
     >
       {children}
     </motion.div>

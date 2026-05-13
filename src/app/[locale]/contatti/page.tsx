@@ -4,7 +4,25 @@ import { SectionWrapper } from '@/components/ui/SectionWrapper'
 import { FadeIn } from '@/components/ui/FadeIn'
 import { MapSection } from '@/components/home/MapSection'
 import { ContactForm } from '@/components/forms/ContactForm'
-import { Facebook, Instagram, Star } from 'lucide-react'
+import { Star } from 'lucide-react'
+
+function IconFacebook() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+    </svg>
+  )
+}
+
+function IconInstagram() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+    </svg>
+  )
+}
 import type { Metadata } from 'next'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -61,10 +79,10 @@ function ContattiContent() {
 
               <div className="flex items-center gap-6">
                 <a href="https://www.facebook.com/almahotelpalermo" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-[13px] text-[#6B6B6B] hover:text-[#E60023] transition-colors">
-                  <Facebook size={16} /> Facebook
+                  <IconFacebook /> Facebook
                 </a>
                 <a href="https://www.instagram.com/almahotelpalermo" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-[13px] text-[#6B6B6B] hover:text-[#E60023] transition-colors">
-                  <Instagram size={16} /> Instagram
+                  <IconInstagram /> Instagram
                 </a>
                 <a href="https://www.tripadvisor.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-[13px] text-[#6B6B6B] hover:text-[#E60023] transition-colors">
                   <Star size={16} /> TripAdvisor
