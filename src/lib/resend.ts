@@ -1,6 +1,15 @@
 import { Resend } from 'resend'
 
-export const resend = new Resend(process.env.RESEND_API_KEY)
+// Lazy init — avoids crash at build time when RESEND_API_KEY is not set.
+let _resend: Resend | null = null
+export function getResend(): Resend {
+  if (!_resend) {
+    const key = process.env.RESEND_API_KEY
+    if (!key) throw new Error('Missing RESEND_API_KEY environment variable')
+    _resend = new Resend(key)
+  }
+  return _resend
+}
 
 export const HOTEL_EMAIL = process.env.HOTEL_EMAIL ?? 'info@almahotel.it'
 

@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { z } from 'zod'
-import { resend, HOTEL_EMAIL, checkinConfirmationHtml } from '@/lib/resend'
+import { getResend, HOTEL_EMAIL, checkinConfirmationHtml } from '@/lib/resend'
 import { createServiceClient } from '@/lib/supabase'
 import { rateLimit } from '@/lib/rate-limit'
 import { renderToBuffer, type DocumentProps } from '@react-pdf/renderer'
@@ -63,7 +63,7 @@ export async function POST(req: NextRequest) {
     const pdfBase64 = Buffer.from(pdfBuffer).toString('base64')
 
     // 2. Email conferma al cliente (con PDF)
-    await resend.emails.send({
+    await getResend().emails.send({
       from: 'Alma Hotel <noreply@almahotel.it>',
       to: data.guestEmail ?? HOTEL_EMAIL,
       subject: 'Web Check-In Completato – Alma Hotel Palermo',
@@ -83,7 +83,7 @@ export async function POST(req: NextRequest) {
     })
 
     // 3. Email hotel (con PDF)
-    await resend.emails.send({
+    await getResend().emails.send({
       from: 'Alma Hotel <noreply@almahotel.it>',
       to: HOTEL_EMAIL,
       subject: `[Check-In] ${data.mainGuest.name} ${data.mainGuest.surname} – Arrivo ${data.arrivalDate}`,

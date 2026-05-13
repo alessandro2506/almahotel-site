@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { z } from 'zod'
-import { resend, HOTEL_EMAIL, transferConfirmationHtml } from '@/lib/resend'
+import { getResend, HOTEL_EMAIL, transferConfirmationHtml } from '@/lib/resend'
 import { createServiceClient } from '@/lib/supabase'
 import { rateLimit } from '@/lib/rate-limit'
 
@@ -42,7 +42,7 @@ export async function POST(req: NextRequest) {
 
   try {
     // 1. Email conferma al cliente
-    await resend.emails.send({
+    await getResend().emails.send({
       from: 'Alma Hotel <noreply@almahotel.it>',
       to: data.email,
       subject: 'Conferma Richiesta Transfer – Alma Hotel Palermo',
@@ -60,7 +60,7 @@ export async function POST(req: NextRequest) {
     })
 
     // 2. Email notifica hotel
-    await resend.emails.send({
+    await getResend().emails.send({
       from: 'Alma Hotel <noreply@almahotel.it>',
       to: HOTEL_EMAIL,
       subject: `[Transfer] ${data.serviceType === 'arrival' ? 'Arrivo' : 'Partenza'} – ${data.name} ${data.surname} – ${data.date}`,

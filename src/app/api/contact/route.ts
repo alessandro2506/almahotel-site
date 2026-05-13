@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { z } from 'zod'
-import { resend, HOTEL_EMAIL } from '@/lib/resend'
+import { getResend, HOTEL_EMAIL } from '@/lib/resend'
 import { rateLimit } from '@/lib/rate-limit'
 
 const schema = z.object({
@@ -29,7 +29,7 @@ export async function POST(req: NextRequest) {
   const { name, email, phone, subject, message } = result.data
 
   try {
-    await resend.emails.send({
+    await getResend().emails.send({
       from: 'Alma Hotel <noreply@almahotel.it>',
       to: HOTEL_EMAIL,
       replyTo: email,
@@ -45,7 +45,7 @@ export async function POST(req: NextRequest) {
       `,
     })
 
-    await resend.emails.send({
+    await getResend().emails.send({
       from: 'Alma Hotel <noreply@almahotel.it>',
       to: email,
       subject: 'Abbiamo ricevuto il tuo messaggio – Alma Hotel Palermo',
