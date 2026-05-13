@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { useLocale } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import { AlmaLogo } from './AlmaLogo'
 import { OCTORATE_URL } from '@/lib/utils'
 
@@ -31,6 +31,7 @@ function IconTripAdvisor() {
 
 export function Footer() {
   const locale = useLocale()
+  const t = useTranslations('footer')
 
   const socialLinks = [
     { href: 'https://www.facebook.com/almahotelpalermo', Icon: IconFacebook, label: 'Facebook' },
@@ -44,37 +45,37 @@ export function Footer() {
 
   const columns = [
     {
-      title: 'HOTEL',
+      title: t('colHotel'),
       links: [
-        { href: `/${locale}/chi-siamo`, label: 'Chi Siamo' },
-        { href: `/${locale}#servizi`, label: 'Servizi' },
-        { href: `/${locale}/ristorante`, label: 'Ristorante' },
-        { href: OCTORATE_URL, label: 'Prenota', external: true },
+        { href: `/${locale}/chi-siamo`, label: t('about') },
+        { href: `/${locale}#servizi`, label: t('services') },
+        { href: `/${locale}/ristorante`, label: t('restaurant') },
+        { href: OCTORATE_URL, label: t('book'), external: true },
       ],
     },
     {
-      title: 'CAMERE',
+      title: t('colRooms'),
       links: [
-        { href: `/${locale}/camere/matrimoniale`, label: 'Matrimoniale' },
-        { href: `/${locale}/camere/matrimoniale-superior`, label: 'Matrimoniale Superior' },
-        { href: `/${locale}/camere/suite`, label: 'Suite' },
-        { href: `/${locale}/camere`, label: 'Tutte le Camere' },
+        { href: `/${locale}/camere/matrimoniale`, label: t('roomMatrimoniale') },
+        { href: `/${locale}/camere/matrimoniale-superior`, label: t('roomSuperior') },
+        { href: `/${locale}/camere/suite`, label: t('roomSuite') },
+        { href: `/${locale}/camere`, label: t('allRooms') },
       ],
     },
     {
-      title: 'SERVIZI',
+      title: t('colServices'),
       links: [
-        { href: `/${locale}/protected/web-check-in`, label: 'Web Check-In' },
-        { href: `/${locale}/protected/prenota-transfer`, label: 'Transfer' },
-        { href: `/${locale}/protected/menu-colazione`, label: 'Menu Colazione' },
+        { href: `/${locale}/protected/web-check-in`, label: t('webCheckin') },
+        { href: `/${locale}/protected/prenota-transfer`, label: t('transfer') },
+        { href: `/${locale}/protected/menu-colazione`, label: t('breakfastMenu') },
       ],
     },
     {
-      title: 'CONTATTI',
+      title: t('colContacts'),
       links: [
         { href: 'tel:+390912514962', label: '+39 091 2514962', external: true },
         { href: 'mailto:info@almahotel.it', label: 'info@almahotel.it', external: true },
-        { href: `/${locale}/contatti`, label: 'Modulo Contatti' },
+        { href: `/${locale}/contatti`, label: t('contactForm') },
       ],
     },
   ]

@@ -1,44 +1,9 @@
-import { getTranslations } from 'next-intl/server'
+'use client'
+
 import { useTranslations } from 'next-intl'
 import { SectionWrapper } from '@/components/ui/SectionWrapper'
-import { FadeIn, FadeInGroup, FadeInItem } from '@/components/ui/FadeIn'
+import { FadeIn } from '@/components/ui/FadeIn'
 import { Coffee, Croissant, Leaf, Wheat } from 'lucide-react'
-import type { Metadata } from 'next'
-
-export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
-  return { title: 'Menù Colazione' }
-}
-
-const menuData = {
-  sweet: [
-    { name: 'Cornetti freschi', description: 'Sfornati ogni mattina, vuoti e ripieni' },
-    { name: 'Brioches siciliane', description: 'Con tuppo, la colazione tipica palermitana' },
-    { name: 'Torte fatte in casa', description: 'Ricette della tradizione siciliana' },
-    { name: 'Yogurt artigianale', description: 'Ai frutti di stagione e naturale' },
-    { name: 'Frutta fresca', description: 'Selezione di stagione' },
-    { name: 'Marmellate & miele', description: 'Prodotti locali selezionati' },
-  ],
-  savory: [
-    { name: 'Uova strapazzate', description: 'Con erbe aromatiche fresche' },
-    { name: 'Prosciutto & salumi', description: 'Selezione di salumi siciliani' },
-    { name: 'Formaggi locali', description: 'Pecorino siciliano e ricotta fresca' },
-    { name: 'Toast & tramezzini', description: 'Preparati al momento' },
-    { name: 'Cereal & muesli', description: 'Biologici con latte fresco' },
-  ],
-  beverages: [
-    { name: 'Caffè espresso', description: 'Miscela selezionata da torrefazione artigianale' },
-    { name: 'Cappuccino', description: 'Con latte intero o vegetale' },
-    { name: 'Tè e infusi', description: 'Selezione biologica' },
-    { name: 'Succhi freschi', description: 'Arancia, pompelmo, melograno – di stagione' },
-    { name: 'Granita siciliana', description: 'Tradizionale – mandorla, limone, caffè' },
-  ],
-  glutenFree: [
-    { name: 'Pane senza glutine', description: 'Sfornato fresco ogni mattina' },
-    { name: 'Biscotti senza glutine', description: 'Artigianali' },
-    { name: 'Cereali senza glutine', description: 'Con latte o bevanda vegetale' },
-    { name: 'Frutta fresca', description: 'Sempre disponibile' },
-  ],
-}
 
 interface MenuCardProps {
   name: string
@@ -82,6 +47,38 @@ function MenuSection({ title, icon: Icon, items }: MenuSectionProps) {
 
 function MenuColazioneContent() {
   const t = useTranslations('protected.breakfast')
+  const tm = useTranslations('breakfastMenu')
+
+  const menuData = {
+    sweet: [
+      { name: tm('sweet.croissants.name'), description: tm('sweet.croissants.desc') },
+      { name: tm('sweet.brioche.name'), description: tm('sweet.brioche.desc') },
+      { name: tm('sweet.torte.name'), description: tm('sweet.torte.desc') },
+      { name: tm('sweet.yogurt.name'), description: tm('sweet.yogurt.desc') },
+      { name: tm('sweet.fruit.name'), description: tm('sweet.fruit.desc') },
+      { name: tm('sweet.jams.name'), description: tm('sweet.jams.desc') },
+    ],
+    savory: [
+      { name: tm('savory.eggs.name'), description: tm('savory.eggs.desc') },
+      { name: tm('savory.meats.name'), description: tm('savory.meats.desc') },
+      { name: tm('savory.cheese.name'), description: tm('savory.cheese.desc') },
+      { name: tm('savory.toast.name'), description: tm('savory.toast.desc') },
+      { name: tm('savory.cereals.name'), description: tm('savory.cereals.desc') },
+    ],
+    beverages: [
+      { name: tm('beverages.espresso.name'), description: tm('beverages.espresso.desc') },
+      { name: tm('beverages.cappuccino.name'), description: tm('beverages.cappuccino.desc') },
+      { name: tm('beverages.tea.name'), description: tm('beverages.tea.desc') },
+      { name: tm('beverages.juices.name'), description: tm('beverages.juices.desc') },
+      { name: tm('beverages.granita.name'), description: tm('beverages.granita.desc') },
+    ],
+    glutenFree: [
+      { name: tm('glutenFree.bread.name'), description: tm('glutenFree.bread.desc') },
+      { name: tm('glutenFree.biscuits.name'), description: tm('glutenFree.biscuits.desc') },
+      { name: tm('glutenFree.cereals.name'), description: tm('glutenFree.cereals.desc') },
+      { name: tm('glutenFree.fruit.name'), description: tm('glutenFree.fruit.desc') },
+    ],
+  }
 
   return (
     <div className="pt-[72px]">
@@ -97,7 +94,7 @@ function MenuColazioneContent() {
             {t('subtitle')}
           </p>
           <p className="font-[family-name:var(--font-sans)] text-[11px] uppercase tracking-widest text-[#9A9A9A] mt-3">
-            Servita dal Lunedì al Domenica · 07:30 – 10:30
+            {tm('hours')}
           </p>
         </FadeIn>
 
@@ -109,7 +106,7 @@ function MenuColazioneContent() {
             <div className="bg-[#F7F3EE] border border-[#E60023]/20 p-8">
               <MenuSection title={t('glutenFree')} icon={Leaf} items={menuData.glutenFree} />
               <p className="text-[12px] text-[#9A9A9A] mt-4">
-                * Informare sempre lo staff di eventuali allergie o intolleranze alimentari
+                {tm('allergyNote')}
               </p>
             </div>
           </FadeIn>

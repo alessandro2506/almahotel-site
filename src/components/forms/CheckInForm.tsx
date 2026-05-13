@@ -35,12 +35,6 @@ const schema = z.object({
 
 type FormData = z.infer<typeof schema>
 
-const DOC_TYPES = [
-  { value: 'carta_identita', label: "Carta d'Identità" },
-  { value: 'passaporto', label: 'Passaporto' },
-  { value: 'patente', label: 'Patente di Guida' },
-]
-
 function inputCls(hasError?: boolean) {
   return cn(
     'w-full border px-4 py-3 text-[14px] text-[#242424] placeholder:text-[#9A9A9A] focus:outline-none focus:border-[#242424] transition-colors bg-white',
@@ -60,11 +54,19 @@ function GuestFields({
   prefix,
   register,
   errors,
+  cf,
 }: {
   prefix: 'mainGuest' | `additionalGuests.${number}`
   register: ReturnType<typeof useForm<FormData>>['register']
   errors: ReturnType<typeof useForm<FormData>>['formState']['errors']
+  cf: ReturnType<typeof useTranslations<'checkinForm'>>
 }) {
+  const DOC_TYPES = [
+    { value: 'carta_identita', label: cf('docIdCard') },
+    { value: 'passaporto', label: cf('docPassport') },
+    { value: 'patente', label: cf('docLicense') },
+  ]
+
   const getError = (field: string) => {
     const parts = prefix.split('.')
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -77,30 +79,30 @@ function GuestFields({
     <div className="space-y-5">
       <div className="grid grid-cols-2 gap-5">
         <div>
-          <FieldLabel required>Nome</FieldLabel>
+          <FieldLabel required>{cf('name')}</FieldLabel>
           <input {...register(`${prefix}.name` as Parameters<typeof register>[0])} className={inputCls(!!getError('name'))} />
         </div>
         <div>
-          <FieldLabel required>Cognome</FieldLabel>
+          <FieldLabel required>{cf('surname')}</FieldLabel>
           <input {...register(`${prefix}.surname` as Parameters<typeof register>[0])} className={inputCls(!!getError('surname'))} />
         </div>
       </div>
       <div className="grid grid-cols-2 gap-5">
         <div>
-          <FieldLabel required>Data di Nascita</FieldLabel>
+          <FieldLabel required>{cf('birthDate')}</FieldLabel>
           <input type="date" {...register(`${prefix}.birthDate` as Parameters<typeof register>[0])} className={inputCls(!!getError('birthDate'))} />
         </div>
         <div>
-          <FieldLabel required>Luogo di Nascita</FieldLabel>
+          <FieldLabel required>{cf('birthPlace')}</FieldLabel>
           <input {...register(`${prefix}.birthPlace` as Parameters<typeof register>[0])} className={inputCls(!!getError('birthPlace'))} />
         </div>
       </div>
       <div>
-        <FieldLabel required>Nazionalità</FieldLabel>
+        <FieldLabel required>{cf('nationality')}</FieldLabel>
         <input {...register(`${prefix}.nationality` as Parameters<typeof register>[0])} className={inputCls(!!getError('nationality'))} />
       </div>
       <div>
-        <FieldLabel required>Tipo Documento</FieldLabel>
+        <FieldLabel required>{cf('documentType')}</FieldLabel>
         <select {...register(`${prefix}.documentType` as Parameters<typeof register>[0])} className={inputCls(!!getError('documentType'))}>
           {DOC_TYPES.map((d) => (
             <option key={d.value} value={d.value}>{d.label}</option>
@@ -108,20 +110,20 @@ function GuestFields({
         </select>
       </div>
       <div>
-        <FieldLabel required>N° Documento</FieldLabel>
+        <FieldLabel required>{cf('documentNumber')}</FieldLabel>
         <input {...register(`${prefix}.documentNumber` as Parameters<typeof register>[0])} className={inputCls(!!getError('documentNumber'))} />
       </div>
       <div className="grid grid-cols-3 gap-4">
         <div>
-          <FieldLabel required>Data Rilascio</FieldLabel>
+          <FieldLabel required>{cf('issueDate')}</FieldLabel>
           <input type="date" {...register(`${prefix}.documentIssueDate` as Parameters<typeof register>[0])} className={inputCls(!!getError('documentIssueDate'))} />
         </div>
         <div>
-          <FieldLabel required>Data Scadenza</FieldLabel>
+          <FieldLabel required>{cf('expiryDate')}</FieldLabel>
           <input type="date" {...register(`${prefix}.documentExpiry` as Parameters<typeof register>[0])} className={inputCls(!!getError('documentExpiry'))} />
         </div>
         <div>
-          <FieldLabel required>Autorità Rilascio</FieldLabel>
+          <FieldLabel required>{cf('authority')}</FieldLabel>
           <input {...register(`${prefix}.documentAuthority` as Parameters<typeof register>[0])} className={inputCls(!!getError('documentAuthority'))} />
         </div>
       </div>
@@ -131,6 +133,7 @@ function GuestFields({
 
 export function CheckInForm() {
   const t = useTranslations('protected.checkin')
+  const cf = useTranslations('checkinForm')
   const [step, setStep] = useState(1)
   const [success, setSuccess] = useState(false)
   const [serverError, setServerError] = useState('')
@@ -226,27 +229,27 @@ export function CheckInForm() {
           <div className="space-y-5">
             <div className="grid grid-cols-2 gap-5">
               <div>
-                <FieldLabel required>Data Arrivo</FieldLabel>
+                <FieldLabel required>{cf('arrivalDate')}</FieldLabel>
                 <input type="date" {...register('arrivalDate')} className={inputCls(!!errors.arrivalDate)} />
               </div>
               <div>
-                <FieldLabel required>Data Partenza</FieldLabel>
+                <FieldLabel required>{cf('departureDate')}</FieldLabel>
                 <input type="date" {...register('departureDate')} className={inputCls(!!errors.departureDate)} />
               </div>
             </div>
             <div className="grid grid-cols-2 gap-5">
               <div>
-                <FieldLabel>N° Camera</FieldLabel>
-                <input {...register('roomNumber')} className={inputCls()} placeholder="Opzionale" />
+                <FieldLabel>{cf('roomNumber')}</FieldLabel>
+                <input {...register('roomNumber')} className={inputCls()} placeholder={cf('optional')} />
               </div>
               <div>
-                <FieldLabel>Codice Prenotazione</FieldLabel>
-                <input {...register('bookingCode')} className={inputCls()} placeholder="Opzionale" />
+                <FieldLabel>{cf('bookingCode')}</FieldLabel>
+                <input {...register('bookingCode')} className={inputCls()} placeholder={cf('optional')} />
               </div>
             </div>
             <div>
-              <FieldLabel>Email (per ricezione riepilogo)</FieldLabel>
-              <input {...register('guestEmail')} type="email" className={inputCls(!!errors.guestEmail)} placeholder="La tua email" />
+              <FieldLabel>{cf('guestEmail')}</FieldLabel>
+              <input {...register('guestEmail')} type="email" className={inputCls(!!errors.guestEmail)} placeholder={cf('guestEmailPlaceholder')} />
             </div>
           </div>
         )}
@@ -255,9 +258,9 @@ export function CheckInForm() {
         {step === 2 && (
           <div>
             <h3 className="font-[family-name:var(--font-sans)] text-[11px] uppercase tracking-widest text-[#9A9A9A] mb-6">
-              Ospite Principale
+              {cf('mainGuest')}
             </h3>
-            <GuestFields prefix="mainGuest" register={register} errors={errors} />
+            <GuestFields prefix="mainGuest" register={register} errors={errors} cf={cf} />
           </div>
         )}
 
@@ -271,7 +274,7 @@ export function CheckInForm() {
                 <div key={field.id} className="border border-[#E8E3DE] p-6 relative">
                   <div className="flex items-center justify-between mb-6">
                     <h3 className="font-[family-name:var(--font-sans)] text-[11px] uppercase tracking-widest text-[#6B6B6B]">
-                      Ospite {index + 2}
+                      {cf('guestNumber', { n: index + 2 })}
                     </h3>
                     <button
                       type="button"
@@ -285,6 +288,7 @@ export function CheckInForm() {
                     prefix={`additionalGuests.${index}`}
                     register={register}
                     errors={errors}
+                    cf={cf}
                   />
                 </div>
               ))
@@ -310,15 +314,15 @@ export function CheckInForm() {
           <div className="space-y-6">
             <div className="bg-[#F7F3EE] p-6 space-y-3">
               <h3 className="font-[family-name:var(--font-sans)] text-[11px] uppercase tracking-widest text-[#6B6B6B] mb-4">
-                Riepilogo Check-In
+                {cf('summary')}
               </h3>
               {[
-                { label: 'Arrivo', value: watch('arrivalDate') },
-                { label: 'Partenza', value: watch('departureDate') },
-                ...(watch('roomNumber') ? [{ label: 'Camera', value: watch('roomNumber') }] : []),
-                { label: 'Ospite', value: `${watch('mainGuest.name')} ${watch('mainGuest.surname')}` },
-                { label: 'Nazionalità', value: watch('mainGuest.nationality') },
-                { label: 'N° Ospiti', value: 1 + (additionalGuests.length) },
+                { label: cf('summaryArrival'), value: watch('arrivalDate') },
+                { label: cf('summaryDeparture'), value: watch('departureDate') },
+                ...(watch('roomNumber') ? [{ label: cf('summaryRoom'), value: watch('roomNumber') }] : []),
+                { label: cf('summaryGuest'), value: `${watch('mainGuest.name')} ${watch('mainGuest.surname')}` },
+                { label: cf('summaryNationality'), value: watch('mainGuest.nationality') },
+                { label: cf('summaryGuests'), value: 1 + (additionalGuests.length) },
               ].map(({ label, value }) => (
                 <div key={label} className="flex justify-between">
                   <span className="text-[12px] uppercase tracking-wider text-[#9A9A9A]">{label}</span>
@@ -330,10 +334,10 @@ export function CheckInForm() {
             <div className="flex items-start gap-3">
               <input {...register('dataConsent')} type="checkbox" id="consent" className="mt-0.5 accent-[#E60023]" />
               <label htmlFor="consent" className="text-[13px] text-[#6B6B6B] cursor-pointer">
-                Acconsento al trattamento dei dati personali ai sensi del GDPR per la gestione del check-in
+                {cf('consentLabel')}
               </label>
             </div>
-            {errors.dataConsent && <p className="text-[#E60023] text-[12px]">Devi accettare il consenso</p>}
+            {errors.dataConsent && <p className="text-[#E60023] text-[12px]">{cf('consentError')}</p>}
 
             {serverError && <p className="text-[#E60023] text-[13px]">{serverError}</p>}
           </div>

@@ -29,13 +29,6 @@ const schema = z.object({
 
 type FormData = z.infer<typeof schema>
 
-const LOCATIONS = [
-  'Aeroporto Palermo (PMO)',
-  'Aeroporto Catania (CTA)',
-  'Stazione Centrale Palermo',
-  'Altro',
-]
-
 function InputField({
   label,
   error,
@@ -66,9 +59,17 @@ const inputCls = (hasError?: boolean) =>
 
 export function TransferForm() {
   const t = useTranslations('protected.transfer')
+  const tf = useTranslations('transferForm')
   const [step, setStep] = useState(1)
   const [success, setSuccess] = useState(false)
   const [serverError, setServerError] = useState('')
+
+  const LOCATIONS = [
+    tf('location0'),
+    tf('location1'),
+    tf('location2'),
+    tf('location3'),
+  ]
 
   const {
     register,
@@ -159,7 +160,7 @@ export function TransferForm() {
         {/* Step 1 */}
         {step === 1 && (
           <div className="space-y-5">
-            <InputField label="Tipo Servizio" required>
+            <InputField label={tf('serviceType')} required>
               <div className="grid grid-cols-2 gap-3">
                 {(['arrival', 'departure'] as const).map((type) => (
                   <label
@@ -173,7 +174,7 @@ export function TransferForm() {
                   >
                     <input {...register('serviceType')} type="radio" value={type} className="accent-[#E60023]" />
                     <span className="text-[13px] text-[#242424]">
-                      {type === 'arrival' ? "Arrivo all'hotel" : "Partenza dall'hotel"}
+                      {type === 'arrival' ? tf('arrival') : tf('departure')}
                     </span>
                   </label>
                 ))}
@@ -181,31 +182,31 @@ export function TransferForm() {
             </InputField>
 
             <div className="grid grid-cols-2 gap-5">
-              <InputField label="Data" required error={errors.date?.message}>
+              <InputField label={tf('date')} required error={errors.date?.message}>
                 <input {...register('date')} type="date" className={inputCls(!!errors.date)} />
               </InputField>
-              <InputField label="Ora" required error={errors.time?.message}>
+              <InputField label={tf('time')} required error={errors.time?.message}>
                 <input {...register('time')} type="time" className={inputCls(!!errors.time)} />
               </InputField>
             </div>
 
-            <InputField label="Provenienza" required error={errors.origin?.message}>
+            <InputField label={tf('origin')} required error={errors.origin?.message}>
               <select {...register('origin')} className={inputCls(!!errors.origin)}>
-                <option value="">Seleziona...</option>
+                <option value="">{tf('selectPlaceholder')}</option>
                 {LOCATIONS.map((l) => (
                   <option key={l} value={l}>{l}</option>
                 ))}
               </select>
             </InputField>
-            {origin === 'Altro' && (
-              <InputField label="Specifica provenienza">
-                <input {...register('customOrigin')} className={inputCls()} placeholder="Es. Porto, stazione..." />
+            {origin === LOCATIONS[3] && (
+              <InputField label={tf('customOrigin')}>
+                <input {...register('customOrigin')} className={inputCls()} placeholder={tf('customOriginPlaceholder')} />
               </InputField>
             )}
 
-            <InputField label="Destinazione" required error={errors.destination?.message}>
+            <InputField label={tf('destination')} required error={errors.destination?.message}>
               <select {...register('destination')} className={inputCls(!!errors.destination)}>
-                <option value="">Seleziona...</option>
+                <option value="">{tf('selectPlaceholder')}</option>
                 {LOCATIONS.map((l) => (
                   <option key={l} value={l}>{l}</option>
                 ))}
@@ -213,7 +214,7 @@ export function TransferForm() {
             </InputField>
 
             <div className="grid grid-cols-2 gap-5">
-              <InputField label="N° Passeggeri" required>
+              <InputField label={tf('passengers')} required>
                 <input
                   {...register('passengers', { valueAsNumber: true })}
                   type="number"
@@ -222,8 +223,8 @@ export function TransferForm() {
                   className={inputCls(!!errors.passengers)}
                 />
               </InputField>
-              <InputField label="N° Volo/Treno">
-                <input {...register('flightNumber')} className={inputCls()} placeholder="Opzionale" />
+              <InputField label={tf('flightNumber')}>
+                <input {...register('flightNumber')} className={inputCls()} placeholder={tf('optional')} />
               </InputField>
             </div>
           </div>
@@ -233,26 +234,26 @@ export function TransferForm() {
         {step === 2 && (
           <div className="space-y-5">
             <div className="grid grid-cols-2 gap-5">
-              <InputField label="Nome" required error={errors.name?.message}>
+              <InputField label={tf('name')} required error={errors.name?.message}>
                 <input {...register('name')} className={inputCls(!!errors.name)} />
               </InputField>
-              <InputField label="Cognome" required error={errors.surname?.message}>
+              <InputField label={tf('surname')} required error={errors.surname?.message}>
                 <input {...register('surname')} className={inputCls(!!errors.surname)} />
               </InputField>
             </div>
-            <InputField label="Email" required error={errors.email?.message}>
+            <InputField label={tf('email')} required error={errors.email?.message}>
               <input {...register('email')} type="email" className={inputCls(!!errors.email)} />
             </InputField>
-            <InputField label="Telefono" required error={errors.phone?.message}>
+            <InputField label={tf('phone')} required error={errors.phone?.message}>
               <input {...register('phone')} type="tel" className={inputCls(!!errors.phone)} />
             </InputField>
             <div className="grid grid-cols-2 gap-5">
-              <InputField label="N° Camera">
-                <input {...register('roomNumber')} className={inputCls()} placeholder="Opzionale" />
+              <InputField label={tf('roomNumber')}>
+                <input {...register('roomNumber')} className={inputCls()} placeholder={tf('optional')} />
               </InputField>
             </div>
-            <InputField label="Note">
-              <textarea {...register('notes')} rows={3} className={cn(inputCls(), 'resize-none')} placeholder="Informazioni aggiuntive..." />
+            <InputField label={tf('notes')}>
+              <textarea {...register('notes')} rows={3} className={cn(inputCls(), 'resize-none')} placeholder={tf('notesPlaceholder')} />
             </InputField>
           </div>
         )}
@@ -262,17 +263,17 @@ export function TransferForm() {
           <div className="space-y-6">
             <div className="bg-[#F7F3EE] p-6 space-y-3">
               <h3 className="font-[family-name:var(--font-sans)] text-[11px] uppercase tracking-widest text-[#6B6B6B] mb-4">
-                Riepilogo Richiesta
+                {tf('summary')}
               </h3>
               {[
-                { label: 'Servizio', value: watch('serviceType') === 'arrival' ? "Arrivo all'hotel" : "Partenza dall'hotel" },
-                { label: 'Data', value: `${watch('date')} alle ${watch('time')}` },
-                { label: 'Da', value: watch('origin') },
-                { label: 'A', value: watch('destination') },
-                { label: 'Passeggeri', value: watch('passengers') },
-                { label: 'Nome', value: `${watch('name')} ${watch('surname')}` },
-                { label: 'Email', value: watch('email') },
-                { label: 'Telefono', value: watch('phone') },
+                { label: tf('summaryService'), value: watch('serviceType') === 'arrival' ? tf('arrival') : tf('departure') },
+                { label: tf('summaryDate'), value: `${watch('date')} ${watch('time')}` },
+                { label: tf('summaryFrom'), value: watch('origin') },
+                { label: tf('summaryTo'), value: watch('destination') },
+                { label: tf('summaryPassengers'), value: watch('passengers') },
+                { label: tf('summaryName'), value: `${watch('name')} ${watch('surname')}` },
+                { label: tf('summaryEmail'), value: watch('email') },
+                { label: tf('summaryPhone'), value: watch('phone') },
               ].map(({ label, value }) => (
                 <div key={label} className="flex justify-between">
                   <span className="text-[12px] uppercase tracking-wider text-[#9A9A9A]">{label}</span>
@@ -284,10 +285,10 @@ export function TransferForm() {
             <div className="flex items-start gap-3">
               <input {...register('privacy')} type="checkbox" id="privacy" className="mt-0.5 accent-[#E60023]" />
               <label htmlFor="privacy" className="text-[13px] text-[#6B6B6B] cursor-pointer">
-                Acconsento al trattamento dei dati personali per la gestione della richiesta di transfer
+                {tf('privacyLabel')}
               </label>
             </div>
-            {errors.privacy && <p className="text-[#E60023] text-[12px]">Devi accettare la privacy policy</p>}
+            {errors.privacy && <p className="text-[#E60023] text-[12px]">{tf('privacyError')}</p>}
 
             {serverError && <p className="text-[#E60023] text-[13px]">{serverError}</p>}
           </div>

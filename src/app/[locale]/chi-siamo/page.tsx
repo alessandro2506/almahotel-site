@@ -88,16 +88,16 @@ function ChiSiamoContent() {
           </FadeIn>
           <FadeIn direction="left">
             <span className="font-[family-name:var(--font-sans)] text-[11px] font-semibold uppercase tracking-widest text-[#E60023] block mb-4">
-              LA NOSTRA MISSIONE
+              {t('missionLabel')}
             </span>
             <h2 className="font-[family-name:var(--font-display)] text-[36px] leading-[44px] text-[#242424] mb-6">
-              Ospitalità siciliana autentica
+              {t('missionTitle')}
             </h2>
             <p className="text-[16px] leading-[28px] text-[#6B6B6B] mb-4">
-              Ogni dettaglio del vostro soggiorno è curato con attenzione. Dal momento dell&apos;arrivo a quello della partenza, il nostro team è sempre presente per garantire un servizio impeccabile.
+              {t('missionText1')}
             </p>
             <p className="text-[16px] leading-[28px] text-[#6B6B6B]">
-              Siamo orgogliosi di essere un punto di riferimento per i viaggiatori che visitano Palermo, offrendo non solo un posto dove dormire, ma un&apos;esperienza di vita autentica della Sicilia.
+              {t('missionText2')}
             </p>
           </FadeIn>
         </div>

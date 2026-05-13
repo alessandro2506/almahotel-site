@@ -10,7 +10,7 @@ interface RoomBookingCardProps {
 }
 
 export function RoomBookingCard({ price }: RoomBookingCardProps) {
-  const t = useTranslations('rooms')
+  const t = useTranslations('roomDetail')
   const [checkin, setCheckin] = useState('')
   const [checkout, setCheckout] = useState('')
 
@@ -58,7 +58,7 @@ export function RoomBookingCard({ price }: RoomBookingCardProps) {
 
       <a href={buildUrl()} target="_blank" rel="noopener noreferrer" className="block">
         <Button variant="primary" className="w-full">
-          Prenota Ora
+          {t('bookNow')}
         </Button>
       </a>
     </div>

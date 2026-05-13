@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { useLocale } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import { cn } from '@/lib/utils'
@@ -29,6 +29,7 @@ export function RoomCard({
   className,
 }: RoomCardProps) {
   const locale = useLocale()
+  const t = useTranslations('rooms')
 
   return (
     <Link href={`/${locale}/camere/${slug}`} className={cn('group block relative overflow-hidden', className)}>
@@ -61,7 +62,7 @@ export function RoomCard({
         {/* Testo overlay */}
         <div className="absolute bottom-0 left-0 right-0 p-6">
           <p className="font-[family-name:var(--font-sans)] text-[10px] font-semibold uppercase tracking-[0.18em] text-white/60 mb-1.5">
-            da {price}/notte
+            {t('from')} {price}{t('perNight')}
           </p>
           <div className="flex items-end justify-between">
             <h3 className="font-[family-name:var(--font-display)] italic text-white"

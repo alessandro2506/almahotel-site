@@ -55,17 +55,17 @@ function ContattiContent() {
 
               <div className="space-y-4 mb-10">
                 <div>
-                  <p className="font-[family-name:var(--font-sans)] text-[11px] uppercase tracking-widest text-[#9A9A9A] mb-1">Indirizzo</p>
+                  <p className="font-[family-name:var(--font-sans)] text-[11px] uppercase tracking-widest text-[#9A9A9A] mb-1">{t('addressLabel')}</p>
                   <p className="text-[14px] text-[#242424]">Via Mariano Stabile, 136<br />90139 – Palermo</p>
                 </div>
                 <div>
-                  <p className="font-[family-name:var(--font-sans)] text-[11px] uppercase tracking-widest text-[#9A9A9A] mb-1">Telefono</p>
+                  <p className="font-[family-name:var(--font-sans)] text-[11px] uppercase tracking-widest text-[#9A9A9A] mb-1">{t('phoneLabel')}</p>
                   <a href="tel:+390912514962" className="text-[14px] text-[#242424] hover:text-[#E60023] transition-colors">
                     +39 091 2514962
                   </a>
                 </div>
                 <div>
-                  <p className="font-[family-name:var(--font-sans)] text-[11px] uppercase tracking-widest text-[#9A9A9A] mb-1">Email</p>
+                  <p className="font-[family-name:var(--font-sans)] text-[11px] uppercase tracking-widest text-[#9A9A9A] mb-1">{t('emailLabel')}</p>
                   <a href="mailto:info@almahotel.it" className="text-[14px] text-[#242424] hover:text-[#E60023] transition-colors">
                     info@almahotel.it
                   </a>

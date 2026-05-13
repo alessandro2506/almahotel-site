@@ -1,3 +1,5 @@
+'use client'
+
 import { useTranslations } from 'next-intl'
 import { SectionWrapper } from '@/components/ui/SectionWrapper'
 import { FadeIn } from '@/components/ui/FadeIn'
@@ -10,13 +12,14 @@ export async function generateMetadata(): Promise<Metadata> {
 
 function WebCheckInContent() {
   const t = useTranslations('protected.checkin')
+  const tc = useTranslations('checkinPage')
 
   return (
     <div className="pt-[72px]">
       <SectionWrapper>
         <FadeIn className="text-center mb-12">
           <span className="font-[family-name:var(--font-sans)] text-[11px] font-semibold uppercase tracking-widest text-[#E60023] block mb-4">
-            CHECK-IN ONLINE
+            {tc('pageLabel')}
           </span>
           <h1 className="font-[family-name:var(--font-display)] text-[40px] leading-[48px] italic text-[#242424] mb-4">
             {t('title')}

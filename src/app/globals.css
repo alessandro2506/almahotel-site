@@ -54,9 +54,9 @@ h3, h4, h5, h6 {
   animation-play-state: paused;
 }
 
-/* Reviews carousel animation (slower, for wider cards) */
+/* Reviews carousel animation */
 .reviews-track {
-  animation: carousel-scroll 60s linear infinite;
+  animation: carousel-scroll 35s linear infinite;
 }
 
 .reviews-track:hover {

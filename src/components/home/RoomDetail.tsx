@@ -1,20 +1,21 @@
 import type { ComponentType } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useTranslations } from 'next-intl'
 import { FadeIn, SlideFade, ScaleIn } from '@/components/ui/FadeIn'
 import { RoomBookingCard } from './RoomBookingCard'
 import { RoomCard } from './RoomCard'
 import { Wifi, Coffee, Car, Shield, Wind, Tv, Bath, BedDouble } from 'lucide-react'
 
 const AMENITY_ICONS: Record<string, ComponentType<{ size?: number; className?: string; strokeWidth?: number }>> = {
-  'WiFi': Wifi,
-  'Colazione': Coffee,
-  'Transfer': Car,
-  'Cassaforte': Shield,
-  'Aria Condizionata': Wind,
-  'TV': Tv,
-  'Bagno Privato': Bath,
-  'Letto Matrimoniale': BedDouble,
+  'wifi': Wifi,
+  'breakfast': Coffee,
+  'transfer': Car,
+  'safe': Shield,
+  'ac': Wind,
+  'tv': Tv,
+  'bathroom': Bath,
+  'bed': BedDouble,
 }
 
 interface RelatedRoom {
@@ -56,7 +57,11 @@ export function RoomDetail({
   cin,
   cir,
   relatedRooms,
+  locale,
 }: RoomDetailProps) {
+  const t = useTranslations('roomDetail')
+  const tAmenities = useTranslations('amenities')
+
   return (
     <>
       {/* SEZIONE 1 — Hero fullscreen */}
@@ -85,7 +90,7 @@ export function RoomDetail({
         </div>
       </section>
 
-      {/* SEZIONE 2 — Intro camera (centrato, Forestis) */}
+      {/* SEZIONE 2 — Intro camera */}
       <section className="bg-white py-[100px] max-md:py-[72px]">
         <div className="max-w-[720px] mx-auto px-6 text-center">
           <FadeIn>
@@ -111,7 +116,6 @@ export function RoomDetail({
       {/* SEZIONE 3 — Gallery mosaico */}
       <section className="bg-[#F5F0E8]">
         <div className="grid grid-cols-3 gap-1" style={{ height: '520px' }}>
-          {/* Immagine grande 2/3 */}
           <ScaleIn className="col-span-2 relative overflow-hidden h-full">
             <Image
               src={heroImage}
@@ -121,7 +125,6 @@ export function RoomDetail({
               sizes="(max-width: 768px) 100vw, 66vw"
             />
           </ScaleIn>
-          {/* 2 immagini piccole 1/3 */}
           <div className="flex flex-col gap-1 h-full">
             {galleryImages.map((img, i) => (
               <ScaleIn key={i} className="relative overflow-hidden flex-1" delay={0.1 * (i + 1)}>
@@ -142,20 +145,20 @@ export function RoomDetail({
       <section className="bg-white py-[96px] max-md:py-[64px]">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
-            {/* Sinistra — dotazioni */}
             <div className="lg:col-span-2">
               <SlideFade direction="left">
                 <span className="font-[family-name:var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.22em] text-[#9A9A9A] block mb-8">
-                  DOTAZIONI
+                  {t('amenitiesLabel')}
                 </span>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {amenities.map((amenity) => {
-                    const Icon = AMENITY_ICONS[amenity]
+                  {amenities.map((amenityKey) => {
+                    const Icon = AMENITY_ICONS[amenityKey]
+                    const label = tAmenities(amenityKey as Parameters<typeof tAmenities>[0])
                     return (
-                      <li key={amenity} className="flex items-center gap-4 py-4 border-b border-[#E8E3DE]">
+                      <li key={amenityKey} className="flex items-center gap-4 py-4 border-b border-[#E8E3DE]">
                         {Icon && <Icon size={18} className="text-[#E60023] flex-shrink-0" strokeWidth={1.5} />}
                         <span className="font-[family-name:var(--font-sans)] text-[13px] text-[#1C1C1C] tracking-wide">
-                          {amenity}
+                          {label}
                         </span>
                       </li>
                     )
@@ -173,7 +176,6 @@ export function RoomDetail({
               </SlideFade>
             </div>
 
-            {/* Destra — sticky booking card */}
             <div className="lg:col-span-1">
               <SlideFade direction="right">
                 <RoomBookingCard price={price} />
@@ -189,13 +191,13 @@ export function RoomDetail({
           <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
             <FadeIn className="mb-12">
               <span className="font-[family-name:var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.22em] text-[#9A9A9A] block mb-3">
-                SCOPRI ANCHE
+                {t('relatedLabel')}
               </span>
               <h3
                 className="font-[family-name:var(--font-display)] italic text-[#1C1C1C]"
                 style={{ fontSize: 'clamp(28px, 3.5vw, 40px)' }}
               >
-                Le Altre Camere
+                {t('relatedTitle')}
               </h3>
             </FadeIn>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
