@@ -33,7 +33,7 @@ export function RoomCard({
   return (
     <Link href={`/${locale}/camere/${slug}`} className={cn('group block relative overflow-hidden', className)}>
       {/* Immagine con hover scale */}
-      <div className={cn('relative overflow-hidden', size === 'tall' ? 'h-[480px] md:h-[560px]' : 'h-[280px] md:h-[320px]')}>
+      <div className={cn('relative overflow-hidden', size === 'tall' ? 'h-[576px] md:h-[656px]' : 'h-[280px] md:h-[320px]')}>
         <motion.div
           className="absolute inset-0"
           whileHover={{ scale: 1.04 }}

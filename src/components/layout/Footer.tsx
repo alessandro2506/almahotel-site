@@ -80,7 +80,7 @@ export function Footer() {
   ]
 
   return (
-    <footer className="bg-[#0A0A0A] text-[#555]">
+    <footer className="bg-[#0A0A0A] text-[#999]">
       {/* Top section */}
       <div className="max-w-[1200px] mx-auto px-6 lg:px-10 pt-20 pb-14">
         {/* Logo centrato */}
@@ -103,14 +103,14 @@ export function Footer() {
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="font-[family-name:var(--font-sans)] text-[12px] text-[#555] hover:text-white transition-colors"
+                        className="font-[family-name:var(--font-sans)] text-[12px] text-[#999] hover:text-white transition-colors"
                       >
                         {link.label}
                       </a>
                     ) : (
                       <Link
                         href={link.href}
-                        className="font-[family-name:var(--font-sans)] text-[12px] text-[#555] hover:text-white transition-colors"
+                        className="font-[family-name:var(--font-sans)] text-[12px] text-[#999] hover:text-white transition-colors"
                       >
                         {link.label}
                       </Link>
@@ -131,7 +131,7 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={label}
-              className="text-[#555] hover:text-white transition-colors"
+              className="text-[#999] hover:text-white transition-colors"
             >
               <Icon />
             </a>
@@ -144,12 +144,12 @@ export function Footer() {
 
       {/* Bottom section */}
       <div className="max-w-[1200px] mx-auto px-6 lg:px-10 py-6 flex flex-col md:flex-row items-center justify-between gap-3">
-        <div className="font-[family-name:var(--font-sans)] text-[10px] uppercase tracking-widest text-[#555] flex flex-wrap gap-x-3 gap-y-1 justify-center md:justify-start">
+        <div className="font-[family-name:var(--font-sans)] text-[10px] uppercase tracking-widest text-[#999] flex flex-wrap gap-x-3 gap-y-1 justify-center md:justify-start">
           <span>CIN: IT082053C3RO37043S</span>
           <span>·</span>
           <span>CIR: 082053-ALM-00001</span>
         </div>
-        <div className="font-[family-name:var(--font-sans)] text-[10px] uppercase tracking-widest text-[#555] flex items-center gap-3">
+        <div className="font-[family-name:var(--font-sans)] text-[10px] uppercase tracking-widest text-[#999] flex items-center gap-3">
           <span>© 2026 Alma Hotel</span>
           <span>·</span>
           <Link href={`/${locale}/privacy`} className="hover:text-white transition-colors">

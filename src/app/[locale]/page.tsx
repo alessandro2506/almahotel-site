@@ -69,11 +69,18 @@ function HomeContent() {
 
   const rooms = [
     {
+      slug: 'suite',
+      name: 'Suite',
+      price: '€149',
+      image: 'https://www.saporiperduti.it/wp-content/uploads/2021/11/suite-1.jpg',
+      badge: 'Suite',
+      size: 'tall' as const,
+    },
+    {
       slug: 'matrimoniale',
       name: 'Camera Matrimoniale',
       price: '€89',
       image: 'https://www.saporiperduti.it/wp-content/uploads/2021/11/matrimoniale-7-1.jpg',
-      size: 'tall' as const,
     },
     {
       slug: 'matrimoniale-superior',
@@ -81,13 +88,6 @@ function HomeContent() {
       price: '€109',
       image: 'https://www.saporiperduti.it/wp-content/uploads/2021/11/suite-2.jpg',
       badge: 'Superior',
-    },
-    {
-      slug: 'suite',
-      name: 'Suite',
-      price: '€149',
-      image: 'https://www.saporiperduti.it/wp-content/uploads/2021/11/suite-1.jpg',
-      badge: 'Suite',
     },
   ]
 
