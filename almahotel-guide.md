@@ -1,6 +1,6 @@
 # AlmaHotel – Design & Development Guide
 > Progetto: Redesign completo almahotel.it | Stack: Next.js 15 + TypeScript + Tailwind CSS 4
-> Autore: Alvenco Ltd | Ultimo aggiornamento: 2026-05-13
+> Autore: Alvenco Ltd | Ultimo aggiornamento: 2026-05-13 (v1.2 — post-deploy, roadmap aggiornata)
 
 ---
 
@@ -177,20 +177,24 @@ Standard — Resend con rate limiting (max 10 req/min per IP).
 
 ## 8. Componenti Chiave
 
-| Componente | Note |
-|---|---|
-| `<Navbar>` | Transparent su hero → solid on scroll. Logo SVG. Language switcher. CTA "Prenota". |
-| `<HeroVideo>` | Fullscreen. Vimeo autoplay/muted/loop. Overlay gradient. Copy centrato + 2 CTA. |
-| `<BookingBar>` | Sticky post-hero. Check-in/out + ospiti + CTA → Octorate. |
-| `<RoomCard>` | Immagine hover-zoom, badge tipologia, prezzo da, CTA. |
-| `<ServiceIcons>` | Grid 3 colonne, icone Lucide React. |
-| `<AwardsCarousel>` | CSS scroll auto-play. Loghi grigi su sfondo `#F7F3EE`. |
-| `<MapSection>` | Google Maps JS API + marker `#E60023` + info card overlay. |
-| `<PasswordGate>` | Form password centrato, verifica API, sessionStorage per la sessione. |
-| `<TransferForm>` | Multistep 3 step. Zod + React Hook Form. |
-| `<CheckInForm>` | Multistep 4 step. Ospiti aggiuntivi dinamici. PDF allegato via email. |
-| `<LanguageSwitcher>` | Dropdown bandiere, routing next-intl. |
-| `<Footer>` | Sfondo `#0A0A0A`. 3 colonne link + CIN/CIR + social + copyright. |
+| Componente | File | Note |
+|---|---|---|
+| `<Navbar>` | `src/components/layout/Navbar.tsx` | Transparent su hero → solid on scroll. h-[80px]. Voci centrate. CTA rosso a destra. |
+| `<HeroVideo>` | `src/components/home/HeroVideo.tsx` | Fullscreen h-screen. Vimeo autoplay/muted/loop (ID 382157995). Fallback immagine. 2 CTA + indirizzo + scroll indicator. |
+| `<BookingBar>` | `src/components/home/BookingBar.tsx` | Sticky post-hero. Check-in/out + CTA → Octorate. |
+| `<RoomCard>` | `src/components/home/RoomCard.tsx` | Size `tall` (`h-[576px]/md:h-[656px]`) o `standard` (`h-[280px]/md:h-[320px]`). Hover scale, overlay gradient, badge, arrow animata. |
+| `<RestaurantSection>` | `src/components/home/RestaurantSection.tsx` | Split 50/50: immagine sx, testo dx. Sfondo `#F5F0E8`. |
+| `<ExperienceSection>` | `src/components/home/ExperienceSection.tsx` | Split 50/50: testo sx, immagine dx (Mondello/Palermo). Sfondo bianco. |
+| `<HighlightBanner>` | `src/components/home/HighlightBanner.tsx` | Full-width immagine con overlay + testo centrato. |
+| `<MapSection>` | `src/components/home/MapSection.tsx` | Embed Google Maps **senza API key** (keyless, stesso metodo di almahotel.it). Info card scura a destra. Supporta opzionalmente `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY`. |
+| `<ServiceIcons>` | `src/components/home/ServiceIcons.tsx` | Grid 3 colonne, icone Lucide React. `'use client'`. |
+| `<AwardsCarousel>` | `src/components/home/AwardsCarousel.tsx` | CSS scroll auto-play. Loghi grigi su sfondo `#F5F0E8`. |
+| `<RoomDetail>` | `src/components/home/RoomDetail.tsx` | Layout Forestis per pagine singola camera: hero + intro + gallery mosaico + dotazioni + booking card + suggerimenti. |
+| `<PasswordGate>` | `src/components/auth/PasswordGate.tsx` | Form password centrato, verifica API `/api/auth/verify`, sessionStorage per sessione. |
+| `<TransferForm>` | `src/components/forms/TransferForm.tsx` | Multistep 3 step. Zod + React Hook Form. POST `/api/transfer-request`. |
+| `<CheckInForm>` | `src/components/forms/CheckInForm.tsx` | Multistep 4 step. Ospiti aggiuntivi dinamici. PDF allegato via `@react-pdf/renderer`. |
+| `<LanguageSwitcher>` | `src/components/layout/LanguageSwitcher.tsx` | Dropdown bandiere, routing next-intl. |
+| `<Footer>` | `src/components/layout/Footer.tsx` | Sfondo `#0A0A0A`. 4 colonne link + social (SVG inline) + CIN/CIR + copyright. Testi link `#999`. |
 
 ---
 
@@ -199,59 +203,91 @@ Standard — Resend con rate limiting (max 10 req/min per IP).
 | Servizio | Uso | Note |
 |---|---|---|
 | Octorate | Booking engine | `https://book.octorate.com/octobook/site/reservation/index.xhtml?codice=13720` |
-| DeepL API | Traduzioni dinamiche | Header: `Authorization: DeepL-Auth-Key` |
-| Resend | Email transazionali | Transfer + Check-in + Contatti |
+| DeepL API | Traduzioni dinamiche | Client: `src/lib/deepl.ts` — lazy init via `getDeepL()`. Package: `deepl-node`. |
+| Resend | Email transazionali | Transfer + Check-in + Contatti. Client: `src/lib/resend.ts` — lazy init via `getResend()`. |
 | Vimeo | Hero video | ID `382157995`, embed background mode |
-| Google Maps JS API | Mappa contatti | Marker custom `#E60023` |
-| Supabase | DB form | Tabelle: `checkins`, `transfer_requests` |
+| Google Maps | Mappa contatti | **Embed keyless** (`maps.google.com/maps?q=Alma+Hotel&output=embed`) — stesso metodo del sito attuale almahotel.it. Se disponibile una Maps Embed API key, viene usato l'endpoint `/embed/v1/place`. |
+| Supabase | DB form | Tabelle: `checkins`, `transfer_requests`. Client: `src/lib/supabase.ts` — lazy init via `getSupabase()` (public) e `createServiceClient()` (service role). |
+
+### Pattern lazy initialization API clients
+Tutti i client di terze parti sono inizializzati **lazily** (prima chiamata, non a livello di modulo) per evitare crash al build-time di Vercel quando le env vars non sono ancora disponibili:
+
+```ts
+// Esempio pattern — replicato per Resend, Supabase, DeepL
+let _client: Client | null = null
+export function getClient(): Client {
+  if (!_client) {
+    const key = process.env.API_KEY
+    if (!key) throw new Error('Missing API_KEY')
+    _client = new Client(key)
+  }
+  return _client
+}
+```
 
 ---
 
 ## 10. Variabili d'Ambiente (Vercel)
 
 ```env
-GUEST_PASSWORD=         # Password area protetta — cambiabile senza toccare codice
-RESEND_API_KEY=         # Email transazionali
-HOTEL_EMAIL=            # info@almahotel.it
-NEXT_PUBLIC_SUPABASE_URL=
-NEXT_PUBLIC_SUPABASE_ANON_KEY=
-SUPABASE_SERVICE_ROLE_KEY=
-DEEPL_API_KEY=
-NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=
-NEXT_PUBLIC_VIMEO_ID=382157995
+GUEST_PASSWORD=                    # Password area protetta — cambiabile senza toccare codice
+RESEND_API_KEY=                    # Email transazionali (lazy init)
+HOTEL_EMAIL=info@almahotel.it      # Destinatario notifiche hotel
+NEXT_PUBLIC_SUPABASE_URL=          # Endpoint Supabase (lazy init)
+NEXT_PUBLIC_SUPABASE_ANON_KEY=     # Chiave pubblica Supabase (lazy init)
+SUPABASE_SERVICE_ROLE_KEY=         # Chiave service role Supabase (lazy init, solo server-side)
+DEEPL_API_KEY=                     # Chiave API DeepL (lazy init, formato: xxxxx:fx per free tier)
+NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=   # OPZIONALE — se assente o "xxxx", usa embed keyless gratuito
+NEXT_PUBLIC_VIMEO_ID=382157995     # ID video hero Vimeo
 ```
+
+> **Nota Google Maps**: il sito almahotel.it usa un embed senza API key. La variabile `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY` è opzionale: se non configurata (o impostata a `xxxx`), la mappa funziona comunque tramite embed gratuito `maps.google.com/maps?output=embed`.
+
+> **Nota lazy init**: i client `Resend`, `Supabase` e `DeepL` vengono istanziati solo alla prima chiamata runtime, NON al momento del `import`. Questo evita crash al build-time di Vercel.
 
 ---
 
 ## 11. Roadmap di Sviluppo
 
-### Fase 1 — Setup & Core
-- [ ] Init repo Next.js 15 + TypeScript + Tailwind 4 + next-intl
-- [ ] Design token CSS, font self-hosting
-- [ ] Componenti base: Navbar, Footer, Layout, FadeIn
-- [ ] Home page completa
-- [ ] Deploy Vercel preview + push GitHub
+### Fase 1 — Setup & Core ✅ COMPLETATA
+- [x] Init repo Next.js 15 + TypeScript + Tailwind 4 + next-intl
+- [x] Design token CSS, font self-hosting (Cormorant Garamond, Montserrat, Open Sans)
+- [x] Componenti base: Navbar, Footer, Layout, FadeIn, BookingBar
+- [x] Home page completa (struttura Badrutt's Palace, 9 sezioni)
+- [x] Redesign visivo completo (tipografia Forestis, palette warm, animazioni premium)
+- [x] Deploy Vercel + repo GitHub (`https://github.com/alessandro2506/almahotel-site`)
 
-### Fase 2 — Pagine & Funzionalità
-- [ ] Pagine camere (x3) con schema HotelRoom
-- [ ] PasswordGate + area protetta
-- [ ] Form Transfer + API route + Resend + Supabase
-- [ ] Form Web Check-In + PDF + API route + Resend + Supabase
-- [ ] Form Contatti
-- [ ] i18n IT/EN/FR/ES + DeepL API
+### Fase 2 — Pagine & Funzionalità ✅ COMPLETATA
+- [x] Pagine camere (x3) con layout Forestis (hero + gallery + dotazioni + booking card)
+- [x] PasswordGate + area protetta (`/protected/*`)
+- [x] Form Transfer + API route + Resend + Supabase
+- [x] Form Web Check-In + PDF (`@react-pdf/renderer`) + API route + Resend + Supabase
+- [x] Form Contatti con rate limiting
+- [x] i18n IT/EN/FR/ES (struttura next-intl)
+- [x] Client DeepL lazy-init pronto per uso (`src/lib/deepl.ts`)
 
-### Fase 3 — SEO & Performance
-- [ ] Schema.org JSON-LD tutte le pagine
-- [ ] next-sitemap + robots.txt
-- [ ] Ottimizzazione immagini e font
-- [ ] Lighthouse ≥ 90 su tutte le metriche
-- [ ] Google Search Console setup
+### Fase 2b — Fix Deployment ✅ COMPLETATA
+- [x] Risolti tutti gli errori di build Vercel (ESLint, TypeScript, SSR, env vars)
+- [x] Lazy initialization per Resend, Supabase, DeepL
+- [x] Google Maps con embed keyless (fallback funzionante senza API key)
+- [x] Immagini reali per tutte le sezioni (saporiperduti.it + Unsplash Palermo)
+- [x] Correzioni UI: Suite come card grande, foto Palermo corretta, footer testi `#999`
 
-### Fase 4 — Launch
-- [ ] UAT con cliente
-- [ ] Migration DNS da WordPress a Vercel
-- [ ] Redirect 301 da tutte le URL WordPress
+### Fase 3 — SEO & Performance 🔄 IN CORSO
+- [x] Schema.org JSON-LD sulle pagine principali
+- [x] next-sitemap + robots.txt
+- [x] Ottimizzazione immagini con `next/image` (WebP, lazy, sizes)
+- [ ] Lighthouse audit e ottimizzazioni (target ≥ 90)
+- [ ] Google Search Console setup e verifica
+- [ ] Core Web Vitals tuning (LCP, CLS, INP)
+
+### Fase 4 — Launch 📋 PIANIFICATA
+- [ ] UAT completo con cliente (test form, email, mappa, booking)
+- [ ] Configurazione env vars reali su Vercel (Resend key, Supabase, DeepL)
+- [ ] Migration DNS da WordPress a Vercel (`almahotel.it`)
+- [ ] Redirect 301 da tutte le URL WordPress legacy
 - [ ] Monitoraggio GA4 + Vercel Analytics
+- [ ] Backup sito WordPress prima della migrazione
 
 ---
 
@@ -260,4 +296,5 @@ NEXT_PUBLIC_VIMEO_ID=382157995
 | Data | Autore | Note |
 |---|---|---|
 | 2026-05-13 | Claude / Alvenco | Creazione file. Analisi sito live, verifica design system, architettura completa, SEO strategy, roadmap. |
-| 2026-05-13 | Claude / Alvenco | Aggiornamento sezione 7: riferimenti visivi corretti. Forestis (primario) + Badrutt's Palace (secondario). Cheval Blanc scartato per eccesso di video e animazioni confusive. Rimossi riferimenti obsoleti a Il Falconiere, Hotel Particulier, Ultima Collection, R Collections. |
+| 2026-05-13 | Claude / Alvenco | Aggiornamento sezione 7: riferimenti visivi corretti. Forestis (primario) + Badrutt's Palace (secondario). Cheval Blanc scartato per eccesso di video e animazioni confusive. |
+| 2026-05-13 | Claude / Alvenco | v1.2 — Post-implementazione completa. Aggiornate: §8 Componenti (tabella dettagliata con file paths e note implementative), §9 Integrazioni (lazy init pattern documentato, Google Maps keyless embed), §10 Env vars (note su opzionalità Maps key e lazy init), §11 Roadmap (fasi 1 e 2 completate, fase 2b fix deployment aggiunta, fase 3 in corso, fase 4 pianificata). |
