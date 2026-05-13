@@ -5,15 +5,14 @@ import { ChevronDown } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { OCTORATE_URL } from '@/lib/utils'
 import Link from 'next/link'
-import Image from 'next/image'
 
 export function HeroVideo() {
   const locale = useLocale()
   const vimeoId = process.env.NEXT_PUBLIC_VIMEO_ID ?? '382157995'
 
   return (
-    <section className="relative h-screen min-h-[640px] flex items-center justify-center overflow-hidden">
-      {/* Video Vimeo */}
+    <section className="relative h-screen min-h-[640px] flex items-center justify-center overflow-hidden bg-[#1C1C1C]">
+      {/* Video Vimeo — bg-[#1C1C1C] funge da sfondo durante il caricamento */}
       <div className="absolute inset-0 z-0">
         <iframe
           src={`https://player.vimeo.com/video/${vimeoId}?autoplay=1&muted=1&loop=1&background=1&playsinline=1`}
@@ -22,16 +21,6 @@ export function HeroVideo() {
           title="Alma Hotel Palermo"
         />
       </div>
-
-      {/* Fallback immagine */}
-      <Image
-        src="https://www.saporiperduti.it/wp-content/uploads/2021/11/suite-1.jpg"
-        alt="Alma Hotel Palermo"
-        fill
-        className="object-cover -z-10"
-        priority
-        sizes="100vw"
-      />
 
       {/* Overlay gradient */}
       <div
