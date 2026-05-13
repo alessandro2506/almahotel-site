@@ -3,8 +3,8 @@ import { z } from 'zod'
 import { resend, HOTEL_EMAIL, checkinConfirmationHtml } from '@/lib/resend'
 import { createServiceClient } from '@/lib/supabase'
 import { rateLimit } from '@/lib/rate-limit'
-import { renderToBuffer } from '@react-pdf/renderer'
-import { createElement } from 'react'
+import { renderToBuffer, type DocumentProps } from '@react-pdf/renderer'
+import { createElement, type ReactElement } from 'react'
 import { CheckInPdf } from '@/lib/checkin-pdf'
 
 const guestSchema = z.object({
@@ -57,7 +57,7 @@ export async function POST(req: NextRequest) {
         bookingCode: data.bookingCode,
         mainGuest: data.mainGuest,
         additionalGuests: data.additionalGuests ?? [],
-      })
+      }) as unknown as ReactElement<DocumentProps>
     )
 
     const pdfBase64 = Buffer.from(pdfBuffer).toString('base64')
