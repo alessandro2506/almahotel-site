@@ -1,5 +1,3 @@
-'use client'
-
 import { useTranslations } from 'next-intl'
 import { SectionWrapper } from '@/components/ui/SectionWrapper'
 import { FadeIn } from '@/components/ui/FadeIn'
