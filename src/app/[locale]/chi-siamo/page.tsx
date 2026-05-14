@@ -67,10 +67,10 @@ function ChiSiamoContent() {
                 style={{
                   top: 0,
                   left: 0,
-                  right: '30%',
+                  right: '35%',
                   bottom: '60px',
                   borderRadius: '2px',
-                  zIndex: 1,
+                  zIndex: 2,
                 }}
               >
                 <Image
@@ -87,13 +87,13 @@ function ChiSiamoContent() {
                 className="absolute overflow-hidden shadow-2xl"
                 style={{
                   top: '60px',
-                  left: '32%',
+                  left: '36%',
                   right: '-4%',
                   bottom: '-16px',
                   transform: 'rotate(6deg)',
                   transformOrigin: 'bottom right',
                   borderRadius: '2px',
-                  zIndex: 2,
+                  zIndex: 1,
                 }}
               >
                 <Image
