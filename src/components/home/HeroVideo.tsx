@@ -1,8 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
 import { useLocale, useTranslations } from 'next-intl'
-import Image from 'next/image'
 import { ChevronDown } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { OCTORATE_URL } from '@/lib/utils'
@@ -12,14 +10,6 @@ export function HeroVideo() {
   const locale = useLocale()
   const t = useTranslations('hero')
   const vimeoId = process.env.NEXT_PUBLIC_VIMEO_ID ?? '382157995'
-
-  const [scrolled, setScrolled] = useState(false)
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 80)
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
 
   return (
     <section className="relative h-screen min-h-[640px] flex items-center justify-center overflow-hidden bg-[#1C1C1C]">
@@ -44,24 +34,6 @@ export function HeroVideo() {
 
       {/* Contenuto centrato */}
       <div className="relative z-20 text-center px-6 max-w-4xl mx-auto">
-        {/* Logo hero — scompare su scroll */}
-        <div
-          className="mb-10 transition-all duration-500"
-          style={{
-            opacity: scrolled ? 0 : 1,
-            transform: scrolled ? 'translateY(-12px)' : 'translateY(0)',
-            pointerEvents: 'none',
-          }}
-        >
-          <Image
-            src="/logo/logo-light.svg"
-            alt="Alma Hotel Palermo"
-            width={280}
-            height={105}
-            priority
-            className="mx-auto w-[200px] md:w-[280px]"
-          />
-        </div>
         <p className="font-[family-name:var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.22em] text-white/65 mb-7">
           {t('label')}
         </p>
