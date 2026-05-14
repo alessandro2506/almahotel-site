@@ -168,13 +168,15 @@ function ChiSiamoContent() {
             },
           ].map((cert) => (
             <div key={cert.name} className="flex flex-col items-center text-center gap-3 p-6 border border-[#E8E3DE]">
-              <div className="w-20 h-20 relative flex items-center justify-center">
+              <div className="w-20 h-20 flex items-center justify-center">
                 <Image
                   src={cert.src}
                   alt={cert.name}
-                  fill
-                  className="object-contain"
+                  width={80}
+                  height={80}
+                  className="object-contain w-full h-full"
                   sizes="80px"
+                  unoptimized={cert.src.startsWith('http')}
                 />
               </div>
               <p className="font-[family-name:var(--font-sans)] text-[12px] font-semibold uppercase tracking-wider text-[#242424]">
