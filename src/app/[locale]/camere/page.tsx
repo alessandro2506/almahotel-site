@@ -47,7 +47,7 @@ function CamereContent() {
   return (
     <>
       {/* Hero */}
-      <div className="relative h-[60vh] min-h-[400px] flex items-end overflow-hidden">
+      <div className="relative h-[50vh] min-h-[360px] flex items-end overflow-hidden">
         <Image
           src="/images/Camere/Suite/suite-02.jpg"
           alt={t('title')}

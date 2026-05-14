@@ -21,9 +21,9 @@ function ChiSiamoContent() {
   return (
     <>
       {/* Hero */}
-      <div className="relative h-[60vh] min-h-[400px] flex items-end overflow-hidden">
+      <div className="relative h-[50vh] min-h-[360px] flex items-end overflow-hidden">
         <Image
-          src="https://www.saporiperduti.it/wp-content/uploads/2021/11/suite-1.jpg"
+          src="/images/hotel-room-5.jpg"
           alt={t('heroAlt')}
           fill
           className="object-cover"
@@ -156,7 +156,7 @@ function ChiSiamoContent() {
             },
             {
               name: 'Accoglienza Sicura',
-              src: 'https://www.almahotel.it/wp-content/uploads/elementor/thumbs/accoglienza-sicura-il-nostro-staff-e-vaccinato-firma-web-rbgvvxbe66nseeuhlkpans4x15yi17r81ybnb27ixs.jpg',
+              src: '/images/accoglienza-sicura.jpg',
             },
             {
               name: 'TripAdvisor Excellence',
