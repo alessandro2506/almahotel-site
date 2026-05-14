@@ -1,5 +1,6 @@
 import { getTranslations } from 'next-intl/server'
 import { useTranslations } from 'next-intl'
+import Image from 'next/image'
 import { SectionWrapper } from '@/components/ui/SectionWrapper'
 import { FadeIn } from '@/components/ui/FadeIn'
 import { MapSection } from '@/components/home/MapSection'
@@ -39,7 +40,26 @@ function ContattiContent() {
 
   return (
     <>
-      <div className="pt-[72px]">
+      <div className="relative h-[50vh] min-h-[360px] flex items-end overflow-hidden">
+        <Image
+          src="/images/teatro_politeama.webp"
+          alt="Teatro Politeama Garibaldi – Palermo"
+          fill
+          className="object-cover"
+          priority
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-black/20" />
+        <div className="relative z-10 max-w-[1200px] mx-auto px-6 lg:px-10 pb-14 w-full">
+          <span className="font-[family-name:var(--font-sans)] text-[11px] font-semibold uppercase tracking-widest text-white/70 block mb-3">
+            ALMA HOTEL PALERMO
+          </span>
+          <h1 className="font-[family-name:var(--font-display)] text-[48px] leading-tight italic text-white">
+            {t('title')}
+          </h1>
+        </div>
+      </div>
+      <div className="pt-[96px]">
         <SectionWrapper>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <FadeIn direction="right">
