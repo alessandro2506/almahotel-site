@@ -35,7 +35,8 @@ interface RoomDetailProps {
   specs: string
   price: string
   heroImage: string
-  galleryImages: string[]
+  mosaicImage?: string
+  galleryImages: [string, string]
   amenities: string[]
   cin?: string
   cir?: string
@@ -52,6 +53,7 @@ export function RoomDetail({
   specs,
   price,
   heroImage,
+  mosaicImage,
   galleryImages,
   amenities,
   cin,
@@ -118,7 +120,7 @@ export function RoomDetail({
         <div className="grid grid-cols-3 gap-1" style={{ height: '520px' }}>
           <ScaleIn className="col-span-2 relative overflow-hidden h-full">
             <Image
-              src={heroImage}
+              src={mosaicImage ?? heroImage}
               alt={name}
               fill
               className="object-cover"

@@ -53,8 +53,8 @@ export default async function SuitePageForestis({
       specs={t('specs')}
       price="€149"
       heroImage="/images/Camere/Suite/suite-04.jpg"
+      mosaicImage="/images/Camere/Suite/suite-05.jpg"
       galleryImages={[
-        '/images/Camere/Suite/suite-05.jpg',
         '/images/Camere/Suite/suite-02.jpg',
         '/images/Camere/Suite/suite-bagno-01.jpg',
       ]}

@@ -53,8 +53,9 @@ export default async function MatrimonialeSuperiorePageForestis({
       specs={t('specs')}
       price="€109"
       heroImage="/images/Camere/Superior/superior-02.jpg"
+      mosaicImage="/images/Camere/Superior/superior-05.jpg"
       galleryImages={[
-        '/images/Camere/Superior/superior-05.jpg',
+        '/images/Camere/Superior/superior-07.jpg',
         '/images/Camere/Superior/superior-03.jpg',
       ]}
       amenities={['wifi', 'breakfast', 'ac', 'bathroom', 'tv', 'bed', 'safe', 'transfer']}
