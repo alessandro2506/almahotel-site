@@ -59,15 +59,24 @@ function ChiSiamoContent() {
             </p>
           </FadeIn>
           <FadeIn direction="left">
-            {/* Contenitore relativo — altezza fissa per contenere l'effetto stacking */}
-            <div className="relative w-full" style={{ height: '480px' }}>
+            {/*
+              Layout "cartolina":
+              - Immagine SOTTO (hotel-owners): verticale, ruotata +5deg, sporgente a destra e in basso
+              - Immagine SOPRA (hotel-reception): dritta, occupa ~80% larghezza lasciando visibile il bordo destro e inferiore della foto sotto
+              L'altezza del contenitore è calibrata per mostrare entrambe le immagini senza tagli eccessivi.
+            */}
+            <div className="relative w-full" style={{ height: '520px' }}>
 
-              {/* Immagine SOTTO — titolari — ruotata +4deg, leggermente spostata */}
+              {/* SOTTO — foto titolari — ruotata, sporgente abbastanza da essere ben visibile */}
               <div
-                className="absolute inset-0 overflow-hidden shadow-xl"
+                className="absolute overflow-hidden shadow-lg"
                 style={{
-                  transform: 'rotate(4deg) translate(16px, 12px)',
-                  transformOrigin: 'bottom left',
+                  top: '20px',
+                  left: '10%',
+                  right: '-8%',
+                  bottom: '-20px',
+                  transform: 'rotate(5deg)',
+                  transformOrigin: 'bottom center',
                   borderRadius: '2px',
                   zIndex: 1,
                 }}
@@ -81,11 +90,14 @@ function ChiSiamoContent() {
                 />
               </div>
 
-              {/* Immagine SOPRA — reception — dritta, leggermente più piccola per mostrare quella sotto */}
+              {/* SOPRA — foto reception — dritta, lascia visibile ~12% del bordo dx e ~30px in basso della foto sotto */}
               <div
                 className="absolute overflow-hidden shadow-2xl"
                 style={{
-                  inset: '0 24px 16px 0',
+                  top: 0,
+                  left: 0,
+                  right: '18%',
+                  bottom: '32px',
                   borderRadius: '2px',
                   zIndex: 2,
                 }}
