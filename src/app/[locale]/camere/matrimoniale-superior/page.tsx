@@ -31,13 +31,13 @@ export default async function MatrimonialeSuperiorePageForestis({
       slug: 'matrimoniale',
       name: t('relatedMatrimoniale'),
       price: '€89',
-      image: 'https://www.saporiperduti.it/wp-content/uploads/2021/11/matrimoniale-7-1.jpg',
+      image: '/images/Camere/Matrimoniale/matrimoniale-01.jpg',
     },
     {
       slug: 'suite',
       name: t('relatedSuite'),
       price: '€149',
-      image: 'https://www.saporiperduti.it/wp-content/uploads/2021/11/suite-1.jpg',
+      image: '/images/Camere/Suite/suite-01.jpg',
       badge: 'Suite',
     },
   ]
@@ -52,10 +52,10 @@ export default async function MatrimonialeSuperiorePageForestis({
       longDescription={t('longDescription')}
       specs={t('specs')}
       price="€109"
-      heroImage="https://www.saporiperduti.it/wp-content/uploads/2021/11/suite-2.jpg"
+      heroImage="/images/Camere/Superior/superior-01.jpg"
       galleryImages={[
-        'https://www.saporiperduti.it/wp-content/uploads/2021/11/suite-7.jpg',
-        'https://www.saporiperduti.it/wp-content/uploads/2021/11/matrimoniale-7-1.jpg',
+        '/images/Camere/Superior/superior-04.jpg',
+        '/images/Camere/Superior/superior-06.jpg',
       ]}
       amenities={['wifi', 'breakfast', 'ac', 'bathroom', 'tv', 'bed', 'safe', 'transfer']}
       cin="CIN: IT082053C3RO37043S"
