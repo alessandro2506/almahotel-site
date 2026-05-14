@@ -45,7 +45,7 @@ function ContattiContent() {
           src="/images/teatro_politeama.webp"
           alt="Teatro Politeama Garibaldi – Palermo"
           fill
-          className="object-cover"
+          className="object-cover object-bottom"
           priority
           sizes="100vw"
         />

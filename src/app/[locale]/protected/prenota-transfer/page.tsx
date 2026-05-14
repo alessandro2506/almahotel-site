@@ -69,7 +69,7 @@ function PrenotaTransferContent() {
           src="/images/mondello.jpg"
           alt="Palermo – Mondello"
           fill
-          className="object-cover"
+          className="object-cover object-bottom"
           priority
           sizes="100vw"
         />
