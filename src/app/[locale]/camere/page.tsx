@@ -24,14 +24,14 @@ function CamereContent() {
       name: t('matrimoniale.name'),
       description: t('matrimoniale.description'),
       price: '€89',
-      image: 'https://www.saporiperduti.it/wp-content/uploads/2021/11/matrimoniale-7-1.jpg',
+      image: '/images/Camere/Matrimoniale/matrimoniale-01.jpg',
     },
     {
       slug: 'matrimoniale-superior',
       name: t('matrimonialeSuperiore.name'),
       description: t('matrimonialeSuperiore.description'),
       price: '€109',
-      image: 'https://www.saporiperduti.it/wp-content/uploads/2021/11/suite-2.jpg',
+      image: '/images/Camere/Superior/superior-01.jpg',
       badge: 'Superior',
     },
     {
@@ -39,7 +39,7 @@ function CamereContent() {
       name: t('suite.name'),
       description: t('suite.description'),
       price: '€149',
-      image: 'https://www.saporiperduti.it/wp-content/uploads/2021/11/suite-1.jpg',
+      image: '/images/Camere/Suite/suite-02.jpg',
       badge: 'Suite',
     },
   ]
@@ -49,7 +49,7 @@ function CamereContent() {
       {/* Hero */}
       <div className="relative h-[60vh] min-h-[400px] flex items-end overflow-hidden">
         <Image
-          src="https://www.saporiperduti.it/wp-content/uploads/2021/11/suite-1.jpg"
+          src="/images/Camere/Suite/suite-02.jpg"
           alt={t('title')}
           fill
           className="object-cover"
