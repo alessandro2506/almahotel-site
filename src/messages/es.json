@@ -66,19 +66,22 @@
     "label": "EL RESTAURANTE",
     "title": "Sapori Perduti",
     "text": "A pocos pasos del hotel, el restaurante Sapori Perduti lleva a la mesa lo mejor de la tradición siciliana, magistralmente reinterpretada por el Chef Piero Oneto. Una experiencia culinaria auténtica en el corazón de Palermo.",
-    "cta": "Descubrir el Restaurante"
+    "cta": "Descubrir el Restaurante",
+    "imageAlt": "Restaurante Sapori Perduti"
   },
   "experience": {
     "label": "PALERMO POR DESCUBRIR",
     "title": "La Ciudad a Su Alcance",
     "text": "El Alma Hotel se encuentra en el corazón palpitante de Palermo, a pocos minutos a pie de los mercados históricos, la Catedral y el Teatro Massimo. La ciudad más bella del Mediterráneo está toda alrededor de usted.",
-    "cta": "Reservar Transfer"
+    "cta": "Reservar Transfer",
+    "imageAlt": "Panorama de Palermo – Mondello"
   },
   "highlight": {
     "label": "CADA MAÑANA",
     "title": "Desayuno Incluido",
     "text": "Comience el día con un desayuno abundante, preparado con productos frescos y locales.",
-    "cta": "Ver el Menú"
+    "cta": "Ver el Menú",
+    "imageAlt": "Sala de desayuno Alma Hotel"
   },
   "awards": {
     "label": "RECONOCIMIENTOS & PREMIOS",
@@ -193,7 +196,10 @@
     "missionText1": "Cada detalle de su estancia es cuidado con atención. Desde la llegada hasta la partida, nuestro equipo siempre está presente para garantizar un servicio impecable.",
     "missionText2": "Estamos orgullosos de ser un punto de referencia para los viajeros que visitan Palermo, ofreciendo no solo un lugar donde dormir, sino una experiencia auténtica de la vida siciliana.",
     "reviewsLabel": "LO QUE DICEN NUESTROS HUÉSPEDES",
-    "reviewsTitle": "La Voz de Quienes Nos Eligieron"
+    "reviewsTitle": "La Voz de Quienes Nos Eligieron",
+    "heroAlt": "Alma Hotel Palermo, vista exterior",
+    "historyImageAlt": "Historia del Alma Hotel",
+    "teamImageAlt": "El equipo del Alma Hotel"
   },
   "breakfastMenu": {
     "hours": "Servido de Lunes a Domingo · 07:30 – 10:30",

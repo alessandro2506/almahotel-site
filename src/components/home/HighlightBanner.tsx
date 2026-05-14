@@ -13,7 +13,7 @@ export function HighlightBanner() {
     <section className="relative h-[500px] flex items-center justify-center overflow-hidden">
       <Image
         src="https://www.saporiperduti.it/wp-content/uploads/2021/11/Sala-Colazione.jpg"
-        alt="Colazione Alma Hotel"
+        alt={t('imageAlt')}
         fill
         className="object-cover"
         sizes="100vw"

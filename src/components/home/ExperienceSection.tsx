@@ -42,7 +42,7 @@ export function ExperienceSection() {
         <SlideFade direction="right" className="relative min-h-[400px] lg:min-h-full overflow-hidden order-1 lg:order-2">
           <Image
             src="https://images.unsplash.com/photo-1618225687595-75be91fc01d1?w=1200&q=80"
-            alt="Panorama di Palermo - Mondello"
+            alt={t('imageAlt')}
             fill
             className="object-cover"
             sizes="(max-width: 1024px) 100vw, 50vw"

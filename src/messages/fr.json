@@ -66,19 +66,22 @@
     "label": "LE RESTAURANT",
     "title": "Sapori Perduti",
     "text": "À quelques pas de l'hôtel, le restaurant Sapori Perduti met à la table le meilleur de la tradition sicilienne, magistralement réinterprétée par le Chef Piero Oneto. Une expérience culinaire authentique au cœur de Palerme.",
-    "cta": "Découvrir le Restaurant"
+    "cta": "Découvrir le Restaurant",
+    "imageAlt": "Restaurant Sapori Perduti"
   },
   "experience": {
     "label": "PALERME À DÉCOUVRIR",
     "title": "La Ville à Portée de Main",
     "text": "L'Alma Hotel est situé au cœur battant de Palerme, à quelques minutes à pied des marchés historiques, de la Cathédrale et du Teatro Massimo. La plus belle ville de la Méditerranée est tout autour de vous.",
-    "cta": "Réserver le Transfert"
+    "cta": "Réserver le Transfert",
+    "imageAlt": "Panorama de Palerme – Mondello"
   },
   "highlight": {
     "label": "CHAQUE MATIN",
     "title": "Petit-déjeuner Inclus",
     "text": "Commencez la journée avec un petit-déjeuner copieux, préparé avec des produits frais et locaux.",
-    "cta": "Consulter le Menu"
+    "cta": "Consulter le Menu",
+    "imageAlt": "Salle du petit-déjeuner Alma Hotel"
   },
   "awards": {
     "label": "RECONNAISSANCES & PRIX",
@@ -193,7 +196,10 @@
     "missionText1": "Chaque détail de votre séjour est soigné avec attention. De l'arrivée au départ, notre équipe est toujours présente pour garantir un service irréprochable.",
     "missionText2": "Nous sommes fiers d'être un point de référence pour les voyageurs qui visitent Palerme, en offrant non seulement un endroit où dormir, mais une expérience authentique de la vie sicilienne.",
     "reviewsLabel": "CE QUE DISENT NOS CLIENTS",
-    "reviewsTitle": "La Voix de Ceux qui Nous ont Choisis"
+    "reviewsTitle": "La Voix de Ceux qui Nous ont Choisis",
+    "heroAlt": "Alma Hotel Palermo, vue extérieure",
+    "historyImageAlt": "Histoire de l'Alma Hotel",
+    "teamImageAlt": "L'équipe de l'Alma Hotel"
   },
   "breakfastMenu": {
     "hours": "Servi du Lundi au Dimanche · 07:30 – 10:30",

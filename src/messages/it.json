@@ -66,19 +66,22 @@
     "label": "IL RISTORANTE",
     "title": "Sapori Perduti",
     "text": "A pochi passi dall'hotel, il ristorante Sapori Perduti porta in tavola il meglio della tradizione siciliana, reinterpretata con maestria dallo Chef Piero Oneto. Un'esperienza culinaria autentica nel cuore di Palermo.",
-    "cta": "Scopri il Ristorante"
+    "cta": "Scopri il Ristorante",
+    "imageAlt": "Ristorante Sapori Perduti"
   },
   "experience": {
     "label": "PALERMO DA SCOPRIRE",
     "title": "La Città a Portata di Mano",
     "text": "L'Alma Hotel si trova nel cuore pulsante di Palermo, a pochi minuti a piedi dai mercati storici, dalla Cattedrale e dal Teatro Massimo. La città più bella del Mediterraneo è tutta attorno a voi.",
-    "cta": "Prenota il Transfer"
+    "cta": "Prenota il Transfer",
+    "imageAlt": "Panorama di Palermo – Mondello"
   },
   "highlight": {
     "label": "OGNI MATTINA",
     "title": "La Colazione Inclusa",
     "text": "Inizia la giornata con una colazione abbondante, preparata con prodotti freschi e locali.",
-    "cta": "Sfoglia il Menu"
+    "cta": "Sfoglia il Menu",
+    "imageAlt": "Sala colazione Alma Hotel"
   },
   "awards": {
     "label": "RICONOSCIMENTI & PREMI",
@@ -193,7 +196,10 @@
     "missionText1": "Ogni dettaglio del vostro soggiorno è curato con attenzione. Dal momento dell'arrivo a quello della partenza, il nostro team è sempre presente per garantire un servizio impeccabile.",
     "missionText2": "Siamo orgogliosi di essere un punto di riferimento per i viaggiatori che visitano Palermo, offrendo non solo un posto dove dormire, ma un'esperienza di vita autentica della Sicilia.",
     "reviewsLabel": "COSA DICONO I NOSTRI OSPITI",
-    "reviewsTitle": "La Voce di Chi ci ha Scelto"
+    "reviewsTitle": "La Voce di Chi ci ha Scelto",
+    "heroAlt": "Alma Hotel Palermo, veduta esterna",
+    "historyImageAlt": "Storia dell'Alma Hotel",
+    "teamImageAlt": "Il team dell'Alma Hotel"
   },
   "breakfastMenu": {
     "hours": "Servita dal Lunedì al Domenica · 07:30 – 10:30",

@@ -15,7 +15,7 @@ export function RestaurantSection() {
         <SlideFade direction="left" className="relative min-h-[400px] lg:min-h-full overflow-hidden">
           <Image
             src="https://www.saporiperduti.it/wp-content/uploads/2021/12/DSC_0013_900x600.jpg"
-            alt="Ristorante Sapori Perduti"
+            alt={t('imageAlt')}
             fill
             className="object-cover"
             sizes="(max-width: 1024px) 100vw, 50vw"

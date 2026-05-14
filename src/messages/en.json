@@ -66,19 +66,22 @@
     "label": "THE RESTAURANT",
     "title": "Sapori Perduti",
     "text": "Steps away from the hotel, restaurant Sapori Perduti brings the best of Sicilian tradition to the table, masterfully reinterpreted by Chef Piero Oneto. An authentic culinary experience in the heart of Palermo.",
-    "cta": "Discover the Restaurant"
+    "cta": "Discover the Restaurant",
+    "imageAlt": "Restaurant Sapori Perduti"
   },
   "experience": {
     "label": "PALERMO TO EXPLORE",
     "title": "The City at Your Doorstep",
     "text": "Alma Hotel is situated in the beating heart of Palermo, just minutes on foot from historic markets, the Cathedral and Teatro Massimo. The most beautiful city in the Mediterranean is all around you.",
-    "cta": "Book Transfer"
+    "cta": "Book Transfer",
+    "imageAlt": "Panorama of Palermo – Mondello"
   },
   "highlight": {
     "label": "EVERY MORNING",
     "title": "Breakfast Included",
     "text": "Start the day with a generous breakfast, prepared with fresh local produce.",
-    "cta": "Browse the Menu"
+    "cta": "Browse the Menu",
+    "imageAlt": "Alma Hotel breakfast room"
   },
   "awards": {
     "label": "RECOGNITION & AWARDS",
@@ -193,7 +196,10 @@
     "missionText1": "Every detail of your stay is carefully attended to. From arrival to departure, our team is always on hand to ensure impeccable service.",
     "missionText2": "We are proud to be a reference point for travellers visiting Palermo, offering not just a place to sleep, but an authentic experience of Sicilian life.",
     "reviewsLabel": "WHAT OUR GUESTS SAY",
-    "reviewsTitle": "The Voice of Those Who Chose Us"
+    "reviewsTitle": "The Voice of Those Who Chose Us",
+    "heroAlt": "Alma Hotel Palermo, exterior view",
+    "historyImageAlt": "History of Alma Hotel",
+    "teamImageAlt": "The Alma Hotel team"
   },
   "breakfastMenu": {
     "hours": "Served Monday to Sunday · 7:30 – 10:30 am",

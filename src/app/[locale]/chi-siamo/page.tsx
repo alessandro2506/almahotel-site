@@ -24,7 +24,7 @@ function ChiSiamoContent() {
       <div className="relative h-[60vh] min-h-[400px] flex items-end overflow-hidden">
         <Image
           src="https://www.saporiperduti.it/wp-content/uploads/2021/11/suite-1.jpg"
-          alt="Alma Hotel Palermo esterno"
+          alt={t('heroAlt')}
           fill
           className="object-cover"
           priority
@@ -62,7 +62,7 @@ function ChiSiamoContent() {
             <div className="relative aspect-[4/3] overflow-hidden">
               <Image
                 src="https://www.saporiperduti.it/wp-content/uploads/2021/11/matrimoniale-7-1.jpg"
-                alt="Storia Alma Hotel"
+                alt={t('historyImageAlt')}
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -79,7 +79,7 @@ function ChiSiamoContent() {
             <div className="relative aspect-[4/3] overflow-hidden">
               <Image
                 src="https://www.saporiperduti.it/wp-content/uploads/2021/11/suite-3.jpg"
-                alt="Il team Alma Hotel"
+                alt={t('teamImageAlt')}
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
