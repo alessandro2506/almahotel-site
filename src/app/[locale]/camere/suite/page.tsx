@@ -8,10 +8,10 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>
 }): Promise<Metadata> {
   const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'suite' })
   return {
-    title: 'Suite – Alma Hotel Palermo',
-    description:
-      'La nostra Suite esclusiva nel centro di Palermo. Spazi ampi, arredi raffinati, vista città. Il massimo del comfort per un soggiorno indimenticabile.',
+    title: t('metaTitle'),
+    description: t('metaDescription'),
     alternates: {
       canonical: `https://www.almahotel.it/${locale}/camere/suite`,
     },

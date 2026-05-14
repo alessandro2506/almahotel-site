@@ -8,10 +8,10 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>
 }): Promise<Metadata> {
   const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'matrimonialeSuperiore' })
   return {
-    title: 'Camera Matrimoniale Superior – Alma Hotel Palermo',
-    description:
-      'Camera matrimoniale superior nel centro di Palermo. Spazi più ampi, finiture superiori, vista privilegiata. Colazione inclusa.',
+    title: t('metaTitle'),
+    description: t('metaDescription'),
     alternates: {
       canonical: `https://www.almahotel.it/${locale}/camere/matrimoniale-superior`,
     },

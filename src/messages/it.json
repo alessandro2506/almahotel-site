@@ -8,7 +8,9 @@
     "about": "Chi Siamo",
     "contacts": "Contatti",
     "restaurant": "Ristorante",
-    "book": "Prenota"
+    "book": "Prenota",
+    "openMenu": "Apri menu",
+    "closeMenu": "Chiudi menu"
   },
   "hero": {
     "label": "BOUTIQUE HOTEL · PALERMO CENTRO",
@@ -333,7 +335,9 @@
     "longDescription": "La Suite è il nostro alloggio più esclusivo, pensato per chi non vuole scendere a compromessi. Ambienti spaziosi, arredi ricercati, finiture di pregio e una vista mozzafiato sulla città di Palermo. Un'esperienza di soggiorno fuori dall'ordinario, nel cuore della Sicilia.",
     "specs": "38 m² · Letto King Size · 3° Piano · Vista Panoramica",
     "relatedMatrimoniale": "Camera Matrimoniale",
-    "relatedSuperior": "Matrimoniale Superior"
+    "relatedSuperior": "Matrimoniale Superior",
+    "metaTitle": "Suite – Alma Hotel Palermo",
+    "metaDescription": "La nostra Suite esclusiva nel centro di Palermo. Spazi ampi, arredi raffinati, vista città. Il massimo del comfort per un soggiorno indimenticabile."
   },
   "matrimoniale": {
     "name": "Camera Matrimoniale",
@@ -343,7 +347,9 @@
     "longDescription": "La nostra Camera Matrimoniale è un rifugio di eleganza e comfort nel cuore di Palermo. Arredata con cura e attenzione ai dettagli, offre tutto il necessario per un soggiorno indimenticabile. Luce naturale, atmosfera calda e silenziosa — la vostra casa lontano da casa.",
     "specs": "22 m² · Letto King Size · Bagno Privato · Vista Città",
     "relatedSuperior": "Matrimoniale Superior",
-    "relatedSuite": "Suite"
+    "relatedSuite": "Suite",
+    "metaTitle": "Camera Matrimoniale – Alma Hotel Palermo",
+    "metaDescription": "Camera matrimoniale elegante nel centro di Palermo. Letto king size, bagno privato, aria condizionata, colazione inclusa."
   },
   "matrimonialeSuperiore": {
     "name": "Matrimoniale Superior",
@@ -353,7 +359,9 @@
     "longDescription": "La Camera Matrimoniale Superior unisce spazio generoso e finiture di alto livello per un soggiorno di vera qualità. Più ampia della standard, con arredi curati e dettagli premium, è la scelta ideale per chi cerca il massimo del comfort senza rinunciare all'autenticità palermitana.",
     "specs": "28 m² · Letto King Size · 2° Piano · Vista Privilegiata",
     "relatedMatrimoniale": "Camera Matrimoniale",
-    "relatedSuite": "Suite"
+    "relatedSuite": "Suite",
+    "metaTitle": "Camera Matrimoniale Superior – Alma Hotel Palermo",
+    "metaDescription": "Camera matrimoniale superior nel centro di Palermo. Spazi più ampi, finiture superiori, vista privilegiata. Colazione inclusa."
   },
   "contacts": {
     "title": "Contatti",

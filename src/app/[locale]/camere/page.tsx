@@ -50,7 +50,7 @@ function CamereContent() {
       <div className="relative h-[60vh] min-h-[400px] flex items-end overflow-hidden">
         <Image
           src="https://www.saporiperduti.it/wp-content/uploads/2021/11/suite-1.jpg"
-          alt="Le Nostre Camere"
+          alt={t('title')}
           fill
           className="object-cover"
           priority

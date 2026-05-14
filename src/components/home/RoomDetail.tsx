@@ -119,7 +119,7 @@ export function RoomDetail({
           <ScaleIn className="col-span-2 relative overflow-hidden h-full">
             <Image
               src={heroImage}
-              alt={`${name} principale`}
+              alt={name}
               fill
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 66vw"
@@ -130,7 +130,7 @@ export function RoomDetail({
               <ScaleIn key={i} className="relative overflow-hidden flex-1" delay={0.1 * (i + 1)}>
                 <Image
                   src={img}
-                  alt={`${name} dettaglio ${i + 1}`}
+                  alt={`${name} ${i + 1}`}
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 50vw, 33vw"

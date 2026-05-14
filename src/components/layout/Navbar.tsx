@@ -95,7 +95,7 @@ export function Navbar() {
             <button
               className="p-2"
               onClick={() => setMobileOpen(true)}
-              aria-label="Apri menu"
+              aria-label={t('openMenu')}
             >
               <Menu size={24} className={scrolled ? 'text-[#242424]' : 'text-white'} />
             </button>
@@ -112,7 +112,7 @@ export function Navbar() {
       >
         <div className="flex items-center justify-between px-6 h-[80px] border-b border-white/10">
           <AlmaLogo variant="light" />
-          <button onClick={() => setMobileOpen(false)} aria-label="Chiudi menu">
+          <button onClick={() => setMobileOpen(false)} aria-label={t('closeMenu')}>
             <X size={24} className="text-white" />
           </button>
         </div>

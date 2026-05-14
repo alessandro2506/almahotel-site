@@ -1,6 +1,6 @@
 # AlmaHotel – Design & Development Guide
 > Progetto: Redesign completo almahotel.it | Stack: Next.js 15 + TypeScript + Tailwind CSS 4
-> Autore: Alvenco Ltd | Ultimo aggiornamento: 2026-05-14 (v1.3 — i18n completa, carousel mobile)
+> Autore: Alvenco Ltd | Ultimo aggiornamento: 2026-05-14 (v1.4 — i18n audit round 2, metadata camere, aria-labels)
 
 ---
 
@@ -352,3 +352,4 @@ NEXT_PUBLIC_VIMEO_ID=382157995     # ID video hero Vimeo
 | 2026-05-13 | Claude / Alvenco | Aggiornamento sezione 7: riferimenti visivi corretti. Forestis (primario) + Badrutt's Palace (secondario). Cheval Blanc scartato per eccesso di video e animazioni confusive. |
 | 2026-05-13 | Claude / Alvenco | v1.2 — Post-implementazione completa. Aggiornate: §8 Componenti (tabella dettagliata con file paths e note implementative), §9 Integrazioni (lazy init pattern documentato, Google Maps keyless embed), §10 Env vars (note su opzionalità Maps key e lazy init), §11 Roadmap (fasi 1 e 2 completate, fase 2b fix deployment aggiunta, fase 3 in corso, fase 4 pianificata). |
 | 2026-05-14 | Claude / Alvenco | v1.3 — i18n completa (fase 2c). Aggiornate: §8 Componenti (tutti i componenti ora documentati con namespace i18n usato), §11 Roadmap (fase 2c completata con 15 punti dettagliati), §12 nuova sezione guida pratica i18n (namespace di riferimento rapido, istruzioni per nuova lingua). Commit: 2f7d642. |
+| 2026-05-14 | Claude / Alvenco | v1.4 — i18n audit approfondito round 2. Fix `web-check-in/page.tsx`: rimossa direttiva `'use client'` incompatibile con `generateMetadata`. Fix metadata camere: `suite`, `matrimoniale`, `matrimoniale-superior` ora usano `t('metaTitle')` e `t('metaDescription')` dalla rispettiva namespace. Fix `Navbar.tsx`: aria-label menu open/close tradotti via `nav.openMenu`/`nav.closeMenu`. Fix `camere/page.tsx` e `RoomDetail.tsx`: alt text immagini in italiano sostituiti con valori internazionalizzati. Chiavi aggiunte ai 4 JSON: `nav.openMenu`, `nav.closeMenu`, `*.metaTitle`, `*.metaDescription` per tutte le pagine camere. |

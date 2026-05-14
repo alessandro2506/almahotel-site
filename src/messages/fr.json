@@ -8,7 +8,9 @@
     "about": "À Propos",
     "contacts": "Contacts",
     "restaurant": "Restaurant",
-    "book": "Réserver"
+    "book": "Réserver",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu"
   },
   "hero": {
     "label": "BOUTIQUE HÔTEL · CENTRE DE PALERME",
@@ -333,7 +335,9 @@
     "longDescription": "La Suite est notre hébergement le plus exclusif, conçu pour ceux qui refusent les compromis. Espaces généreux, mobilier recherché, finitions soignées et une vue à couper le souffle sur la ville de Palerme. Une expérience de séjour extraordinaire au cœur de la Sicile.",
     "specs": "38 m² · Lit King Size · 3e étage · Vue panoramique",
     "relatedMatrimoniale": "Chambre Double",
-    "relatedSuperior": "Chambre Double Supérieure"
+    "relatedSuperior": "Chambre Double Supérieure",
+    "metaTitle": "Suite – Alma Hotel Palermo",
+    "metaDescription": "Notre Suite exclusive au cœur de Palerme. Espaces généreux, mobilier raffiné, vue sur la ville. Le summum du confort pour un séjour inoubliable."
   },
   "matrimoniale": {
     "name": "Chambre Double",
@@ -343,7 +347,9 @@
     "longDescription": "Notre Chambre Double est un havre d'élégance et de confort au cœur de Palerme. Meublée avec soin et attention aux détails, elle offre tout le nécessaire pour un séjour inoubliable. Lumière naturelle, atmosphère chaleureuse et paisible — votre maison loin de chez vous.",
     "specs": "22 m² · Lit King Size · Salle de bain privée · Vue sur la ville",
     "relatedSuperior": "Chambre Double Supérieure",
-    "relatedSuite": "Suite"
+    "relatedSuite": "Suite",
+    "metaTitle": "Chambre Double – Alma Hotel Palermo",
+    "metaDescription": "Élégante chambre double au cœur de Palerme. Lit king size, salle de bain privée, climatisation, petit-déjeuner inclus."
   },
   "matrimonialeSuperiore": {
     "name": "Chambre Double Supérieure",
@@ -353,7 +359,9 @@
     "longDescription": "La Chambre Double Supérieure allie espace généreux et finitions haut de gamme pour un séjour de vraie qualité. Plus grande que la standard, avec un mobilier soigné et des détails premium, c'est le choix idéal pour ceux qui recherchent le maximum de confort sans renoncer à l'authenticité palermitaine.",
     "specs": "28 m² · Lit King Size · 2e étage · Vue privilégiée",
     "relatedMatrimoniale": "Chambre Double",
-    "relatedSuite": "Suite"
+    "relatedSuite": "Suite",
+    "metaTitle": "Chambre Double Supérieure – Alma Hotel Palermo",
+    "metaDescription": "Chambre double supérieure au cœur de Palerme. Espaces plus larges, finitions premium, vue privilégiée. Petit-déjeuner inclus."
   },
   "contacts": {
     "title": "Contacts",

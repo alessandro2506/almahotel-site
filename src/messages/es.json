@@ -8,7 +8,9 @@
     "about": "Quiénes Somos",
     "contacts": "Contactos",
     "restaurant": "Restaurante",
-    "book": "Reservar"
+    "book": "Reservar",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú"
   },
   "hero": {
     "label": "HOTEL BOUTIQUE · CENTRO DE PALERMO",
@@ -333,7 +335,9 @@
     "longDescription": "La Suite es nuestro alojamiento más exclusivo, pensado para quienes no quieren compromisos. Ambientes espaciosos, mobiliario refinado, acabados de calidad y una vista impresionante de la ciudad de Palermo. Una experiencia de estancia fuera de lo ordinario, en el corazón de Sicilia.",
     "specs": "38 m² · Cama King Size · 3ª planta · Vista panorámica",
     "relatedMatrimoniale": "Habitación Doble",
-    "relatedSuperior": "Habitación Doble Superior"
+    "relatedSuperior": "Habitación Doble Superior",
+    "metaTitle": "Suite – Alma Hotel Palermo",
+    "metaDescription": "Nuestra Suite exclusiva en el corazón de Palermo. Espacios amplios, mobiliario refinado, vistas a la ciudad. El máximo confort para una estancia inolvidable."
   },
   "matrimoniale": {
     "name": "Habitación Doble",
@@ -343,7 +347,9 @@
     "longDescription": "Nuestra Habitación Doble es un refugio de elegancia y confort en el corazón de Palermo. Decorada con cuidado y atención al detalle, ofrece todo lo necesario para una estancia inolvidable. Luz natural, atmósfera cálida y tranquila — su hogar lejos de casa.",
     "specs": "22 m² · Cama King Size · Baño privado · Vista a la ciudad",
     "relatedSuperior": "Habitación Doble Superior",
-    "relatedSuite": "Suite"
+    "relatedSuite": "Suite",
+    "metaTitle": "Habitación Doble – Alma Hotel Palermo",
+    "metaDescription": "Elegante habitación doble en el corazón de Palermo. Cama king size, baño privado, aire acondicionado, desayuno incluido."
   },
   "matrimonialeSuperiore": {
     "name": "Habitación Doble Superior",
@@ -353,7 +359,9 @@
     "longDescription": "La Habitación Doble Superior combina espacio generoso y acabados de alto nivel para una estancia de verdadera calidad. Más amplia que la estándar, con mobiliario cuidado y detalles premium, es la elección ideal para quienes buscan el máximo confort sin renunciar a la autenticidad palermitana.",
     "specs": "28 m² · Cama King Size · 2ª planta · Vista privilegiada",
     "relatedMatrimoniale": "Habitación Doble",
-    "relatedSuite": "Suite"
+    "relatedSuite": "Suite",
+    "metaTitle": "Habitación Doble Superior – Alma Hotel Palermo",
+    "metaDescription": "Habitación doble superior en el corazón de Palermo. Espacios más amplios, acabados premium, vista privilegiada. Desayuno incluido."
   },
   "contacts": {
     "title": "Contactos",

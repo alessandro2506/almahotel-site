@@ -8,7 +8,9 @@
     "about": "About Us",
     "contacts": "Contacts",
     "restaurant": "Restaurant",
-    "book": "Book"
+    "book": "Book",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
   },
   "hero": {
     "label": "BOUTIQUE HOTEL · PALERMO CENTRE",
@@ -333,7 +335,9 @@
     "longDescription": "The Suite is our most exclusive accommodation, designed for those who refuse to compromise. Spacious settings, exquisite furnishings, fine finishes and a breathtaking view over the city of Palermo. An extraordinary stay experience at the heart of Sicily.",
     "specs": "38 m² · King Size Bed · 3rd Floor · Panoramic View",
     "relatedMatrimoniale": "Double Room",
-    "relatedSuperior": "Superior Double Room"
+    "relatedSuperior": "Superior Double Room",
+    "metaTitle": "Suite – Alma Hotel Palermo",
+    "metaDescription": "Our exclusive Suite in the heart of Palermo. Generous spaces, refined furnishings, city views. The ultimate comfort for an unforgettable stay."
   },
   "matrimoniale": {
     "name": "Double Room",
@@ -343,7 +347,9 @@
     "longDescription": "Our Double Room is a haven of elegance and comfort in the heart of Palermo. Furnished with care and attention to detail, it offers everything needed for an unforgettable stay. Natural light, warm and peaceful atmosphere — your home away from home.",
     "specs": "22 m² · King Size Bed · Private Bathroom · City View",
     "relatedSuperior": "Superior Double Room",
-    "relatedSuite": "Suite"
+    "relatedSuite": "Suite",
+    "metaTitle": "Double Room – Alma Hotel Palermo",
+    "metaDescription": "Elegant double room in the heart of Palermo. King-size bed, private bathroom, air conditioning, breakfast included."
   },
   "matrimonialeSuperiore": {
     "name": "Superior Double Room",
@@ -353,7 +359,9 @@
     "longDescription": "The Superior Double Room combines generous space with premium finishes for a truly quality stay. Larger than the standard, with carefully selected furnishings and premium details, it is the ideal choice for those seeking maximum comfort without giving up the authenticity of Palermo.",
     "specs": "28 m² · King Size Bed · 2nd Floor · Privileged View",
     "relatedMatrimoniale": "Double Room",
-    "relatedSuite": "Suite"
+    "relatedSuite": "Suite",
+    "metaTitle": "Superior Double Room – Alma Hotel Palermo",
+    "metaDescription": "Superior double room in the heart of Palermo. More spacious, premium finishes, privileged view. Breakfast included."
   },
   "contacts": {
     "title": "Contacts",

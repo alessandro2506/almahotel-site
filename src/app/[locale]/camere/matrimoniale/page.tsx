@@ -8,10 +8,10 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>
 }): Promise<Metadata> {
   const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'matrimoniale' })
   return {
-    title: 'Camera Matrimoniale – Alma Hotel Palermo',
-    description:
-      'Camera matrimoniale elegante nel centro di Palermo. Letto king size, bagno privato, aria condizionata, colazione inclusa.',
+    title: t('metaTitle'),
+    description: t('metaDescription'),
     alternates: {
       canonical: `https://www.almahotel.it/${locale}/camere/matrimoniale`,
     },
