@@ -59,65 +59,64 @@ function ContattiContent() {
           </h1>
         </div>
       </div>
-      <div className="pt-[96px]">
-        <SectionWrapper>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            <FadeIn direction="right">
-              <span className="font-[family-name:var(--font-sans)] text-[11px] font-semibold uppercase tracking-widest text-[#E60023] block mb-4">
-                ALMA HOTEL PALERMO
-              </span>
-              <h1 className="font-[family-name:var(--font-display)] text-[40px] leading-[48px] text-[#242424] mb-3">
-                {t('title')}
-              </h1>
-              <p className="text-[16px] text-[#6B6B6B] mb-10">
-                {t('subtitle')}
-              </p>
 
-              <div className="space-y-4 mb-10">
-                <div>
-                  <p className="font-[family-name:var(--font-sans)] text-[11px] uppercase tracking-widest text-[#9A9A9A] mb-1">{t('addressLabel')}</p>
-                  <p className="text-[14px] text-[#242424]">Via Mariano Stabile, 136<br />90139 – Palermo</p>
-                </div>
-                <div>
-                  <p className="font-[family-name:var(--font-sans)] text-[11px] uppercase tracking-widest text-[#9A9A9A] mb-1">{t('phoneLabel')}</p>
-                  <a href="tel:+390912514962" className="text-[14px] text-[#242424] hover:text-[#E60023] transition-colors">
-                    +39 091 2514962
-                  </a>
-                </div>
-                <div>
-                  <p className="font-[family-name:var(--font-sans)] text-[11px] uppercase tracking-widest text-[#9A9A9A] mb-1">{t('emailLabel')}</p>
-                  <a href="mailto:info@almahotel.it" className="text-[14px] text-[#242424] hover:text-[#E60023] transition-colors">
-                    info@almahotel.it
-                  </a>
-                </div>
-                <div>
-                  <p className="font-[family-name:var(--font-sans)] text-[11px] uppercase tracking-widest text-[#9A9A9A] mb-1">CIN / CIR</p>
-                  <p className="text-[13px] text-[#6B6B6B]">CIN: IT082053A1NPDY6DP</p>
-                  <p className="text-[13px] text-[#6B6B6B]">CIR: 19082053A301094</p>
-                </div>
+      <SectionWrapper>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <FadeIn direction="right">
+            <span className="font-[family-name:var(--font-sans)] text-[11px] font-semibold uppercase tracking-widest text-[#E60023] block mb-4">
+              ALMA HOTEL PALERMO
+            </span>
+            <h1 className="font-[family-name:var(--font-display)] text-[40px] leading-[48px] text-[#242424] mb-3">
+              {t('title')}
+            </h1>
+            <p className="text-[16px] text-[#6B6B6B] mb-10">
+              {t('subtitle')}
+            </p>
+
+            <div className="space-y-4 mb-10">
+              <div>
+                <p className="font-[family-name:var(--font-sans)] text-[11px] uppercase tracking-widest text-[#9A9A9A] mb-1">{t('addressLabel')}</p>
+                <p className="text-[14px] text-[#242424]">Via Mariano Stabile, 136<br />90139 – Palermo</p>
               </div>
-
-              <div className="flex items-center gap-6">
-                <a href="https://www.facebook.com/almahotelpalermo" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-[13px] text-[#6B6B6B] hover:text-[#E60023] transition-colors">
-                  <IconFacebook /> Facebook
-                </a>
-                <a href="https://www.instagram.com/almahotelpalermo" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-[13px] text-[#6B6B6B] hover:text-[#E60023] transition-colors">
-                  <IconInstagram /> Instagram
-                </a>
-                <a href="https://www.tripadvisor.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-[13px] text-[#6B6B6B] hover:text-[#E60023] transition-colors">
-                  <Star size={16} /> TripAdvisor
+              <div>
+                <p className="font-[family-name:var(--font-sans)] text-[11px] uppercase tracking-widest text-[#9A9A9A] mb-1">{t('phoneLabel')}</p>
+                <a href="tel:+390912514962" className="text-[14px] text-[#242424] hover:text-[#E60023] transition-colors">
+                  +39 091 2514962
                 </a>
               </div>
-            </FadeIn>
+              <div>
+                <p className="font-[family-name:var(--font-sans)] text-[11px] uppercase tracking-widest text-[#9A9A9A] mb-1">{t('emailLabel')}</p>
+                <a href="mailto:info@almahotel.it" className="text-[14px] text-[#242424] hover:text-[#E60023] transition-colors">
+                  info@almahotel.it
+                </a>
+              </div>
+              <div>
+                <p className="font-[family-name:var(--font-sans)] text-[11px] uppercase tracking-widest text-[#9A9A9A] mb-1">CIN / CIR</p>
+                <p className="text-[13px] text-[#6B6B6B]">CIN: IT082053A1NPDY6DP</p>
+                <p className="text-[13px] text-[#6B6B6B]">CIR: 19082053A301094</p>
+              </div>
+            </div>
 
-            <FadeIn direction="left">
-              <ContactForm />
-            </FadeIn>
-          </div>
-        </SectionWrapper>
+            <div className="flex items-center gap-6">
+              <a href="https://www.facebook.com/almahotelpalermo" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-[13px] text-[#6B6B6B] hover:text-[#E60023] transition-colors">
+                <IconFacebook /> Facebook
+              </a>
+              <a href="https://www.instagram.com/almahotelpalermo" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-[13px] text-[#6B6B6B] hover:text-[#E60023] transition-colors">
+                <IconInstagram /> Instagram
+              </a>
+              <a href="https://www.tripadvisor.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-[13px] text-[#6B6B6B] hover:text-[#E60023] transition-colors">
+                <Star size={16} /> TripAdvisor
+              </a>
+            </div>
+          </FadeIn>
 
-        <MapSection />
-      </div>
+          <FadeIn direction="left">
+            <ContactForm />
+          </FadeIn>
+        </div>
+      </SectionWrapper>
+
+      <MapSection />
     </>
   )
 }

@@ -64,7 +64,7 @@ function PrenotaTransferContent() {
 
   return (
     <>
-      <div className="relative h-[50vh] min-h-[360px] flex items-end overflow-hidden">
+      <div className="relative h-[50vh] min-h-[360px] flex items-end overflow-hidden" style={{ minHeight: '360px' }}>
         <Image
           src="/images/mondello.jpg"
           alt="Palermo – Mondello"
