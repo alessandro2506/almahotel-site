@@ -53,10 +53,11 @@ export default async function MatrimonialePageForestis({
       longDescription={t('longDescription')}
       specs={t('specs')}
       price="€89"
-      heroImage="/images/Camere/Matrimoniale/matrimoniale-01.jpg"
+      heroImage="/images/Camere/Matrimoniale/matrimoniale-04.jpg"
+      mosaicImage="/images/Camere/Matrimoniale/matrimoniale-05.jpg"
       galleryImages={[
-        '/images/Camere/Matrimoniale/matrimoniale-04.jpg',
-        '/images/Camere/Matrimoniale/matrimoniale-09.jpg',
+        '/images/Camere/Matrimoniale/matrimoniale-02.jpg',
+        '/images/Camere/Matrimoniale/matrimoniale-06.jpg',
       ]}
       amenities={['wifi', 'breakfast', 'ac', 'bathroom', 'tv', 'bed', 'safe', 'transfer']}
       cin="CIN: IT082053C3RO37043S"
