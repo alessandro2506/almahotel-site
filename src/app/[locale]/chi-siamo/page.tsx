@@ -59,14 +59,46 @@ function ChiSiamoContent() {
             </p>
           </FadeIn>
           <FadeIn direction="left">
-            <div className="relative aspect-[4/3] overflow-hidden">
-              <Image
-                src="https://www.saporiperduti.it/wp-content/uploads/2021/11/matrimoniale-7-1.jpg"
-                alt={t('historyImageAlt')}
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
+            {/* Contenitore relativo — altezza fissa per contenere l'effetto stacking */}
+            <div className="relative w-full" style={{ height: '480px' }}>
+
+              {/* Immagine SOTTO — titolari — ruotata +4deg, leggermente spostata */}
+              <div
+                className="absolute inset-0 overflow-hidden shadow-xl"
+                style={{
+                  transform: 'rotate(4deg) translate(16px, 12px)',
+                  transformOrigin: 'bottom left',
+                  borderRadius: '2px',
+                  zIndex: 1,
+                }}
+              >
+                <Image
+                  src="/images/hotel-owners.jpg"
+                  alt={t('teamImageAlt')}
+                  fill
+                  className="object-cover object-top"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              </div>
+
+              {/* Immagine SOPRA — reception — dritta, leggermente più piccola per mostrare quella sotto */}
+              <div
+                className="absolute overflow-hidden shadow-2xl"
+                style={{
+                  inset: '0 24px 16px 0',
+                  borderRadius: '2px',
+                  zIndex: 2,
+                }}
+              >
+                <Image
+                  src="/images/hotel-reception.jpg"
+                  alt={t('historyImageAlt')}
+                  fill
+                  className="object-cover object-center"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              </div>
+
             </div>
           </FadeIn>
         </div>
@@ -79,7 +111,7 @@ function ChiSiamoContent() {
             <div className="relative aspect-[4/3] overflow-hidden">
               <Image
                 src="https://www.saporiperduti.it/wp-content/uploads/2021/11/suite-3.jpg"
-                alt={t('teamImageAlt')}
+                alt={t('missionTitle')}
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"

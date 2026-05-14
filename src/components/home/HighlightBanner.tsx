@@ -12,7 +12,7 @@ export function HighlightBanner() {
   return (
     <section className="relative h-[500px] flex items-center justify-center overflow-hidden">
       <Image
-        src="https://www.saporiperduti.it/wp-content/uploads/2021/11/Sala-Colazione.jpg"
+        src="/images/breakfast-room.jpg"
         alt={t('imageAlt')}
         fill
         className="object-cover"

@@ -1,0 +1,11 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /*/protected/
+Disallow: /api/
+
+# Host
+Host: https://www.almahotel.it
+
+# Sitemaps
+Sitemap: https://www.almahotel.it/sitemap.xml
