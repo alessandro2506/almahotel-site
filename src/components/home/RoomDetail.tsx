@@ -35,7 +35,7 @@ interface RoomDetailProps {
   specs: string
   price: string
   heroImage: string
-  galleryImages: [string, string]
+  galleryImages: string[]
   amenities: string[]
   cin?: string
   cir?: string

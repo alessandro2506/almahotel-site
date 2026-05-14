@@ -52,9 +52,10 @@ export default async function SuitePageForestis({
       longDescription={t('longDescription')}
       specs={t('specs')}
       price="€149"
-      heroImage="/images/Camere/Suite/suite-02.jpg"
+      heroImage="/images/Camere/Suite/suite-04.jpg"
       galleryImages={[
         '/images/Camere/Suite/suite-05.jpg',
+        '/images/Camere/Suite/suite-02.jpg',
         '/images/Camere/Suite/suite-bagno-01.jpg',
       ]}
       amenities={['wifi', 'breakfast', 'ac', 'bathroom', 'tv', 'bed', 'safe', 'transfer']}
