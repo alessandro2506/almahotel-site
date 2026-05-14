@@ -61,18 +61,16 @@ function ChiSiamoContent() {
           <FadeIn direction="left">
             <div className="relative w-full" style={{ height: '560px' }}>
 
-              {/* SOTTO — reception — ruotata -6deg, sporgente a sinistra e in basso */}
+              {/* SOTTO — reception — DRITTA, posizionata a sinistra */}
               <div
                 className="absolute overflow-hidden shadow-lg"
                 style={{
-                  top: '40px',
-                  left: '-6%',
-                  right: '14%',
-                  bottom: '-24px',
-                  transform: 'rotate(-6deg)',
-                  transformOrigin: 'bottom left',
+                  top: 0,
+                  left: 0,
+                  right: '22%',
+                  bottom: '40px',
                   borderRadius: '2px',
-                  zIndex: 2,
+                  zIndex: 1,
                 }}
               >
                 <Image
@@ -84,16 +82,18 @@ function ChiSiamoContent() {
                 />
               </div>
 
-              {/* SOPRA — titolari — dritta, occupa l'area centrale lasciando visibile la reception sotto */}
+              {/* SOPRA — titolari — OBLIQUA +6deg, spostata a destra e in basso */}
               <div
                 className="absolute overflow-hidden shadow-2xl"
                 style={{
-                  top: 0,
-                  left: '18%',
-                  right: 0,
-                  bottom: '40px',
+                  top: '48px',
+                  left: '24%',
+                  right: '-4%',
+                  bottom: '-16px',
+                  transform: 'rotate(6deg)',
+                  transformOrigin: 'bottom right',
                   borderRadius: '2px',
-                  zIndex: 1,
+                  zIndex: 2,
                 }}
               >
                 <Image
