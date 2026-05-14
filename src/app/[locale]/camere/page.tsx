@@ -24,14 +24,14 @@ function CamereContent() {
       name: t('matrimoniale.name'),
       description: t('matrimoniale.description'),
       price: '€89',
-      image: '/images/Camere/Matrimoniale/matrimoniale-01.jpg',
+      image: '/images/Camere/Matrimoniale/matrimoniale-04.jpg',
     },
     {
       slug: 'matrimoniale-superior',
       name: t('matrimonialeSuperiore.name'),
       description: t('matrimonialeSuperiore.description'),
       price: '€109',
-      image: '/images/Camere/Superior/superior-01.jpg',
+      image: '/images/Camere/Superior/superior-02.jpg',
       badge: 'Superior',
     },
     {
@@ -39,7 +39,7 @@ function CamereContent() {
       name: t('suite.name'),
       description: t('suite.description'),
       price: '€149',
-      image: '/images/Camere/Suite/suite-02.jpg',
+      image: '/images/Camere/Suite/suite-04.jpg',
       badge: 'Suite',
     },
   ]
