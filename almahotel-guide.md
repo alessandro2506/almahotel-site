@@ -1,6 +1,6 @@
 # AlmaHotel – Design & Development Guide
 > Progetto: Redesign completo almahotel.it | Stack: Next.js 15 + TypeScript + Tailwind CSS 4
-> Autore: Alvenco Ltd | Ultimo aggiornamento: 2026-05-13 (v1.2 — post-deploy, roadmap aggiornata)
+> Autore: Alvenco Ltd | Ultimo aggiornamento: 2026-05-14 (v1.3 — i18n completa, carousel mobile)
 
 ---
 
@@ -179,22 +179,24 @@ Standard — Resend con rate limiting (max 10 req/min per IP).
 
 | Componente | File | Note |
 |---|---|---|
-| `<Navbar>` | `src/components/layout/Navbar.tsx` | Transparent su hero → solid on scroll. h-[80px]. Voci centrate. CTA rosso a destra. |
-| `<HeroVideo>` | `src/components/home/HeroVideo.tsx` | Fullscreen h-screen. Vimeo autoplay/muted/loop (ID 382157995). Fallback immagine. 2 CTA + indirizzo + scroll indicator. |
+| `<Navbar>` | `src/components/layout/Navbar.tsx` | Transparent su hero → solid on scroll. h-[80px]. Voci centrate. CTA rosso a destra. Voci "Transfer" e "Web Check-In" incluse. |
+| `<HeroVideo>` | `src/components/home/HeroVideo.tsx` | Fullscreen h-screen. Vimeo autoplay/muted/loop (ID 382157995). 2 CTA + indirizzo + scroll indicator. Testo da `useTranslations('hero')`. |
 | `<BookingBar>` | `src/components/home/BookingBar.tsx` | Sticky post-hero. Check-in/out + CTA → Octorate. |
-| `<RoomCard>` | `src/components/home/RoomCard.tsx` | Size `tall` (`h-[576px]/md:h-[656px]`) o `standard` (`h-[280px]/md:h-[320px]`). Hover scale, overlay gradient, badge, arrow animata. |
-| `<RestaurantSection>` | `src/components/home/RestaurantSection.tsx` | Split 50/50: immagine sx, testo dx. Sfondo `#F5F0E8`. |
-| `<ExperienceSection>` | `src/components/home/ExperienceSection.tsx` | Split 50/50: testo sx, immagine dx (Mondello/Palermo). Sfondo bianco. |
-| `<HighlightBanner>` | `src/components/home/HighlightBanner.tsx` | Full-width immagine con overlay + testo centrato. |
-| `<MapSection>` | `src/components/home/MapSection.tsx` | Embed Google Maps **senza API key** (keyless, stesso metodo di almahotel.it). Info card scura a destra. Supporta opzionalmente `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY`. |
-| `<ServiceIcons>` | `src/components/home/ServiceIcons.tsx` | Grid 3 colonne, icone Lucide React. `'use client'`. |
-| `<AwardsCarousel>` | `src/components/home/AwardsCarousel.tsx` | CSS scroll auto-play. Loghi grigi su sfondo `#F5F0E8`. |
-| `<RoomDetail>` | `src/components/home/RoomDetail.tsx` | Layout Forestis per pagine singola camera: hero + intro + gallery mosaico + dotazioni + booking card + suggerimenti. |
-| `<PasswordGate>` | `src/components/auth/PasswordGate.tsx` | Form password centrato, verifica API `/api/auth/verify`, sessionStorage per sessione. |
-| `<TransferForm>` | `src/components/forms/TransferForm.tsx` | Multistep 3 step. Zod + React Hook Form. POST `/api/transfer-request`. |
-| `<CheckInForm>` | `src/components/forms/CheckInForm.tsx` | Multistep 4 step. Ospiti aggiuntivi dinamici. PDF allegato via `@react-pdf/renderer`. |
+| `<RoomCard>` | `src/components/home/RoomCard.tsx` | Size `tall` (`h-[576px]/md:h-[656px]`) o `standard` (`h-[280px]/md:h-[320px]`). Hover scale, overlay gradient, badge, arrow animata. Prezzo da `useTranslations('rooms')`. |
+| `<RestaurantSection>` | `src/components/home/RestaurantSection.tsx` | Split 50/50: immagine sx, testo dx. Sfondo `#F5F0E8`. Testi da `useTranslations('restaurant')`. |
+| `<ExperienceSection>` | `src/components/home/ExperienceSection.tsx` | Split 50/50: testo sx, immagine dx (Mondello/Palermo). Testi da `useTranslations('experience')`. |
+| `<HighlightBanner>` | `src/components/home/HighlightBanner.tsx` | Full-width immagine con overlay + testo centrato. Testi da `useTranslations('highlight')`. |
+| `<MapSection>` | `src/components/home/MapSection.tsx` | Embed Google Maps **senza API key** (keyless). Info card scura a destra. Testi da `useTranslations('map')`. |
+| `<ServiceIcons>` | `src/components/home/ServiceIcons.tsx` | Grid 3 colonne, icone Lucide React. Testi da `useTranslations('services')`. |
+| `<AwardsCarousel>` | `src/components/home/AwardsCarousel.tsx` | CSS scroll auto-play 30s. Loghi grigi su sfondo `#F5F0E8`. |
+| `<ReviewsCarousel>` | `src/components/home/ReviewsCarousel.tsx` | **Desktop**: infinite CSS scroll 35s. **Mobile**: snap-scroll con dot indicators e swipe. Recensioni reali da Booking.com/TripAdvisor. |
+| `<RoomDetail>` | `src/components/home/RoomDetail.tsx` | Layout Forestis. Amenities da ID neutrali (`'wifi'`, `'breakfast'`…) → `useTranslations('amenities')`. Etichette da `useTranslations('roomDetail')`. |
+| `<RoomBookingCard>` | `src/components/home/RoomBookingCard.tsx` | Sticky card prenotazione. "Prenota Ora" da `useTranslations('roomDetail')`. |
+| `<PasswordGate>` | `src/components/forms/PasswordGate.tsx` | Form password centrato. Verifica server-side. `sessionStorage` per sessione — una sola password per tutte le pagine `/protected/*`. |
+| `<TransferForm>` | `src/components/forms/TransferForm.tsx` | Multistep 3 step. TUTTI i label da `useTranslations('transferForm')`. LOCATIONS array dinamico per lingua. |
+| `<CheckInForm>` | `src/components/forms/CheckInForm.tsx` | Multistep 4 step. GuestFields con label da `useTranslations('checkinForm')`. Tipi documento tradotti. |
 | `<LanguageSwitcher>` | `src/components/layout/LanguageSwitcher.tsx` | Dropdown bandiere, routing next-intl. |
-| `<Footer>` | `src/components/layout/Footer.tsx` | Sfondo `#0A0A0A`. 4 colonne link + social (SVG inline) + CIN/CIR + copyright. Testi link `#999`. |
+| `<Footer>` | `src/components/layout/Footer.tsx` | Sfondo `#0A0A0A`. 4 colonne link da `useTranslations('footer')`. Social SVG inline. Testi link `#999`. |
 
 ---
 
@@ -273,6 +275,21 @@ NEXT_PUBLIC_VIMEO_ID=382157995     # ID video hero Vimeo
 - [x] Immagini reali per tutte le sezioni (saporiperduti.it + Unsplash Palermo)
 - [x] Correzioni UI: Suite come card grande, foto Palermo corretta, footer testi `#999`
 
+### Fase 2c — i18n Completa ✅ COMPLETATA
+- [x] Audit approfondito di tutti i testi hardcoded italiani su tutto il sito
+- [x] Menu colazione: tutti gli item (30+ voci) tradotti in IT/EN/FR/ES via namespace `breakfastMenu`
+- [x] Form Transfer: tutti i label, LOCATIONS array dinamico, riepilogo step 3, privacy consent
+- [x] Form Web Check-In: GuestFields completo, tipi documento, riepilogo step 4, consenso GDPR
+- [x] Sezione tariffe transfer (TariffeSection) completamente tradotta via namespace `transferRates`
+- [x] Pagine camere (suite, matrimoniale, matrimoniale-superior): tutti i testi via `getTranslations`
+- [x] `RoomDetail.tsx`: amenities convertite da stringhe IT a ID neutrali (es. `'wifi'`, `'breakfast'`) → tradotte a runtime
+- [x] `RoomCard.tsx`, `RoomBookingCard.tsx`: label prezzo e CTA tradotti
+- [x] `Footer.tsx`: titoli colonne e label link tradotti in tutte le lingue
+- [x] `chi-siamo/page.tsx`: sezione "LA NOSTRA MISSIONE" tradotta
+- [x] `contatti/page.tsx`: label "Indirizzo", "Telefono", "Email" tradotti
+- [x] Carosello recensioni: velocità 60s→35s; mobile con snap-scroll, swipe e dot indicators
+- [x] Commit: `2f7d642`
+
 ### Fase 3 — SEO & Performance 🔄 IN CORSO
 - [x] Schema.org JSON-LD sulle pagine principali
 - [x] next-sitemap + robots.txt
@@ -291,6 +308,42 @@ NEXT_PUBLIC_VIMEO_ID=382157995     # ID video hero Vimeo
 
 ---
 
+## 12. Note i18n — Guida Pratica (v1.3)
+
+### Aggiungere un nuovo testo tradotto
+
+1. Aggiungere la chiave in `src/messages/it.json`, `en.json`, `fr.json`, `es.json`
+2. Nel componente usare `useTranslations('namespace')` (client) o `getTranslations({ locale, namespace })` (server async)
+3. Richiamare con `t('chiave')`
+
+### Namespace di riferimento rapido
+
+| Pagina/Componente | Namespace da usare |
+|---|---|
+| Homepage | `hero`, `welcome`, `rooms`, `services`, `restaurant`, `experience`, `highlight`, `awards`, `booking`, `map` |
+| Chi Siamo | `about` |
+| Contatti | `contacts` |
+| Camere (listing) | `rooms` |
+| Camera Matrimoniale | `matrimoniale` |
+| Camera Matrimoniale Superior | `matrimonialeSuperiore` |
+| Suite | `suite` |
+| Dotazioni camera | `amenities` (chiavi: `wifi`, `breakfast`, `ac`, `bathroom`, `tv`, `bed`, `safe`, `transfer`) |
+| RoomDetail etichette | `roomDetail` |
+| Menu Colazione | `protected.breakfast` + `breakfastMenu` |
+| Prenota Transfer | `protected.transfer` + `transferRates` + `transferForm` |
+| Web Check-In | `protected.checkin` + `checkinPage` + `checkinForm` |
+| PasswordGate | `protected.password` |
+| Navbar | `nav` |
+| Footer | `footer` |
+
+### Aggiungere una nuova lingua
+
+1. Creare `src/messages/xx.json` copiando `en.json` e traducendo tutti i valori
+2. Aggiungere `'xx'` all'array `locales` in `src/i18n/routing.ts`
+3. Aggiungere la bandiera a `LanguageSwitcher.tsx`
+
+---
+
 ## Changelog
 
 | Data | Autore | Note |
@@ -298,3 +351,4 @@ NEXT_PUBLIC_VIMEO_ID=382157995     # ID video hero Vimeo
 | 2026-05-13 | Claude / Alvenco | Creazione file. Analisi sito live, verifica design system, architettura completa, SEO strategy, roadmap. |
 | 2026-05-13 | Claude / Alvenco | Aggiornamento sezione 7: riferimenti visivi corretti. Forestis (primario) + Badrutt's Palace (secondario). Cheval Blanc scartato per eccesso di video e animazioni confusive. |
 | 2026-05-13 | Claude / Alvenco | v1.2 — Post-implementazione completa. Aggiornate: §8 Componenti (tabella dettagliata con file paths e note implementative), §9 Integrazioni (lazy init pattern documentato, Google Maps keyless embed), §10 Env vars (note su opzionalità Maps key e lazy init), §11 Roadmap (fasi 1 e 2 completate, fase 2b fix deployment aggiunta, fase 3 in corso, fase 4 pianificata). |
+| 2026-05-14 | Claude / Alvenco | v1.3 — i18n completa (fase 2c). Aggiornate: §8 Componenti (tutti i componenti ora documentati con namespace i18n usato), §11 Roadmap (fase 2c completata con 15 punti dettagliati), §12 nuova sezione guida pratica i18n (namespace di riferimento rapido, istruzioni per nuova lingua). Commit: 2f7d642. |

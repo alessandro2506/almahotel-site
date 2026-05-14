@@ -1,7 +1,7 @@
 # AlmaHotel – Cursor Redesign Prompt v2
 > REDESIGN VISIVO COMPLETO — Homepage + Pagine Camere
 > Obiettivo: avvicinarsi concretamente a badruttspalace.com (struttura/layout) + forestis.it (tipografia/tono/pagine camere)
-> Aggiornato: 2026-05-13 (v2.1 — post-implementazione, correzioni e fix applicati)
+> Aggiornato: 2026-05-14 (v2.2 — i18n completa, carousel mobile, fix UI)
 
 ---
 
@@ -398,9 +398,101 @@ Tutti i punti sopra sono stati completati e deployati su Vercel via GitHub (`htt
 
 ---
 
+## 16. INTERNAZIONALIZZAZIONE — ARCHITETTURA FINALE (v2.2)
+
+### Namespaces next-intl (tutti i file `src/messages/*.json`)
+
+Tutti i namespace sono tradotti in **IT, EN, FR, ES**:
+
+| Namespace | Contenuto |
+|---|---|
+| `hero` | Label, titolo, CTA hero video |
+| `welcome` | Sezione intro homepage |
+| `rooms` | Listing camere (nomi, descrizioni, `from`/`perNight`) |
+| `restaurant` | Sezione ristorante |
+| `experience` | Sezione esperienze/Palermo |
+| `highlight` | Banner colazione |
+| `awards` | Sezione premi |
+| `booking` | Banner prenotazione |
+| `map` | Sezione mappa e info contatti |
+| `nav` | Voci navbar + CTA prenota |
+| `footer` | Colonne footer (titoli + link labels) |
+| `about` | Pagina Chi Siamo (storia, missione, certificazioni, recensioni) |
+| `contacts` | Pagina Contatti (label Indirizzo/Telefono/Email + form) |
+| `roomDetail` | Etichette componente RoomDetail (DOTAZIONI, SCOPRI ANCHE, Prenota Ora, from/perNight) |
+| `amenities` | Nomi dotazioni camera per chiave (wifi, breakfast, ac, bathroom, tv, bed, safe, transfer) |
+| `suite` | Testi pagina Suite (name, badge, typeLabel, tagline, longDescription, specs, camere correlate) |
+| `matrimoniale` | Testi pagina Matrimoniale |
+| `matrimonialeSuperiore` | Testi pagina Matrimoniale Superior |
+| `breakfastMenu` | Intero menu colazione (sweet, savory, beverages, glutenFree — tutti gli item tradotti) |
+| `transferRates` | Sezione tariffe transfer (label, persone, supplemento notturno, nota) |
+| `transferForm` | Tutti i label del form Transfer (tipo servizio, provenienza, destinazione, riepilogo, privacy) |
+| `checkinPage` | Label pagina Check-In |
+| `checkinForm` | Tutti i label del form Check-In (ospite, documento, dati soggiorno, consenso GDPR) |
+| `protected.breakfast` | Titolo/sottotitolo menu colazione |
+| `protected.transfer` | Titolo/sottotitolo/step form transfer |
+| `protected.checkin` | Titolo/sottotitolo/step form check-in |
+| `protected.password` | PasswordGate |
+
+### Componenti aggiornati per i18n completa (v2.2)
+
+| Componente | Cambiamento |
+|---|---|
+| `HeroVideo.tsx` | `useTranslations('hero')` — label, titolo, CTA |
+| `page.tsx` (home) | Tutti i testi inline → useTranslations per namespace welcome, rooms, services, awards, booking |
+| `RestaurantSection.tsx` | `useTranslations('restaurant')` |
+| `ExperienceSection.tsx` | `useTranslations('experience')` |
+| `HighlightBanner.tsx` | `useTranslations('highlight')` |
+| `RoomCard.tsx` | `useTranslations('rooms')` — prezzo in locale (`da/from/depuis/desde`) |
+| `RoomBookingCard.tsx` | `useTranslations('roomDetail')` — "Prenota Ora" tradotto |
+| `RoomDetail.tsx` | `useTranslations('roomDetail')` + `useTranslations('amenities')` — amenity keys sono ora ID neutrali (es. `'wifi'`, `'breakfast'`), tradotti a display-time |
+| `suite/page.tsx` | `getTranslations({ locale, namespace: 'suite' })` — tutti i testi compresi i relatedRooms |
+| `matrimoniale/page.tsx` | `getTranslations({ locale, namespace: 'matrimoniale' })` |
+| `matrimoniale-superior/page.tsx` | `getTranslations({ locale, namespace: 'matrimonialeSuperiore' })` |
+| `menu-colazione/page.tsx` | `useTranslations('breakfastMenu')` — tutti gli item del menu tradotti; orari e nota allergie dinamici |
+| `prenota-transfer/page.tsx` | `useTranslations('transferRates')` — TariffeSection completamente tradotta |
+| `TransferForm.tsx` | `useTranslations('transferForm')` — tutti i label, radio options, LOCATIONS array, summary, privacy |
+| `web-check-in/page.tsx` | `useTranslations('checkinPage')` |
+| `CheckInForm.tsx` | `useTranslations('checkinForm')` — tutti i label, tipi documento, ospiti aggiuntivi, riepilogo, consenso GDPR |
+| `chi-siamo/page.tsx` | `t('missionLabel')`, `t('missionTitle')`, `t('missionText1')`, `t('missionText2')` |
+| `contatti/page.tsx` | `t('addressLabel')`, `t('phoneLabel')`, `t('emailLabel')` |
+| `Footer.tsx` | `useTranslations('footer')` — tutti i titoli colonne e label link |
+
+### Pattern amenity keys (v2.2)
+
+Le dotazioni camera NON vengono più passate come stringhe italiane ma come chiavi ID:
+```tsx
+// Prima (hardcoded IT):
+amenities={['WiFi', 'Colazione', 'Aria Condizionata', ...]}
+
+// Dopo (ID neutrali → tradotti da useTranslations('amenities')):
+amenities={['wifi', 'breakfast', 'ac', 'bathroom', 'tv', 'bed', 'safe', 'transfer']}
+```
+`RoomDetail.tsx` usa `tAmenities(amenityKey)` per mostrare il nome nella lingua corretta.
+
+---
+
+## 17. CAROSELLO RECENSIONI — SPECIFICHE MOBILE (v2.2)
+
+### Desktop (≥ md)
+- Infinite CSS scroll animation — `animation: carousel-scroll 35s linear infinite`
+- Hover → pausa animazione
+- Fade edges laterali con gradiente
+
+### Mobile (< md)
+- Carosello snap-scroll orizzontale con `overflow-x-auto` + `scroll-snap-type: x mandatory`
+- Ogni card ha `scroll-snap-align: center`
+- Dot indicators in basso con stato attivo (`#E60023`)
+- Click sul dot → scroll smooth alla card corrispondente
+- Scrollbar nascosta via `scrollbar-width: none`
+- Nessun loop infinito su mobile — solo le card reali
+
+---
+
 ## Changelog
 
 | Data | Autore | Note |
 |---|---|---|
 | 2026-05-13 | Claude / Alvenco | Creazione CURSOR_REDESIGN_PROMPT.md. Redesign visivo completo: struttura Badrutt's Palace, tipografia Forestis, immagini reali da saporiperduti.it + Unsplash, nuove sezioni Ristorante/Esperienze/Colazione, layout camere Forestis-inspired. |
 | 2026-05-13 | Claude / Alvenco | v2.1 — Post-implementazione. Fix applicati: (1) Griglia camere invertita: Suite è ora la card grande, altezze `tall=h-[576px]/md:h-[656px]` calibrate per coprire esattamente le due card destre. (2) Foto ExperienceSection sostituita: Barcellona → Mondello/Palermo (`photo-1618225687595-75be91fc01d1`). (3) Footer testi da `#555` a `#999` per leggibilità. (4) Errori deployment Vercel documentati in §14. (5) Lazy init per Resend, Supabase, DeepL. (6) Google Maps usa embed keyless (come almahotel.it). |
+| 2026-05-14 | Claude / Alvenco | v2.2 — i18n completa. Audit approfondito di tutto il testo hardcoded italiano: menu colazione (30+ voci), form transfer (label, LOCATIONS, riepilogo, privacy), form check-in (GuestFields, tipi documento, consenso GDPR), pagine camere (name/badge/tagline/specs/amenities), RoomDetail (DOTAZIONI, relatedRooms), RoomCard (prezzo), Footer (colonne e link), chi-siamo (sezione missione), contatti (label indirizzo/telefono/email). Amenities convertite da stringhe italiane a ID neutrali. Fix carosello recensioni: velocità aumentata (60s→35s) + mobile snap-scroll con dot indicators. Commit: 2f7d642. |
