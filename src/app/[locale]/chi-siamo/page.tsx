@@ -59,45 +59,18 @@ function ChiSiamoContent() {
             </p>
           </FadeIn>
           <FadeIn direction="left">
-            {/*
-              Layout "cartolina":
-              - Immagine SOTTO (hotel-owners): verticale, ruotata +5deg, sporgente a destra e in basso
-              - Immagine SOPRA (hotel-reception): dritta, occupa ~80% larghezza lasciando visibile il bordo destro e inferiore della foto sotto
-              L'altezza del contenitore è calibrata per mostrare entrambe le immagini senza tagli eccessivi.
-            */}
-            <div className="relative w-full" style={{ height: '520px' }}>
+            <div className="relative w-full" style={{ height: '560px' }}>
 
-              {/* SOTTO — foto titolari — ruotata, sporgente abbastanza da essere ben visibile */}
+              {/* SOTTO — reception — ruotata -6deg, sporgente a sinistra e in basso */}
               <div
                 className="absolute overflow-hidden shadow-lg"
                 style={{
-                  top: '20px',
-                  left: '10%',
-                  right: '-8%',
-                  bottom: '-20px',
-                  transform: 'rotate(5deg)',
-                  transformOrigin: 'bottom center',
-                  borderRadius: '2px',
-                  zIndex: 1,
-                }}
-              >
-                <Image
-                  src="/images/hotel-owners.jpg"
-                  alt={t('teamImageAlt')}
-                  fill
-                  className="object-cover object-top"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-              </div>
-
-              {/* SOPRA — foto reception — dritta, lascia visibile ~12% del bordo dx e ~30px in basso della foto sotto */}
-              <div
-                className="absolute overflow-hidden shadow-2xl"
-                style={{
-                  top: 0,
-                  left: 0,
-                  right: '18%',
-                  bottom: '32px',
+                  top: '40px',
+                  left: '-6%',
+                  right: '14%',
+                  bottom: '-24px',
+                  transform: 'rotate(-6deg)',
+                  transformOrigin: 'bottom left',
                   borderRadius: '2px',
                   zIndex: 2,
                 }}
@@ -107,6 +80,27 @@ function ChiSiamoContent() {
                   alt={t('historyImageAlt')}
                   fill
                   className="object-cover object-center"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              </div>
+
+              {/* SOPRA — titolari — dritta, occupa l'area centrale lasciando visibile la reception sotto */}
+              <div
+                className="absolute overflow-hidden shadow-2xl"
+                style={{
+                  top: 0,
+                  left: '18%',
+                  right: 0,
+                  bottom: '40px',
+                  borderRadius: '2px',
+                  zIndex: 1,
+                }}
+              >
+                <Image
+                  src="/images/hotel-owners.jpg"
+                  alt={t('teamImageAlt')}
+                  fill
+                  className="object-cover object-top"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </div>
