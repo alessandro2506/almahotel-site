@@ -67,8 +67,8 @@ function ChiSiamoContent() {
                 style={{
                   top: 0,
                   left: 0,
-                  right: '22%',
-                  bottom: '40px',
+                  right: '30%',
+                  bottom: '60px',
                   borderRadius: '2px',
                   zIndex: 1,
                 }}
@@ -86,8 +86,8 @@ function ChiSiamoContent() {
               <div
                 className="absolute overflow-hidden shadow-2xl"
                 style={{
-                  top: '48px',
-                  left: '24%',
+                  top: '60px',
+                  left: '32%',
                   right: '-4%',
                   bottom: '-16px',
                   transform: 'rotate(6deg)',
